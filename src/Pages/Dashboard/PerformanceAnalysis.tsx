@@ -5,6 +5,7 @@ import KnowledgeGraph from "../../Component/KnowledgeGraph ";
 import PassRateComparison from "../../Component/PassRateComparison";
 import StrengthGraphGreen from "../../Component/StrengthGraphGreen";
 import StrengthGraphRed from "../../Component/StrengthGraphRed";
+import LearningTimeGraph from "../../Component/LearningTimeGraph";
 
 const PerformanceAnalysis = () => {
   return (
@@ -24,7 +25,7 @@ const PerformanceAnalysis = () => {
       <div className="w-full bg-slate-700 h-[1px]"></div>
 
       <div className="mt-10 flex gap-4 ">
-        <div className="w-[30%]">
+        <div className="w-[40%]">
           <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <h3>Average Knowledge Score</h3>
             <CircularProgress value={6.9} />
@@ -36,12 +37,15 @@ const PerformanceAnalysis = () => {
             <StrengthGraphRed />
           </div>
         </div>
-        <div className="w-[70%] ">
+        <div className="w-[60%] ">
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <KnowledgeGraph />
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <PassRateComparison />
+          </div>
+          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <LearningTimeGraph />
           </div>
         </div>
       </div>

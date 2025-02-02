@@ -77,7 +77,7 @@ const KnowledgeGraph = () => {
       </div>
 
       <div className="flex w-full justify-end">
-        <div className="flex justify-end gap-2 mb-6 bg-[#828597] rounded-lg w-fit">
+        <div className="flex justify-end gap-2 mb-1 bg-[#828597] rounded-lg w-fit">
           {Object.keys(DATA).map((period) => (
             <button
               key={period}
@@ -94,7 +94,7 @@ const KnowledgeGraph = () => {
         </div>
       </div>
 
-      <div className="h-56 w-full">
+      <div className="h-44 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={currentData}

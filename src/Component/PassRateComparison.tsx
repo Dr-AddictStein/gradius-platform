@@ -50,11 +50,11 @@ const PassRateComparison = () => {
   const currentData = DATA[timeframe];
 
   return (
-    <div className="w-full max-w-4xl p-6 rounded-xl">
+    <div className="w-full max-w-4xl  rounded-xl">
       <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-2">
           <h2 className="text-white text-lg font-semibold">Pass Rate Quizzes VS Flashcards</h2>
-          <div className="flex flex-col justify-start items-start gap-4">
+          <div className="flex flex-col justify-start items-start gap-2">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-purple-500"></div>
               <span className="text-gray-300">Quizzes</span>
@@ -66,7 +66,7 @@ const PassRateComparison = () => {
           </div>
         </div>
 
-        <div className="flex justify-end gap-2 mb-6 bg-[#828597] rounded-lg w-fit">
+        <div className="flex justify-end gap-2 mb-1 bg-[#828597] rounded-lg w-fit">
           {Object.keys(DATA).map((period) => (
             <button
               key={period}
@@ -83,7 +83,7 @@ const PassRateComparison = () => {
         </div>
       </div>
 
-      <div className="h-64 w-full">
+      <div className="h-40 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={currentData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
             <CartesianGrid 
