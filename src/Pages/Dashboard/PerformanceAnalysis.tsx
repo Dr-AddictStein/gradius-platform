@@ -1,11 +1,52 @@
-import React from 'react'
+import { Cross, Pencil, X } from "lucide-react";
+import React from "react";
+import CircularProgress from "../../Component/CircularProgressProps";
+import KnowledgeGraph from "../../Component/KnowledgeGraph ";
+import PassRateComparison from "../../Component/PassRateComparison";
+import StrengthGraphGreen from "../../Component/StrengthGraphGreen";
+import StrengthGraphRed from "../../Component/StrengthGraphRed";
 
 const PerformanceAnalysis = () => {
   return (
-    <div>
-      Performance Analysis
-    </div>
-  )
-}
+    <div className=" text-white p-6 rounded-lg min-h-screen">
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-red-500"></div>
+          <h1 className="text-xl font-semibold mr-4">
+            Physics | Performance Analysis
+          </h1>
+          <img src="../../../public/growIcon.png" alt="" />
+        </div>
+        <button className="p-2">
+          <X className="w-5 h-5" />
+        </button>
+      </div>
+      <div className="w-full bg-slate-700 h-[1px]"></div>
 
-export default PerformanceAnalysis
+      <div className="mt-10 flex gap-4 ">
+        <div className="w-[30%]">
+          <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <h3>Average Knowledge Score</h3>
+            <CircularProgress value={6.9} />
+          </div>
+          <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <StrengthGraphGreen />
+          </div>
+          <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <StrengthGraphRed />
+          </div>
+        </div>
+        <div className="w-[70%] ">
+          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <KnowledgeGraph />
+          </div>
+          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <PassRateComparison />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PerformanceAnalysis;
