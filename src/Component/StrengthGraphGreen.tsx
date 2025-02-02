@@ -10,7 +10,6 @@ const StrengthGraphGreen: React.FC = () => {
 
   return (
     <div className=" rounded-xl px-10 w-full">
-      <h2 className="text-white text-center font-semibold mb-3">Strengths</h2>
       <div className="space-y-2">
         {strengths.map((strength, index) => (
           <div

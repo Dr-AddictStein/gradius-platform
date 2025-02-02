@@ -10,7 +10,6 @@ const StrengthGraphRed: React.FC = () => {
 
   return (
     <div className="  px-10 rounded-xl w-full">
-      <h2 className="text-white text-center font-semibold mb-3">Strengths</h2>
       <div className="space-y-2">
         {strengths.map((strength, index) => (
           <div

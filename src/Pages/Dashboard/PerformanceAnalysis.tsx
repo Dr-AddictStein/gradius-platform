@@ -31,9 +31,13 @@ const PerformanceAnalysis = () => {
             <CircularProgress value={6.9} />
           </div>
           <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <h2 className="text-white text-center font-semibold">Strengths</h2>
             <StrengthGraphGreen />
           </div>
           <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <h2 className="text-white text-center font-semibold">
+              Weaknesses
+            </h2>
             <StrengthGraphRed />
           </div>
         </div>
