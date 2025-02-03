@@ -42,7 +42,7 @@ const LearningTimeGraph: React.FC = () => {
         <ResponsiveContainer width="100%" height={220}>
           <BarChart
             data={data}
-            margin={{ top: 20, right: 10, left: 10, bottom: 10 }}
+            margin={{ top: 20, right: -1, left: -38, bottom: 10 }}
           >
             {/* Grid Lines */}
             <CartesianGrid

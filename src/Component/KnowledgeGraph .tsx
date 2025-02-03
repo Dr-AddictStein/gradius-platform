@@ -56,7 +56,7 @@ const KnowledgeGraph = ({ isSmall }) => {
   const nextDay = currentData[highlightIndex + 1]?.day;
 
   return (
-    <div className="w-[100%] max-w-4xl rounded-xl">
+    <div className="w-[100%]  rounded-xl">
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-6">
           <h2 className="text-white text-[16px] font-bold">
@@ -100,11 +100,11 @@ const KnowledgeGraph = ({ isSmall }) => {
       </div>
       <div className="w-full bg-slate-500 h-[1px] mb-8"></div>
 
-      <div className="h-44 w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-44 w-full ">
+        <ResponsiveContainer width="100%" height="100%"  >
           <AreaChart
             data={currentData}
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+            margin={{ top: 10, right: -30, left: -35, bottom: 0 }}
           >
             <defs>
               <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">

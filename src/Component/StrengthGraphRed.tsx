@@ -4,6 +4,8 @@ const StrengthGraphRed: React.FC = () => {
   const strengths = [
     { label: "Dummy", value: 100 },
     { label: "Dummy", value: 80 },
+    { label: "Dummy", value: 90 },
+    { label: "Dummy", value: 70 },
   ];
 
   return (
