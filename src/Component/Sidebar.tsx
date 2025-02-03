@@ -79,6 +79,7 @@ const Sidebar = () => {
               }`}
               onClick={() => {
                 setActiveTab("Home");
+                setIsSubjectsOpen(false);
                 navigate("/dashboard");
               }}
             >
@@ -100,13 +101,15 @@ const Sidebar = () => {
                 <img
                   src={subjectIcon}
                   alt="Subjects"
-                  className="h-[20px] w-[20px]"
+                  className={`h-[20px] w-[20px] transition-transform duration-300 ${
+                    isSubjectsOpen ? "rotate-90" : ""
+                  }`}
                 />
                 <span className="text-[14px] font-semibold">Subjects</span>
               </div>
               <ChevronRight
                 size={16}
-                className={`text-gray-400 transition-transform ${
+                className={`text-gray-400 transition-transform duration-300 ${
                   isSubjectsOpen ? "rotate-90" : ""
                 }`}
               />
@@ -119,19 +122,19 @@ const Sidebar = () => {
                   {/* New Subject Button */}
                   <div
                     onClick={() => setIsNewSubjectModalOpen(true)}
-                    className="w-full h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-gray-700 text-gray-400"
+                    className="hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer  text-gray-400"
                   >
                     <Plus size={16} />
                     <span>New Subject</span>
                   </div>
 
                   {/* Scrollable Subject List */}
-                  <div className="w-full max-h-[200px] overflow-y-auto scrollbar-hide">
+                  <div className="w-full max-h-[200px] overflow-y-auto scrollbar-hide px-2 py-2">
                     {subjects.map((subject) => (
                       <div
                         key={subject.id}
-                        className={`w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
-                          subject.isActive ? "bg-gray-700" : "hover:bg-gray-700"
+                        className={` hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
+                          subject.isActive ? "bg-gray-700" : ""
                         }`}
                         onClick={() => {
                           navigate("/dashboard/perSubject");

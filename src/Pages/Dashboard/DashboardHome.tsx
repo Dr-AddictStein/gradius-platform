@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import CircularProgress from "../../Component/CircularProgressProps";
 import homeIcon from "../../../public/homeIcon.png";
 import line1 from "../../../public/Line 1.png";
+import leftA from "../../../public/left.png";
+import rightA from "../../../public/right.png";
 
 const DashboardHome = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -51,7 +53,7 @@ const DashboardHome = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg w-[246px]">
+          <button className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] text-white px-6 py-3 rounded-lg w-[246px] text-[16px] font-bold transition-shadow duration-300">
             Start Studying
           </button>
         </div>
@@ -105,18 +107,18 @@ const DashboardHome = () => {
             <button
               onClick={handlePrev}
               disabled={currentSlide === 0}
-              className="absolute left-0 bg-purple-800 p-2 rounded-full hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="h-[35px] w-[35px] flex justify-center items-center absolute left-0 bg-[#A436F1] p-2 rounded-full hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Previous slide"
             >
-              ←
+              <img src={leftA} alt="" />
             </button>
             <button
               onClick={handleNext}
               disabled={currentSlide >= progressCards.length - 3} // Update disable logic
-              className="absolute right-0 bg-purple-800 p-2 rounded-full hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="h-[35px] w-[35px] flex justify-center items-center absolute right-0 bg-[#A436F1] p-2 rounded-full hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next slide"
             >
-              →
+              <img src={rightA} alt="" />
             </button>
           </div>
         </div>

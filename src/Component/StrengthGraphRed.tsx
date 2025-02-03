@@ -12,7 +12,7 @@ const StrengthGraphRed: React.FC = () => {
         {strengths.map((strength, index) => (
           <div
             key={index}
-            className="bg-[#9D372A] text-white py-2 px-4 rounded-lg"
+            className="bg-[#9D372A] text-white text-start py-2 px-4 rounded-lg"
             style={{ width: `${strength.value}%` }}
           >
             {strength.label}

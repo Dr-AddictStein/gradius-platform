@@ -1,5 +1,12 @@
-import React from 'react';
-import { ArrowUpIcon, ArrowDownIcon, RotateCwIcon, ArrowUpDown } from 'lucide-react';
+import React from "react";
+import {
+  ArrowUpIcon,
+  ArrowDownIcon,
+  RotateCwIcon,
+  ArrowUpDown,
+  Repeat,
+} from "lucide-react";
+import rotateIcon from "../../public/Rotate ccw.png";
 
 interface Topic {
   name: string;
@@ -21,29 +28,27 @@ const TableSmall = () => {
         { name: "Leptons", score: "+2" },
         { name: "Quarks A", score: "+2" },
         { name: "Quarks B", score: "+2" },
-        { name: "Quarks", score: "+2" }
+        { name: "Quarks", score: "+2" },
       ],
       upVotes: 6,
-      downVotes: 3
+      downVotes: 3,
     },
     {
       date: "17/07",
       topics: [
         { name: "Dark Matter", score: "+1" },
         { name: "Dark aaa", score: "+1" },
-        { name: "Dark Energy", score: "+1" }
+        { name: "Dark Energy", score: "+1" },
       ],
       upVotes: 8,
-      downVotes: 1
+      downVotes: 1,
     },
     {
       date: "16/07",
-      topics: [
-        { name: "Nuclear Fission", score: "+3" }
-      ],
+      topics: [{ name: "Nuclear Fission", score: "+3" }],
       upVotes: 9,
-      downVotes: 2
-    }
+      downVotes: 2,
+    },
   ];
 
   const MAX_VISIBLE_TOPICS = 2;
@@ -51,7 +56,10 @@ const TableSmall = () => {
   const renderTopics = (topics: Topic[]) => {
     if (topics.length <= MAX_VISIBLE_TOPICS) {
       return topics.map((topic, i) => (
-        <span key={i} className="px-2 py-1 bg-[#57575940] rounded-xl text-[12px] font-semibold flex items-center gap-1">
+        <span
+          key={i}
+          className="px-2 py-1 bg-[#57575940] rounded-xl text-[12px] font-semibold flex items-center gap-1"
+        >
           {topic.name}
         </span>
       ));
@@ -63,7 +71,10 @@ const TableSmall = () => {
     return (
       <>
         {visibleTopics.map((topic, i) => (
-          <span key={i} className="px-2 py-1 bg-[#57575940] rounded-xl text-[12px] font-semibold flex items-center gap-1">
+          <span
+            key={i}
+            className="px-2 py-1 bg-[#57575940] rounded-xl text-[12px] font-semibold flex items-center gap-1"
+          >
             {topic.name}
           </span>
         ))}
@@ -81,10 +92,18 @@ const TableSmall = () => {
       <table className="w-full">
         <thead>
           <tr className="text-sm text-gray-400">
-            <th className="py-2 text-[13px] font-medium text-center">Date</th>
-            <th className="py-2 text-[13px] font-medium text-center flex justify-center items-center gap-2">Topics <ArrowUpDown size={15}/> </th>
-            <th className="py-2 text-[13px] font-medium text-center">Score</th>
-            <th className="py-2 text-[13px] font-medium text-center">Retake</th>
+            <th className="py-2 text-[13px] font-medium text-center text-[#D2D3D9]">
+              Date
+            </th>
+            <th className="py-2 text-[13px] font-medium text-center flex justify-center items-center gap-2 text-[#D2D3D9]">
+              Topics <ArrowUpDown size={15} />{" "}
+            </th>
+            <th className="py-2 text-[13px] font-medium text-center text-[#D2D3D9]">
+              Score
+            </th>
+            <th className="py-2 text-[13px] font-medium text-center text-[#D2D3D9]">
+              Retake
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -105,14 +124,16 @@ const TableSmall = () => {
                     </div>
                     <div className="flex items-center text-red-400">
                       <ArrowDownIcon size={16} />
-                      <span className="text-sm text-white">{row.downVotes}</span>
+                      <span className="text-sm text-white">
+                        {row.downVotes}
+                      </span>
                     </div>
                   </div>
                 </div>
               </td>
               <td className="py-3">
                 <button className="text-gray-400 hover:text-gray-200 flex items-center justify-center w-full">
-                  <RotateCwIcon size={16} />
+                  <img src={rotateIcon} alt="" />
                 </button>
               </td>
             </tr>

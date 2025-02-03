@@ -12,7 +12,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
   value,
   maxValue = 10,
   size = 200,
-  strokeWidth = 25,
+  strokeWidth = 32,
   className = '',
 }) => {
   // Validate and clamp the value
