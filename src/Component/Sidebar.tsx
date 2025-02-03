@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown, Plus } from "lucide-react";
+import { ChevronDown, ChevronRight, Plus } from "lucide-react";
 import logo from "../../public/logo.png";
 import homeIcon from "../../public/homeIcon.png";
 import subjectIcon from "../../public/subjectIcon.png";
@@ -35,90 +35,105 @@ const Sidebar = () => {
 
   const user: User = {
     name: "Marcus Gradius",
-    email: "gradius@gmail.com",
+    email: "marcus.gradius@gmail.com",
     avatar: "../../public/userAvatar.png",
   };
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-[17%]  px-3 py-4 flex flex-col justify-between ">
+    <div className="h-screen py-4 pl-2 flex flex-col justify-between ">
       <div className="flex flex-col justify-between items-center h-full w-full">
-
-      {/* Logo */}
-      <div className=" w-full flex justify-center items-center gap-3 mb-6">
-        <img src={logo} alt="Gradius Logo" className="w-16 h-16 rounded" />
-        <div>
-          <h1 className="font-semibold text-4xl text-white">Gradius</h1>
-          <p className="text-lg text-gray-400">Learn Your Way</p>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <nav className="w-full flex-1 justify-center items-center">
-        {/* Home */}
-        <div className="flex items-center gap-3 px-3 py-2 rounded-lg mb-4 hover:bg-gray-700 cursor-pointer text-white">
-          <img src={homeIcon} alt="Home" />
-          <span>Home</span>
-        </div>
-
-        {/* Subjects */}
-        <div className="mb-4">
-          <div
-            className="flex items-center justify-between px-3 py-2 cursor-pointer text-white"
-            onClick={() => setIsSubjectsOpen(!isSubjectsOpen)}
-          >
-            <div className="flex items-center gap-3">
-              <img src={subjectIcon} alt="Subjects" />
-              <span>Subjects</span>
-            </div>
-            <ChevronDown
-              size={16}
-              className={`text-gray-400 transition-transform ${
-                isSubjectsOpen ? "rotate-180" : ""
-              }`}
+        {/* Logo */}
+        <div className="w-full flex flex-col items-center gap-6">
+          <div className=" w-[177px] h-[49px] flex justify-center items-center gap-3 ">
+            <img
+              src={logo}
+              alt="Gradius Logo"
+              className="w-[49px] h-[49px] rounded"
             />
-          </div>
-
-          {isSubjectsOpen && (
-            <div className="mt-2">
-              {/* New Subject Button */}
-              <div className="mx-3 mb-2 px-3 py-2 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-gray-700 text-gray-400">
-                <Plus size={16} />
-                <span>New Subject</span>
-              </div>
-
-              {/* Subject List */}
-              {subjects.map((subject) => (
-                <div
-                  key={subject.id}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg mx-3 cursor-pointer text-white ${
-                    subject.isActive ? "bg-gray-700" : "hover:bg-gray-700"
-                  }`}
-                >
-                  <div className={`w-2 h-2 rounded-full ${colorMap[subject.color]}`} />
-                  <span>{subject.name}</span>
-                </div>
-              ))}
+            <div>
+              <h1 className=" text-[20px] font-bold text-white">Gradius</h1>
+              <p className="text-[16px] font-medium text-gray-400">
+                Learn Your Way
+              </p>
             </div>
-          )}
-        </div>
-      </nav>
+          </div>
+          <div className="w-full bg-slate-700 h-[1px]"></div>
+          <div className=" w-full flex flex-col items-center justify-center gap-4">
+            {/* Home */}
+            <button className="flex w-full h-[50px] justify-start px-14 gap-6 items-center rounded-[6px] border-[1px] border-slate-600">
+              <img src={homeIcon} alt="Home" className="h-[20px] w-[20px]" />
+              <span className="text-[14px] font-semibold">Home</span>
+            </button>
+            {/* Home */}
+            <button
+              onClick={() => setIsSubjectsOpen(!isSubjectsOpen)}
+              className="flex w-full h-[50px] justify-between px-14  items-center rounded-[6px] border-[1px] border-slate-600"
+            >
+              <div className="flex gap-6">
+                <img
+                  src={subjectIcon}
+                  alt="Home"
+                  className="h-[20px] w-[20px]"
+                />
+                <span className="text-[14px] font-semibold">Subjects</span>
+              </div>
+              <ChevronRight
+                size={16}
+                className={`text-gray-400 transition-transform ${
+                  isSubjectsOpen ? "rotate-90" : ""
+                }`}
+              />
+            </button>
+            {isSubjectsOpen && (
+              <div className="w-full flex  justify-end items-end">
+                <div className="w-full flex flex-col justify-end items-end gap-2">
+                  {/* New Subject Button */}
+                  <div className="w-[95%] h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-gray-700 text-gray-400">
+                    <Plus size={16} />
+                    <span>New Subject</span>
+                  </div>
 
-      {/* User Profile */}
-      <div className="w-full bg-[#343540] rounded-md p-3 flex flex-col items-center gap-3">
-        <div className="flex items-center gap-3">
-          <img src={user.avatar} alt={user.name} className="w-10 h-10 rounded-full" />
-          <div>
-            <h3 className="text-sm sm:text-lg font-medium text-white">{user.name}</h3>
-            <p className="text-xs sm:text-sm text-gray-400">{user.email}</p>
+                  {/* Subject List */}
+                  {subjects.map((subject) => (
+                    <div
+                      key={subject.id}
+                      className={`w-[95%] h-[42px] flex items-center gap-3 px-10 rounded-lg  cursor-pointer text-white ${
+                        subject.isActive ? "bg-gray-700" : "hover:bg-gray-700"
+                      }`}
+                    >
+                      <div
+                        className={`w-2 h-2 rounded-full ${
+                          colorMap[subject.color]
+                        }`}
+                      />
+                      <span>{subject.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Upgrade Button */}
-        <button className="w-full py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
-          <img src={upgradeIcon} alt="Upgrade" className="w-5 h-5" />
-          <span>Upgrade</span>
-        </button>
-      </div>
+        {/* Navigation */}
+
+        {/* User Profile */}
+        <div className="w-full h-[160px] bg-[#343540] rounded-md p-3 flex flex-col items-center justify-around">
+            <div className="flex gap-3">
+              <div className="">
+                <img src={user.avatar} alt="" className="rounded-full h-[50px] w-[50px]"/>
+              </div>
+              <div className=" flex flex-col items-start justify-center ">
+                <div className="text-[14px] font-semibold">{user.name}</div>
+                <div className="text-[#828597] font-medium text-[12px]">{user.email}</div>
+              </div>
+            </div>
+          {/* Upgrade Button */}
+          <button className="w-[198px] h-[40px] py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
+            <img src={upgradeIcon} alt="Upgrade" className="w-3 h-3" />
+            <span className="text-[16px] font-normal">Upgrade</span>
+          </button>
+        </div>
       </div>
     </div>
   );
