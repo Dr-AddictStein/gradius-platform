@@ -42,7 +42,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
           cy={size / 2}
           r={radius}
           strokeWidth={strokeWidth}
-          stroke="#374151"
+          stroke="#3D3F4A"
           fill="none"
         />
         

@@ -10,6 +10,7 @@ import {
   ReferenceDot,
   ReferenceArea,
 } from "recharts";
+import growthIcon from "../../public/Growth Indicator.png";
 
 // Different data sets for each time period
 const DATA = {
@@ -55,44 +56,47 @@ const KnowledgeGraph = () => {
   const nextDay = currentData[highlightIndex + 1]?.day;
 
   return (
-    <div className="w-[90%] max-w-4xl rounded-xl">
-      <div className="flex items-center justify-between mb-8">
+    <div className="w-[100%] max-w-4xl rounded-xl">
+      <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-6">
-          <h2 className="text-white text-lg font-semibold">
+          <h2 className="text-white text-[16px] font-bold">
             Overall Knowledge
           </h2>
+        </div>
+        <div className="flex gap-2">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-            <span className="text-gray-300">Knowledge score</span>
+            <span className="text-gray-300 text-[10px] font-normal">
+              Knowledge score
+            </span>
           </div>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span className="text-green-400 text-lg font-semibold">1.3%</span>
-          <div className="flex items-center gap-1 text-sm text-gray-400">
-            <ArrowUpRight className="w-4 h-4 text-green-400" />
-            <span>VS LAST WEEK</span>
+          <div className="flex flex-col items-center ">
+            <div className="flex items-center gap-1 text-sm text-gray-400">
+              <span className="text-white text-[10px] font-bold">1.3%</span>
+              <img src={growthIcon} alt="" />
+            </div>
+            <span className="text-[10px] font-normal text-[#ACADB6]">
+              VS LAST WEEK
+            </span>
+          </div>
+          <div className="flex justify-between gap-2 px-2 py-4 items-center bg-[#828597] rounded-[15px] w-[193px] h-[21px]">
+            {Object.keys(DATA).map((period) => (
+              <button
+                key={period}
+                onClick={() => setTimeframe(period)}
+                className={`rounded-[13px] text-[10px] font-normal transition-colors px-[6px] py-1 ${
+                  timeframe === period
+                    ? "bg-gray-700 text-white"
+                    : "text-white hover:text-gray-300"
+                }`}
+              >
+                {period}
+              </button>
+            ))}
           </div>
         </div>
       </div>
-
-      <div className="flex w-full justify-end">
-        <div className="flex justify-end gap-2 mb-1 bg-[#828597] rounded-lg w-fit">
-          {Object.keys(DATA).map((period) => (
-            <button
-              key={period}
-              onClick={() => setTimeframe(period)}
-              className={`px-4 py-1.5 rounded-lg text-sm transition-colors ${
-                timeframe === period
-                  ? "bg-gray-700 text-white"
-                  : "text-white hover:text-gray-300"
-              }`}
-            >
-              {period}
-            </button>
-          ))}
-        </div>
-      </div>
+      <div className="w-full bg-slate-500 h-[1px] mb-8"></div>
 
       <div className="h-44 w-full">
         <ResponsiveContainer width="100%" height="100%">
@@ -110,12 +114,14 @@ const KnowledgeGraph = () => {
                 <stop offset="100%" stopColor="#A855F7" stopOpacity={0.4} />
               </linearGradient>
             </defs>
+            {/* 🔥 Stronger Horizontal Grid Lines */}
             <CartesianGrid
-              strokeDasharray="3 3"
+              strokeDasharray="4 4"
+              stroke="white"
+              opacity={0.8}
               vertical={false}
-              stroke="#374151"
-              opacity={0.5}
             />
+
             <XAxis
               dataKey="day"
               axisLine={false}

@@ -26,7 +26,7 @@ const PerformanceAnalysis = () => {
 
       <div className="mt-10 flex gap-4 ">
         <div className="w-[40%]">
-          <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+          <div className="bg-[#3D3F4A] text-center px-4 py-5 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <h3>Average Knowledge Score</h3>
             <CircularProgress value={6.9} />
           </div>
@@ -35,9 +35,7 @@ const PerformanceAnalysis = () => {
             <StrengthGraphGreen />
           </div>
           <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <h2 className="text-white text-center font-semibold">
-              Weaknesses
-            </h2>
+            <h2 className="text-white text-center font-semibold">Weaknesses</h2>
             <StrengthGraphRed />
           </div>
         </div>
@@ -46,10 +44,10 @@ const PerformanceAnalysis = () => {
             <KnowledgeGraph />
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <PassRateComparison />
+            <LearningTimeGraph />
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <LearningTimeGraph />
+            <PassRateComparison />
           </div>
         </div>
       </div>
