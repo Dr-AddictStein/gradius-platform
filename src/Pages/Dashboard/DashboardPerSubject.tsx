@@ -1,5 +1,5 @@
 import { Expand, History, Pencil, Plus, PlusIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import KnowledgeGraph from "../../Component/KnowledgeGraph ";
 import LearningTimeGraph from "../../Component/LearningTimeGraph";
 import CircularProgress from "../../Component/CircularProgressProps";
@@ -12,8 +12,11 @@ import starRight from "../../../public/starRight.png";
 import check4 from "../../../public/File Check 4.png";
 import TableSmall from "../../Component/TableSmall";
 import { Link } from "react-router-dom";
+import ImportModal from "../../Component/ImportModal";
+
 
 const DashboardPerSubject = () => {
+  const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   return (
     <div className=" text-white p-6 rounded-lg min-h-screen">
       <div className="flex items-center justify-between mb-6">
@@ -39,7 +42,10 @@ const DashboardPerSubject = () => {
                   MATERIALS UPLOADED
                 </h1>
               </div>
-              <button className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
+              <button
+                onClick={() => setIsImportModalOpen(true)}
+                className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2"
+              >
                 <PlusIcon size={14} />
                 Upload
               </button>
@@ -111,7 +117,10 @@ const DashboardPerSubject = () => {
                   RECENT STUDY SESSIONS
                 </h1>
               </div>
-              <Link to={'/dashboard/studySessions'} className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
+              <Link
+                to={"/dashboard/studySessions"}
+                className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2"
+              >
                 <Expand size={14} />
                 Expand
               </Link>
@@ -130,7 +139,10 @@ const DashboardPerSubject = () => {
                 PERFORMANCE ANALYSIS
               </h1>
             </div>
-            <Link to={'/dashboard/performanceAnalysis'} className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
+            <Link
+              to={"/dashboard/performanceAnalysis"}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2"
+            >
               <Expand size={14} />
               Expand
             </Link>
@@ -166,6 +178,11 @@ const DashboardPerSubject = () => {
           </div>
         </div>
       </div>
+
+      <ImportModal
+        isOpen={isImportModalOpen}
+        onClose={() => setIsImportModalOpen(false)}
+      />
     </div>
   );
 };

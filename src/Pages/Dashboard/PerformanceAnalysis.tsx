@@ -30,18 +30,18 @@ const PerformanceAnalysis = () => {
             <h3>Average Knowledge Score</h3>
             <CircularProgress value={6.9} />
           </div>
-          <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <h2 className="text-white text-center font-semibold">Strengths</h2>
+          <div className="bg-[#3D3F4A] text-center px-4 py-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <h2 className="text-white text-center font-semibold text-[16px]">Strengths</h2>
             <StrengthGraphGreen />
           </div>
-          <div className="bg-[#3D3F4A] text-center px-4 py-8 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <h2 className="text-white text-center font-semibold">Weaknesses</h2>
+          <div className="bg-[#3D3F4A] text-center px-4 py-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <h2 className="text-white text-center font-semibold text-[16px]">Weaknesses</h2>
             <StrengthGraphRed />
           </div>
         </div>
         <div className="w-[60%] ">
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <KnowledgeGraph />
+            <KnowledgeGraph isSmall={false}/>
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <LearningTimeGraph />

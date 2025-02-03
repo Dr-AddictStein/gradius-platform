@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChevronDown, ChevronRight, Plus } from "lucide-react";
 import logo from "../../public/logo.png";
 import homeIcon from "../../public/homeIcon.png";
 import subjectIcon from "../../public/subjectIcon.png";
 import upgradeIcon from "../../public/upgradeIcon.png";
 import { useNavigate } from "react-router-dom";
+import ColorPickerModal from "./ColorPickerModal";
 
 interface Subject {
   id: string;
@@ -42,6 +43,13 @@ const Sidebar = () => {
     avatar: "../../public/userAvatar.png",
   };
 
+  const handleSubmit = (subject: string, color: string) => {
+    console.log("New subject:", subject, "with color:", color);
+    // Handle the submission here
+  };
+
+  const [isNewSubjectModalOpen, setIsNewSubjectModalOpen] = useState(false);
+
   return (
     <div className="fixed top-0 2xl:left-[270px] left-6 h-screen py-4 pl-2 flex flex-col justify-between">
       <div className="flex flex-col justify-between items-center h-full w-full">
@@ -63,10 +71,10 @@ const Sidebar = () => {
           <div className="w-full bg-slate-700 h-[1px]"></div>
 
           {/* Navigation */}
-          <div className="w-full flex flex-col items-center justify-center gap-4">
+          <div className="w-full flex flex-col items-center justify- gap-4">
             {/* Home Button */}
             <button
-              className={`flex w-full h-[50px] justify-start px-14 gap-6 items-center rounded-[6px] border-[1px] border-slate-600 ${
+              className={`flex w-full h-[50px] justify-start px-8 gap-6 items-center rounded-[6px] border-[1px] border-slate-600 ${
                 activeTab === "Home" ? "bg-gray-700" : "hover:bg-gray-700"
               }`}
               onClick={() => {
@@ -84,7 +92,7 @@ const Sidebar = () => {
                 setIsSubjectsOpen(!isSubjectsOpen);
                 setActiveTab("Subjects");
               }}
-              className={`flex w-full h-[50px] justify-between px-14 items-center rounded-[6px] border-[1px] border-slate-600 ${
+              className={`flex w-full h-[50px] justify-between px-8 items-center rounded-[6px] border-[1px] border-slate-600 ${
                 isSubjectsOpen ? "bg-gray-700" : "hover:bg-gray-700"
               }`}
             >
@@ -109,7 +117,10 @@ const Sidebar = () => {
               <div className="w-full flex justify-end items-end">
                 <div className="w-[95%] flex flex-col justify-end items-end gap-2">
                   {/* New Subject Button */}
-                  <div className="w-full h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-gray-700 text-gray-400">
+                  <div
+                    onClick={() => setIsNewSubjectModalOpen(true)}
+                    className="w-full h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-gray-700 text-gray-400"
+                  >
                     <Plus size={16} />
                     <span>New Subject</span>
                   </div>
@@ -165,6 +176,11 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
+      <ColorPickerModal
+        isOpen={isNewSubjectModalOpen}
+        onClose={() => setIsNewSubjectModalOpen(false)}
+        onSubmit={handleSubmit}
+      />
     </div>
   );
 };
