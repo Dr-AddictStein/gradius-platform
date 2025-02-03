@@ -126,12 +126,12 @@ const KnowledgeGraph = () => {
               dataKey="day"
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#9CA3AF" }}
+              tick={{ fill: "#9CA3AF", fontSize: 10 }}
             />
             <YAxis
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#9CA3AF" }}
+              tick={{ fill: "#9CA3AF", fontSize: 10 }}
               domain={[0, 10]}
               ticks={[0, 2, 4, 6, 8, 10]}
             />

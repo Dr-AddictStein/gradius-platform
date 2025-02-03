@@ -138,7 +138,7 @@ const PassRateComparison = () => {
                   const data = payload[0].payload;
                   if (data.highlight) {
                     return (
-                      <div className="bg-white rounded-lg px-3 py-1 text-sm">
+                      <div className="bg-slate-600 rounded-lg px-3 py-1 text-sm">
                         {data.label}
                       </div>
                     );
