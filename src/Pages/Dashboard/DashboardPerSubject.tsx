@@ -11,6 +11,7 @@ import starLeft from "../../../public/starLeft.png";
 import starRight from "../../../public/starRight.png";
 import check4 from "../../../public/File Check 4.png";
 import TableSmall from "../../Component/TableSmall";
+import { Link } from "react-router-dom";
 
 const DashboardPerSubject = () => {
   return (
@@ -110,10 +111,10 @@ const DashboardPerSubject = () => {
                   RECENT STUDY SESSIONS
                 </h1>
               </div>
-              <button className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
+              <Link to={'/dashboard/studySessions'} className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
                 <Expand size={14} />
                 Expand
-              </button>
+              </Link>
             </div>
             <div className="w-full bg-slate-500 h-[1px] mb-4"></div>
 
@@ -129,10 +130,10 @@ const DashboardPerSubject = () => {
                 PERFORMANCE ANALYSIS
               </h1>
             </div>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
+            <Link to={'/dashboard/performanceAnalysis'} className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
               <Expand size={14} />
               Expand
-            </button>
+            </Link>
           </div>
           <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
 

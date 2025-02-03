@@ -4,6 +4,7 @@ import logo from "../../public/logo.png";
 import homeIcon from "../../public/homeIcon.png";
 import subjectIcon from "../../public/subjectIcon.png";
 import upgradeIcon from "../../public/upgradeIcon.png";
+import { useNavigate } from "react-router-dom";
 
 interface Subject {
   id: string;
@@ -32,6 +33,8 @@ const Sidebar = () => {
     { id: "2", name: "History", isActive: false, color: "green" },
     { id: "3", name: "Maths", isActive: false, color: "red" },
   ];
+
+  const navigate = useNavigate();
 
   const user: User = {
     name: "Marcus Gradius",
@@ -66,7 +69,10 @@ const Sidebar = () => {
               className={`flex w-full h-[50px] justify-start px-14 gap-6 items-center rounded-[6px] border-[1px] border-slate-600 ${
                 activeTab === "Home" ? "bg-gray-700" : "hover:bg-gray-700"
               }`}
-              onClick={() => setActiveTab("Home")}
+              onClick={() => {
+                setActiveTab("Home");
+                navigate("/dashboard");
+              }}
             >
               <img src={homeIcon} alt="Home" className="h-[20px] w-[20px]" />
               <span className="text-[14px] font-semibold">Home</span>
@@ -116,6 +122,9 @@ const Sidebar = () => {
                         className={`w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
                           subject.isActive ? "bg-gray-700" : "hover:bg-gray-700"
                         }`}
+                        onClick={() => {
+                          navigate("/dashboard/performanceAnalysis");
+                        }}
                       >
                         <div
                           className={`w-2 h-2 rounded-full ${
