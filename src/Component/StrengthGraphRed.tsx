@@ -4,8 +4,7 @@ const StrengthGraphRed: React.FC = () => {
   const strengths = [
     { label: "Dummy", value: 100 },
     { label: "Dummy", value: 80 },
-    { label: "Dummy", value: 60 },
-    { label: "Dummy", value: 50 },
+    { label: "Dummy", value: 90 },
   ];
 
   return (
@@ -14,7 +13,7 @@ const StrengthGraphRed: React.FC = () => {
         {strengths.map((strength, index) => (
           <div
             key={index}
-            className="bg-red-500 text-white py-2 px-4 rounded-lg"
+            className="bg-[#9D372A] text-white py-2 px-4 rounded-lg"
             style={{ width: `${strength.value}%` }}
           >
             {strength.label}

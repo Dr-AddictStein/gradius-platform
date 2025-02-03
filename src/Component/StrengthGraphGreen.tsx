@@ -2,10 +2,9 @@ import React from "react";
 
 const StrengthGraphGreen: React.FC = () => {
   const strengths = [
-    { label: "Dummy", value: 40 },
+    { label: "Dummy", value: 90 },
     { label: "Dummy", value: 80 },
-    { label: "Dummy", value: 60 },
-    { label: "Dummy", value: 50 },
+
   ];
 
   return (

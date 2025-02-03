@@ -1,11 +1,73 @@
-import React from 'react'
+import { Expand, Pencil, Plus } from "lucide-react";
+import React from "react";
+import KnowledgeGraph from "../../Component/KnowledgeGraph ";
+import LearningTimeGraph from "../../Component/LearningTimeGraph";
+import CircularProgress from "../../Component/CircularProgressProps";
+import StrengthGraphGreen from "../../Component/StrengthGraphGreen";
+import StrengthGraphRed from "../../Component/StrengthGraphRed";
+import growthIcon from "../../../public/growIcon.png";
 
 const DashboardPerSubject = () => {
   return (
-    <div>
-      Dashboard Per Subject
-    </div>
-  )
-}
+    <div className=" text-white p-6 rounded-lg min-h-screen">
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-red-500"></div>
+          <h1 className="text-[24px] font-bold mr-4">Physics</h1>
+          <Pencil size={20} />
+        </div>
+        <button className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[213px] flex justify-center items-center text-[16px] font-bold">
+          <Plus />
+          New Study Sessions
+        </button>
+      </div>
+      <div className="w-full bg-slate-700 h-[1px]"></div>
 
-export default DashboardPerSubject
+      <div className="py-6 w-full min-h-screen flex justify-between gap-2">
+        <div className="w-1/2 bg-[#3D3F4A] h-full rounded-[6px] px-8 py-4 border-[1px] border-slate-600"></div>
+        <div className="h-full bg-slate-700 w-[1px]"></div>
+        <div className="w-1/2 bg-[#3D3F4A] h-full rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
+          <div className="flex justify-between w-full">
+            <div className="flex gap-3">
+              <img className="h-[24px] w-[24px]" src={growthIcon} alt="" />
+              <h1 className="text-white font-bold text-[16px]">
+                PERFORMANCE ANALYSIS
+              </h1>
+            </div>
+            <button className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2">
+              <Expand size={14} />
+              Expand
+            </button>
+          </div>
+          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
+
+          <KnowledgeGraph />
+          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
+          <LearningTimeGraph />
+          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
+          <div className="w-full flex justify-center items-center">
+            <div className="w-1/2 h-full">
+              <div className="flex flex-col gap-6 justify-start items-center">
+                <h1 className="text-[15px] font-semibold">
+                  Average Knowledge Score
+                </h1>
+                <CircularProgress value={7.7} />
+              </div>
+            </div>
+            <div className="w-1/2 h-full">
+              <div className="flex justify-start items-center flex-col gap-2">
+                <h1 className="text-[15px] font-semibold">
+                  Strenghts and Weaknesses
+                </h1>
+                <StrengthGraphGreen />
+                <StrengthGraphRed />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardPerSubject;
