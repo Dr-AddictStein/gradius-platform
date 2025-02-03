@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 interface ColorPickerModalProps {
@@ -17,7 +18,22 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
   const [opacity, setOpacity] = useState(100);
   
   const savedColors = [
-    ['#FF1493', '#FF4500', '#FF69B4', '#8A2BE2', '#1E90FF', '#40E0D0', '#32CD32','#FF69B4', '#FF6347', '#DDA0DD', '#6495ED', '#00CED1', '#98FB98', '#FFD700']
+    [
+      '#FF1493',
+      '#FF4500',
+      '#FF69B4',
+      '#8A2BE2',
+      '#1E90FF',
+      '#40E0D0',
+      '#32CD32',
+      '#FF69B4',
+      '#FF6347',
+      '#DDA0DD',
+      '#6495ED',
+      '#00CED1',
+      '#98FB98',
+      '#FFD700'
+    ]
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,16 +44,13 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
       <div className="w-[601px] bg-[#343540] rounded-lg">
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-800">
           <h2 className="text-white text-lg font-medium">Create New Subject</h2>
-          <button 
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-200"
-          >
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-200">
             <X size={20} />
           </button>
         </div>
@@ -117,7 +130,7 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
               </div>
 
               {/* Right Panel - Hexagonal Color Picker */}
-              
+              {/* Additional content can be added here if needed */}
             </div>
           </div>
 
@@ -130,7 +143,8 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal-root")!
   );
 };
 

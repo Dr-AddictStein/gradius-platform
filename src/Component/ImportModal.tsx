@@ -8,33 +8,8 @@ interface ImportModalProps {
 }
 
 const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => {
-  const [subjectName, setSubjectName] = useState("");
-  const [selectedColor, setSelectedColor] = useState("#4F46E5");
-  const [opacity, setOpacity] = useState(100);
 
-  const savedColors = [
-    [
-      "#FF1493",
-      "#FF4500",
-      "#FF69B4",
-      "#8A2BE2",
-      "#1E90FF",
-      "#40E0D0",
-      "#32CD32",
-      "#FF69B4",
-      "#FF6347",
-      "#DDA0DD",
-      "#6495ED",
-      "#00CED1",
-      "#98FB98",
-      "#FFD700",
-    ],
-  ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onClose();
-  };
 
   if (!isOpen) return null;
 

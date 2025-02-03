@@ -6,6 +6,7 @@ import subjectIcon from "../../public/subjectIcon.png";
 import upgradeIcon from "../../public/upgradeIcon.png";
 import { useNavigate } from "react-router-dom";
 import ColorPickerModal from "./ColorPickerModal";
+import UpgradeModal from "./UpgradeModal";
 
 interface Subject {
   id: string;
@@ -49,6 +50,7 @@ const Sidebar = () => {
   };
 
   const [isNewSubjectModalOpen, setIsNewSubjectModalOpen] = useState(false);
+  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
 
   return (
     <div className="fixed top-0 2xl:left-[270px] left-6 h-screen py-4 pl-2 flex flex-col justify-between">
@@ -173,16 +175,21 @@ const Sidebar = () => {
             </div>
           </div>
           {/* Upgrade Button */}
-          <button className="w-[198px] h-[40px] py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
+          <button onClick={() => setIsUpgradeModalOpen(true)} className="w-[198px] h-[40px] py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
             <img src={upgradeIcon} alt="Upgrade" className="w-3 h-3" />
             <span className="text-[16px] font-normal">Upgrade</span>
           </button>
+          
         </div>
       </div>
       <ColorPickerModal
         isOpen={isNewSubjectModalOpen}
         onClose={() => setIsNewSubjectModalOpen(false)}
         onSubmit={handleSubmit}
+      />
+      <UpgradeModal
+        isOpen={isUpgradeModalOpen}
+        onClose={() => setIsUpgradeModalOpen(false)}
       />
     </div>
   );
