@@ -46,7 +46,7 @@ const DATA = {
   ],
 };
 
-const KnowledgeGraph = () => {
+const KnowledgeGraph = ({ isSmall }) => {
   const [timeframe, setTimeframe] = useState("Day");
   const currentData = DATA[timeframe];
 
@@ -64,21 +64,23 @@ const KnowledgeGraph = () => {
           </h2>
         </div>
         <div className="flex gap-2">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-            <span className="text-gray-300 text-[10px] font-normal">
-              Knowledge score
-            </span>
-          </div>
-          <div className="flex flex-col items-center ">
-            <div className="flex items-center gap-1 text-sm text-gray-400">
-              <span className="text-white text-[10px] font-bold">1.3%</span>
-              <img src={growthIcon} alt="" />
+          {!isSmall && <>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+              <span className="text-gray-300 text-[10px] font-normal">
+                Knowledge score
+              </span>
             </div>
-            <span className="text-[10px] font-normal text-[#ACADB6]">
-              VS LAST WEEK
-            </span>
-          </div>
+            <div className="flex flex-col items-center ">
+              <div className="flex items-center gap-1 text-sm text-gray-400">
+                <span className="text-white text-[10px] font-bold">1.3%</span>
+                <img src={growthIcon} alt="" />
+              </div>
+              <span className="text-[10px] font-normal text-[#ACADB6]">
+                VS LAST WEEK
+              </span>
+            </div>
+          </>}
           <div className="flex justify-between gap-2 px-2 py-4 items-center bg-[#828597] rounded-[15px] w-[193px] h-[21px]">
             {Object.keys(DATA).map((period) => (
               <button
