@@ -5,8 +5,6 @@ interface CircularProgressProps {
   maxValue?: number; // Optional max value, defaults to 10
   size?: number;
   strokeWidth?: number;
-  progressColor?: string;
-  backgroundColor?: string;
   className?: string;
 }
 
@@ -15,8 +13,6 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
   maxValue = 10,
   size = 200,
   strokeWidth = 25,
-  progressColor = '#A855F7',
-  backgroundColor = '#374151',
   className = '',
 }) => {
   // Validate and clamp the value
@@ -32,25 +28,33 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
         className="transform -rotate-90"
         style={{ width: size, height: size }}
       >
+        {/* Define Angular Gradient */}
+        <defs>
+          <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#BF7DED" />
+            <stop offset="100%" stopColor="#A436F1" />
+          </linearGradient>
+        </defs>
+
         {/* Background circle */}
         <circle
           cx={size / 2}
           cy={size / 2}
           r={radius}
           strokeWidth={strokeWidth}
-          stroke={backgroundColor}
+          stroke="#374151"
           fill="none"
         />
         
-        {/* Progress circle */}
+        {/* Progress circle with gradient */}
         <circle
           cx={size / 2}
           cy={size / 2}
           r={radius}
           strokeWidth={strokeWidth}
-          stroke={progressColor}
+          stroke="url(#progressGradient)"
           fill="none"
-          strokeLinecap="round"
+          // strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={progress}
           style={{

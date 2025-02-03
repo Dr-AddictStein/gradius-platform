@@ -25,7 +25,7 @@ const Sidebar = () => {
     blue: "bg-blue-500",
   };
   const [activeTab, setActiveTab] = React.useState("Home"); // Track active tab
-  const [isSubjectsOpen, setIsSubjectsOpen] = React.useState(true);
+  const [isSubjectsOpen, setIsSubjectsOpen] = React.useState(false);
 
   const subjects: Subject[] = [
     { id: "1", name: "Physics", isActive: true, color: "red" },
