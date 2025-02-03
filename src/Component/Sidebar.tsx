@@ -7,6 +7,7 @@ import upgradeIcon from "../../public/upgradeIcon.png";
 import { useNavigate } from "react-router-dom";
 import ColorPickerModal from "./ColorPickerModal";
 import UpgradeModal from "./UpgradeModal";
+import ProfileModal from "./ProfileModal";
 
 interface Subject {
   id: string;
@@ -51,6 +52,7 @@ const Sidebar = () => {
 
   const [isNewSubjectModalOpen, setIsNewSubjectModalOpen] = useState(false);
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   return (
     <div className="fixed top-0 2xl:left-[270px] left-6 h-screen py-4 pl-2 flex flex-col justify-between">
@@ -159,7 +161,7 @@ const Sidebar = () => {
 
         {/* User Profile */}
         <div className="w-full h-[160px] bg-[#343540] rounded-md p-3 flex flex-col items-center justify-around">
-          <div className="flex gap-3">
+          <div className="flex gap-3 cursor-pointer" onClick={() => setIsProfileModalOpen(true)}>
             <div>
               <img
                 src={user.avatar}
@@ -175,7 +177,7 @@ const Sidebar = () => {
             </div>
           </div>
           {/* Upgrade Button */}
-          <button onClick={() => setIsUpgradeModalOpen(true)} className="w-[198px] h-[40px] py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
+          <button onClick={() => setIsUpgradeModalOpen(true)} className=" hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-[198px] h-[40px] py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
             <img src={upgradeIcon} alt="Upgrade" className="w-3 h-3" />
             <span className="text-[16px] font-normal">Upgrade</span>
           </button>
@@ -190,6 +192,10 @@ const Sidebar = () => {
       <UpgradeModal
         isOpen={isUpgradeModalOpen}
         onClose={() => setIsUpgradeModalOpen(false)}
+      />
+      <ProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
       />
     </div>
   );
