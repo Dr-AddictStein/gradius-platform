@@ -123,7 +123,7 @@ const Sidebar = () => {
                           subject.isActive ? "bg-gray-700" : "hover:bg-gray-700"
                         }`}
                         onClick={() => {
-                          navigate("/dashboard/performanceAnalysis");
+                          navigate("/dashboard/perSubject");
                         }}
                       >
                         <div
