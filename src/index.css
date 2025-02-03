@@ -10,3 +10,7 @@
 body {
   background-color: #202123;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
