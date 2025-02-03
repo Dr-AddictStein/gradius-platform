@@ -4,6 +4,7 @@ import homeIcon from "../../../public/homeIcon.png";
 import line1 from "../../../public/Line 1.png";
 import leftA from "../../../public/left.png";
 import rightA from "../../../public/right.png";
+import StartStudyingModal from "../../Component/StartStudyingModal";
 
 const DashboardHome = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,6 +32,10 @@ const DashboardHome = () => {
       setCurrentSlide((prev) => prev - 1);
     }
   };
+
+  const [isStartStudyingModalOpen, setIsStartStudyingModalOpen] =
+    useState(false);
+
   return (
     <div className="container mx-auto p-8 h-[860px]">
       {/* Header Section */}
@@ -53,7 +58,7 @@ const DashboardHome = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <button className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] text-white px-6 py-3 rounded-lg w-[246px] text-[16px] font-bold transition-shadow duration-300">
+          <button onClick={() => setIsStartStudyingModalOpen(true)} className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] text-white px-6 py-3 rounded-lg w-[246px] text-[16px] font-bold transition-shadow duration-300">
             Start Studying
           </button>
         </div>
@@ -123,6 +128,10 @@ const DashboardHome = () => {
           </div>
         </div>
       </div>
+      <StartStudyingModal
+        isOpen={isStartStudyingModalOpen}
+        onClose={() => setIsStartStudyingModalOpen(false)}
+      />
     </div>
   );
 };

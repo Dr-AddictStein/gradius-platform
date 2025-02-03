@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { createPortal } from 'react-dom';
-import { X } from 'lucide-react';
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 
 interface ColorPickerModalProps {
   isOpen: boolean;
@@ -8,33 +8,18 @@ interface ColorPickerModalProps {
   onSubmit: (subject: string, color: string) => void;
 }
 
+const hexagonalColors = [
+  "#FF0000", "#FF7F00", "#FFFF00", "#7FFF00", "#00FF00", "#00FF7F", "#00FFFF", "#007FFF", "#0000FF", "#7F00FF", "#FF00FF", "#FF007F",
+  "#D2691E", "#8B0000", "#4B0082", "#800080", "#008000", "#808000", "#4682B4", "#5F9EA0", "#2E8B57", "#FFD700", "#FF4500", "#DC143C"
+];
+
 const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
   isOpen,
   onClose,
   onSubmit,
 }) => {
-  const [subjectName, setSubjectName] = useState('');
-  const [selectedColor, setSelectedColor] = useState('#4F46E5');
-  const [opacity, setOpacity] = useState(100);
-  
-  const savedColors = [
-    [
-      '#FF1493',
-      '#FF4500',
-      '#FF69B4',
-      '#8A2BE2',
-      '#1E90FF',
-      '#40E0D0',
-      '#32CD32',
-      '#FF69B4',
-      '#FF6347',
-      '#DDA0DD',
-      '#6495ED',
-      '#00CED1',
-      '#98FB98',
-      '#FFD700'
-    ]
-  ];
+  const [subjectName, setSubjectName] = useState("");
+  const [selectedColor, setSelectedColor] = useState("#4F46E5");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,8 +34,13 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
       <div className="w-[601px] bg-[#343540] rounded-lg">
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-800">
-          <h2 className="text-white text-lg font-medium">Create New Subject</h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-200">
+          <h2 className="text-white text-[20px] font-semibold text-center">
+            Create New Subject
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-200"
+          >
             <X size={20} />
           </button>
         </div>
@@ -71,21 +61,22 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
           {/* Color Selection */}
           <div>
             <p className="text-white text-sm mb-2">Choose a color</p>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {/* Left Panel */}
               <div className="bg-[#2c2c2e] rounded-lg p-3">
                 {/* Gradient Slider */}
                 <div className="relative h-36 mb-3 rounded-md overflow-hidden">
-                  <div 
+                  <div
                     className="absolute inset-0"
                     style={{
-                      background: `linear-gradient(to right, transparent, ${selectedColor})`
+                      background: `linear-gradient(to right, transparent, ${selectedColor})`,
                     }}
                   />
-                  <div 
+                  <div
                     className="absolute inset-0"
                     style={{
-                      background: 'linear-gradient(to bottom, white, transparent, black)'
+                      background:
+                        "linear-gradient(to bottom, white, transparent, black)",
                     }}
                   />
                   <input
@@ -106,41 +97,36 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
                     <input
                       type="text"
                       value={selectedColor.slice(1).toUpperCase()}
-                      onChange={(e) => setSelectedColor('#' + e.target.value)}
+                      onChange={(e) => setSelectedColor("#" + e.target.value)}
                       className="bg-transparent text-white text-xs px-1 py-1 w-full focus:outline-none"
                     />
                   </div>
                 </div>
-
-                {/* Saved Colors */}
-                <div className="mt-3 space-y-2 w-full">
-                  {savedColors.map((row, rowIndex) => (
-                    <div key={rowIndex} className="flex gap-1">
-                      {row.map((color, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setSelectedColor(color)}
-                          className="w-6 h-6 rounded-full"
-                          style={{ backgroundColor: color }}
-                        />
-                      ))}
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Right Panel - Hexagonal Color Picker */}
-              {/* Additional content can be added here if needed */}
+              <div className="bg-[#2c2c2e] rounded-lg p-3 flex flex-wrap gap-2 justify-center">
+                {hexagonalColors.map((color, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedColor(color)}
+                    className="w-6 h-6 rounded-full border border-gray-500"
+                    style={{ backgroundColor: color }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Create Button */}
-          <button
-            onClick={handleSubmit}
-            className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white rounded-lg py-2 text-sm font-medium"
-          >
-            Create Subject
-          </button>
+          <div className="w-full flex justify-center pt-6">
+            <button
+              onClick={handleSubmit}
+              className="w-[307px] h-[38px] bg-[#A436F1] rounded-[10px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300"
+            >
+              Create Subject
+            </button>
+          </div>
         </div>
       </div>
     </div>,
