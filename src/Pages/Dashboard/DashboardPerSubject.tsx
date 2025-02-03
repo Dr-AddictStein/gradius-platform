@@ -45,22 +45,26 @@ const DashboardPerSubject = () => {
           <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
           <LearningTimeGraph />
           <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
-          <div className="w-full flex justify-center items-center">
-            <div className="w-1/2 h-full">
-              <div className="flex flex-col gap-6 justify-start items-center">
-                <h1 className="text-[15px] font-semibold">
-                  Average Knowledge Score
-                </h1>
-                <CircularProgress value={7.7} />
-              </div>
+          <div className="w-full">
+            <div className="flex w-full justify-between text-center mb-4">
+              <h1 className="text-[15px] font-semibold">
+                Average Knowledge Score
+              </h1>
+              <h1 className="text-[15px] font-semibold">
+                Strenghts and Weaknesses
+              </h1>
             </div>
-            <div className="w-1/2 h-full">
-              <div className="flex justify-start items-center flex-col gap-2">
-                <h1 className="text-[15px] font-semibold">
-                  Strenghts and Weaknesses
-                </h1>
-                <StrengthGraphGreen />
-                <StrengthGraphRed />
+            <div className="w-full flex justify-center items-center">
+              <div className="w-1/2 h-full">
+                <div className="flex flex-col gap-6 justify-start items-center">
+                  <CircularProgress value={7.7} />
+                </div>
+              </div>
+              <div className="w-1/2 h-full">
+                <div className="flex justify-start items-center flex-col gap-2">
+                  <StrengthGraphGreen />
+                  <StrengthGraphRed />
+                </div>
               </div>
             </div>
           </div>
