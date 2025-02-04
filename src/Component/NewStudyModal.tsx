@@ -77,8 +77,7 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
   const sessions: Session[] = [
     { id: "1", name: "Small", isActive: false },
     { id: "2", name: "Medium", isActive: false },
-    { id: "3", name: "Short-Long", isActive: false },
-    { id: "4", name: "Long", isActive: false },
+    { id: "3", name: "Long", isActive: false },
   ];
   const colorMap: { [key: string]: string } = {
     red: "bg-red-500",
