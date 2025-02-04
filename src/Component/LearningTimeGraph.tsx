@@ -39,7 +39,7 @@ const LearningTimeGraph: React.FC = ({ isSmall }) => {
 
       <div className="w-full flex justify-start">
         {/* Chart */}
-        <ResponsiveContainer width="100%" height={isSmall ? 140 : 220}>
+        <ResponsiveContainer width="100%" height={isSmall ? 168 : 220}>
           <BarChart
             data={data}
             margin={{ top: 20, right: -1, left: -38, bottom: 10 }}

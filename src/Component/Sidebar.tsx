@@ -32,7 +32,7 @@ const Sidebar = () => {
   const [isSubjectsOpen, setIsSubjectsOpen] = React.useState(false);
 
   const subjects: Subject[] = [
-    { id: "1", name: "Physics", isActive: true, color: "red" },
+    { id: "1", name: "Physics", isActive: false, color: "red" },
     { id: "2", name: "History", isActive: false, color: "green" },
     { id: "3", name: "Maths", isActive: false, color: "red" },
   ];
@@ -55,7 +55,7 @@ const Sidebar = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 2xl:left-[270px] left-6 h-screen py-4 pl-2 flex flex-col justify-between">
+    <div className="fixed top-0 2xl:w-[16%] h-screen py-4 2xl:pl-6 pl-2 flex flex-col justify-between">
       <div className="flex flex-col justify-between items-center h-full w-full">
         {/* Logo */}
         <div className="w-full flex flex-col items-center gap-6">

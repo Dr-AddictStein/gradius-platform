@@ -11,9 +11,9 @@ interface CircularProgressProps {
 const CircularProgress: React.FC<CircularProgressProps> = ({
   value,
   maxValue = 10,
-  size = 200,
+  size,
   strokeWidth = 32,
-  className = '',
+  className = ''
 }) => {
   // Validate and clamp the value
   const validValue = Math.min(Math.max(Number(value) || 0, 0), maxValue);

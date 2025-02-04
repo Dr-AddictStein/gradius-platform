@@ -109,15 +109,15 @@ const TableSmall = () => {
         <tbody>
           {data.map((row, index) => (
             <tr key={index} className="border-t border-gray-700">
-              <td className="py-3 text-[13px] font-normal">{row.date}</td>
+              <td className="py-3 text-[13px] font-normal text-center">{row.date}</td>
               <td className="py-3">
                 <div className="flex gap-2 justify-center">
                   {renderTopics(row.topics)}
                 </div>
               </td>
               <td className="py-3">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="flex  items-center gap-1">
                     <div className="flex items-center text-green-400">
                       <ArrowUpIcon size={16} />
                       <span className="text-sm text-white">{row.upVotes}</span>

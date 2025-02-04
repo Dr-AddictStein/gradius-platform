@@ -26,7 +26,7 @@ const StrengthGraphGreen: React.FC = ({isShort}) => {
         {strengths.slice(0,2).map((strength, index) => (
           <div
             key={index}
-            className="bg-teal-600 text-white py-2 px-4 rounded-lg text-start"
+            className="bg-teal-600 text-white py-1 px-4 rounded-lg text-start"
             style={{ width: `${strength.value}%` }}
           >
             {strength.label}

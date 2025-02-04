@@ -28,7 +28,7 @@ const PerformanceAnalysis = () => {
         <div className="w-[40%]">
           <div className="bg-[#3D3F4A] text-center px-4 py-5 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <h3>Average Knowledge Score</h3>
-            <CircularProgress value={6.9} />
+            <CircularProgress value={6.9}  size={200}/>
           </div>
           <div className="bg-[#3D3F4A] text-center px-4 py-[33px] rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <h2 className="text-white text-center font-semibold text-[16px]">Strengths</h2>

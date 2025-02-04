@@ -154,17 +154,17 @@ const DashboardPerSubject = () => {
           <div className="w-full bg-slate-500 h-[1px] mb-1"></div>
           <div className="w-full">
             <div className="flex w-full justify-between text-center mb-4">
-              <h1 className="text-[15px] font-semibold">
+              <h1 className="text-[15px] font-semibold tet-center w-full">
                 Average Knowledge Score
               </h1>
-              <h1 className="text-[15px] font-semibold">
+              <h1 className="text-[15px] font-semibold tet-center w-full">
                 Strenghts and Weaknesses
               </h1>
             </div>
             <div className="w-full flex justify-center items-center">
               <div className="w-1/2 h-full">
                 <div className="flex flex-col gap-6 justify-start items-center">
-                  <CircularProgress value={7.7} />
+                  <CircularProgress value={7.7} size={155}/>
                 </div>
               </div>
               <div className="w-1/2 h-full">
