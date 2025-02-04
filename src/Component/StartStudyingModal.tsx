@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import UpgradeModal from "./UpgradeModal";
 import subjectIcon from "../../public/subjectIcon.png";
+import NewStudyModal from "./NewStudyModal";
 
 interface StartStudyingModalProps {
   isOpen: boolean;
@@ -34,7 +35,7 @@ const StartStudyingModal: React.FC<StartStudyingModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
+  const [isNewStudyModalOpen, setIsNewStudyModalOpen] = useState(false);
   const [isSubjectsOpen, setIsSubjectsOpen] = React.useState(false);
   const [isSessionsOpen, setIsSessionsOpen] = React.useState(false);
   const [selectedSubject, setSelectedSubject] = useState(null);
@@ -62,11 +63,15 @@ const StartStudyingModal: React.FC<StartStudyingModalProps> = ({
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
       <div className="w-[580px] h-[90vh] bg-[#343540] rounded-lg">
         {/* Header */}
-        <div className="flex justify-between items-center py-4 pl-10 pr-4 border-b border-gray-800">
-          <h2 className="text-white text-[16px] font-bold">Start Studying</h2>
+        <div className="relative pt-4 pb-10 pl-10 pr-4 border-b border-gray-800">
+          {/* Centered heading */}
+          <h2 className="absolute left-1/2 transform -translate-x-1/2 text-white text-[16px] font-bold">
+            Start Studying
+          </h2>
+          {/* Right-aligned close button */}
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-200"
+            className="absolute right-4 text-gray-400 hover:text-gray-200"
           >
             <X size={20} />
           </button>
@@ -174,13 +179,14 @@ const StartStudyingModal: React.FC<StartStudyingModalProps> = ({
                 <h1 className="text-[16px] font-bold">Select Study Session </h1>
 
                 <div className=" flex flex-col justify-between h-[100%]">
-                  <button className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 text-white px-2 py-3 rounded-lg w-[246px] flex justify-center items-center text-[15px] font-bold">
+                  <button
+                    onClick={() => setIsNewStudyModalOpen(true)}
+                    className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 text-white px-2 py-3 rounded-lg w-[246px] flex justify-center items-center text-[15px] font-bold"
+                  >
                     <Plus />
                     New Study Sessions
                   </button>
-                  <p className="font-bold text-lg text-center">
-                    O
-                  </p>
+                  <p className="font-bold text-lg text-center">O</p>
                   <div className="">
                     {selectedSession === null && (
                       <div className="w-[246px]">
@@ -273,9 +279,9 @@ const StartStudyingModal: React.FC<StartStudyingModalProps> = ({
           {/* Your additional content goes here */}
         </div>
       </div>
-      <UpgradeModal
-        isOpen={isUpgradeModalOpen}
-        onClose={() => setIsUpgradeModalOpen(false)}
+      <NewStudyModal
+        isOpen={isNewStudyModalOpen}
+        onClose={() => setIsNewStudyModalOpen(false)}
       />
     </div>,
     document.getElementById("modal-root")!
