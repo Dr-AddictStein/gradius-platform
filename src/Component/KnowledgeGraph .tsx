@@ -64,23 +64,25 @@ const KnowledgeGraph = ({ isSmall }) => {
           </h2>
         </div>
         <div className="flex gap-2">
-          {!isSmall && <>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-              <span className="text-gray-300 text-[10px] font-normal">
-                Knowledge score
-              </span>
-            </div>
-            <div className="flex flex-col items-center ">
-              <div className="flex items-center gap-1 text-sm text-gray-400">
-                <span className="text-white text-[10px] font-bold">1.3%</span>
-                <img src={growthIcon} alt="" />
+          {!isSmall && (
+            <>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+                <span className="text-gray-300 text-[10px] font-normal">
+                  Knowledge score
+                </span>
               </div>
-              <span className="text-[10px] font-normal text-[#ACADB6]">
-                VS LAST WEEK
-              </span>
-            </div>
-          </>}
+              <div className="flex flex-col items-center ">
+                <div className="flex items-center gap-1 text-sm text-gray-400">
+                  <span className="text-white text-[10px] font-bold">1.3%</span>
+                  <img src={growthIcon} alt="" />
+                </div>
+                <span className="text-[10px] font-normal text-[#ACADB6]">
+                  VS LAST WEEK
+                </span>
+              </div>
+            </>
+          )}
           <div className="flex justify-between gap-2 px-2 py-4 items-center bg-[#828597] rounded-[15px] w-[193px] h-[21px]">
             {Object.keys(DATA).map((period) => (
               <button
@@ -98,10 +100,10 @@ const KnowledgeGraph = ({ isSmall }) => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-slate-500 h-[1px] mb-8"></div>
+      <div className={`w-full bg-slate-500 h-[1px] ${isSmall?"":"mb-8"} `}></div>
 
-      <div className="h-44 w-full ">
-        <ResponsiveContainer width="100%" height="100%"  >
+      <div className={`${isSmall ? "h-[116px]" : "h-44"} w-full`}>
+        <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={currentData}
             margin={{ top: 10, right: -30, left: -35, bottom: 0 }}

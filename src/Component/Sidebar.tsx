@@ -177,7 +177,7 @@ const Sidebar = () => {
             </div>
           </div>
           {/* Upgrade Button */}
-          <button onClick={() => setIsUpgradeModalOpen(true)} className=" hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-[198px] h-[40px] py-2 bg-violet-600 hover:bg-violet-700 rounded-lg flex items-center justify-center gap-2 text-white">
+          <button onClick={() => setIsUpgradeModalOpen(true)} className=" hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-[198px] h-[40px] py-2 bg-[#A436F1] rounded-lg flex items-center justify-center gap-2 text-white">
             <img src={upgradeIcon} alt="Upgrade" className="w-3 h-3" />
             <span className="text-[16px] font-normal">Upgrade</span>
           </button>

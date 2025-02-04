@@ -14,11 +14,10 @@ import TableSmall from "../../Component/TableSmall";
 import { Link } from "react-router-dom";
 import ImportModal from "../../Component/ImportModal";
 
-
 const DashboardPerSubject = () => {
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   return (
-    <div className=" text-white p-6 rounded-lg min-h-screen">
+    <div className=" text-white p-6 rounded-lg min-h-fit">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-red-500"></div>
@@ -32,7 +31,7 @@ const DashboardPerSubject = () => {
       </div>
       <div className="w-full bg-slate-700 h-[1px]"></div>
 
-      <div className="py-6 w-full min-h-screen flex justify-between gap-2">
+      <div className="py-6 w-full min-h-fit flex justify-between gap-2">
         <div className="w-1/2">
           <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[320px] mb-4">
             <div className="flex justify-between w-full">
@@ -131,7 +130,7 @@ const DashboardPerSubject = () => {
           </div>
         </div>
         <div className="h-full bg-slate-700 w-[1px]"></div>
-        <div className="w-1/2 bg-[#3D3F4A] h-full rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
+        <div className="w-1/2 bg-[#3D3F4A] h-fit rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
           <div className="flex justify-between w-full">
             <div className="flex gap-3">
               <img className="h-[24px] w-[24px]" src={growthIcon} alt="" />
@@ -147,12 +146,12 @@ const DashboardPerSubject = () => {
               Expand
             </Link>
           </div>
-          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
+          <div className="w-full bg-slate-500 h-[1px] mb-[1px]"></div>
 
           <KnowledgeGraph isSmall={true} />
-          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
-          <LearningTimeGraph />
-          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
+          <div className="w-full bg-slate-500 h-[1px] mb-1"></div>
+          <LearningTimeGraph isSmall={true} />
+          <div className="w-full bg-slate-500 h-[1px] mb-1"></div>
           <div className="w-full">
             <div className="flex w-full justify-between text-center mb-4">
               <h1 className="text-[15px] font-semibold">
@@ -170,8 +169,8 @@ const DashboardPerSubject = () => {
               </div>
               <div className="w-1/2 h-full">
                 <div className="flex justify-start items-center flex-col gap-2">
-                  <StrengthGraphGreen />
-                  <StrengthGraphRed />
+                  <StrengthGraphGreen isShort={true}  />
+                  <StrengthGraphRed isShort={true} />
                 </div>
               </div>
             </div>

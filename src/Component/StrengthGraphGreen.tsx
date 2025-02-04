@@ -1,6 +1,6 @@
 import React from "react";
 
-const StrengthGraphGreen: React.FC = () => {
+const StrengthGraphGreen: React.FC = ({isShort}) => {
   const strengths = [
     { label: "Dummy", value: 90 },
     { label: "Dummy", value: 80 },
@@ -11,7 +11,7 @@ const StrengthGraphGreen: React.FC = () => {
 
   return (
     <div className=" rounded-xl px-10 w-full">
-      <div className="space-y-2">
+      {!isShort && <div className="space-y-2">
         {strengths.map((strength, index) => (
           <div
             key={index}
@@ -21,7 +21,18 @@ const StrengthGraphGreen: React.FC = () => {
             {strength.label}
           </div>
         ))}
-      </div>
+      </div>}
+      {isShort && <div className="space-y-2">
+        {strengths.slice(0,2).map((strength, index) => (
+          <div
+            key={index}
+            className="bg-teal-600 text-white py-2 px-4 rounded-lg text-start"
+            style={{ width: `${strength.value}%` }}
+          >
+            {strength.label}
+          </div>
+        ))}
+      </div>}
     </div>
   );
 };

@@ -23,13 +23,13 @@ const data = [
 
 const maxHours = 8; // Maximum hours for scaling
 
-const LearningTimeGraph: React.FC = () => {
+const LearningTimeGraph: React.FC = ({ isSmall }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className=" rounded-xl w-full ">
       {/* Title */}
-      <div className="flex items-center justify-start gap-4 text-white font-semibold mb-3">
+      <div className={`flex items-center justify-start gap-4 text-white font-semibold ${isSmall?"mb-1":"mb-3"}`}>
         <span className="text-white text-[16px] font-bold">
           Daily time spent learning
         </span>
@@ -39,7 +39,7 @@ const LearningTimeGraph: React.FC = () => {
 
       <div className="w-full flex justify-start">
         {/* Chart */}
-        <ResponsiveContainer width="100%" height={220}>
+        <ResponsiveContainer width="100%" height={isSmall ? 140 : 220}>
           <BarChart
             data={data}
             margin={{ top: 20, right: -1, left: -38, bottom: 10 }}

@@ -9,7 +9,7 @@ const DashboardMain = () => {
         <Sidebar />
       </div>
       <div className="w-[1141px] p-3">
-        <div className="bg-[#343540] min-h-screen rounded-[6px] p-2">
+        <div className="bg-[#343540] min-h-fit rounded-[6px] p-2">
           <Outlet />
         </div>
       </div>
