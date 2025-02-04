@@ -13,9 +13,11 @@ import check4 from "../../../public/File Check 4.png";
 import TableSmall from "../../Component/TableSmall";
 import { Link } from "react-router-dom";
 import ImportModal from "../../Component/ImportModal";
+import NewStudyModal from "../../Component/NewStudyModal";
 
 const DashboardPerSubject = () => {
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
+  const [isNewStudyModalOpen, setIsNewStudyModalOpen] = useState(false);
   return (
     <div className=" text-white p-6 rounded-lg min-h-fit">
       <div className="flex items-center justify-between mb-6">
@@ -24,7 +26,10 @@ const DashboardPerSubject = () => {
           <h1 className="text-[24px] font-bold mr-4">Physics</h1>
           <Pencil size={20} />
         </div>
-        <button className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[213px] flex justify-center items-center text-[16px] font-bold">
+        <button
+          onClick={() => setIsNewStudyModalOpen(true)}
+          className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[213px] flex justify-center items-center text-[16px] font-bold"
+        >
           <Plus />
           New Study Sessions
         </button>
@@ -164,12 +169,12 @@ const DashboardPerSubject = () => {
             <div className="w-full flex justify-center items-center">
               <div className="w-1/2 h-full">
                 <div className="flex flex-col gap-6 justify-start items-center">
-                  <CircularProgress value={7.7} size={155}/>
+                  <CircularProgress value={7.7} size={155} />
                 </div>
               </div>
               <div className="w-1/2 h-full">
                 <div className="flex justify-start items-center flex-col gap-2">
-                  <StrengthGraphGreen isShort={true}  />
+                  <StrengthGraphGreen isShort={true} />
                   <StrengthGraphRed isShort={true} />
                 </div>
               </div>
@@ -181,6 +186,10 @@ const DashboardPerSubject = () => {
       <ImportModal
         isOpen={isImportModalOpen}
         onClose={() => setIsImportModalOpen(false)}
+      />
+      <NewStudyModal
+        isOpen={isNewStudyModalOpen}
+        onClose={() => setIsNewStudyModalOpen(false)}
       />
     </div>
   );
