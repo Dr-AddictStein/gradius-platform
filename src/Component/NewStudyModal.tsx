@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   ChevronDown,
@@ -61,14 +61,14 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
     },
     {
       id: "4",
-      name: "Maths",
+      name: "Physics",
       isActive: false,
       color: "red",
       icon: "../../public/File Check 4 White.png",
     },
     {
       id: "5",
-      name: "Maths",
+      name: "Zoology",
       isActive: false,
       color: "red",
       icon: "../../public/File Check 4 White.png",
@@ -108,6 +108,9 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
     }, 1000);
   };
 
+  const [subjectList, setSubjectList] = useState(subjects);
+  const [subjectListChosen, setSubjectListChosen] = useState([]);
+
   return createPortal(
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
       <div className="w-[580px] h-[98vh] bg-[#343540] rounded-lg">
@@ -133,51 +136,104 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
             </h1>
             {/* step 1 */}
             <div className=" mt-6">
-              {selectedSubject === null && (
-                <div className="w-[246px]">
-                  {/* Subjects Button */}
-                  <button
-                    onClick={() => {
-                      setIsSubjectsOpen(!isSubjectsOpen);
-                    }}
-                    className={`flex w-full h-[50px] justify-between px-8 items-center rounded-[6px] border-[1px] border-slate-600 bg-[#2D2E38] ${
-                      isSubjectsOpen ? "bg-gray-700" : "hover:bg-gray-700"
-                    }`}
-                  >
-                    <div className="flex gap-6">
-                      <img
-                        src="../../public/File Down 01.png"
-                        alt="Subjects"
-                        className={`h-[20px] w-[20px] transition-transform duration-300 ${
-                          isSubjectsOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                      <span className="text-[14px] font-semibold">
-                        Select Material
-                      </span>
+              {subjectListChosen.length !== 0 && (
+                <div className="max-h-[145px] overflow-y-auto scrollbar-hide">
+                  {subjectListChosen.map((ss) => (
+                    <div className="flex justify-start mb-2" key={ss.id}>
+                      <div className="relative">
+                        <div className="w-[246px] h-[50px] bg-[#2D2E38] rounded-md flex gap-3 px-6 justify-start items-center">
+                          <img src={ss.icon} alt="" />
+                          <div className="text-[14px] font-semibold relative">
+                            {ss.name}
+                            {ss.name === "Select All" && (
+                              <div className="absolute top-0 -right-28">
+                                <img
+                                  src="../../public/Group 628841.png"
+                                  alt=""
+                                />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        <div className="absolute  right-5 top-3">
+                          <button
+                            className=""
+                            onClick={() => {
+                              let dex = subjectListChosen.filter(
+                                (s) => s.id != ss.id
+                              );
+                              setSubjectListChosen(dex);
+                            }}
+                          >
+                            <XIcon />
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <ChevronRight
-                      size={16}
-                      className={`text-gray-400 transition-transform duration-300 ${
-                        isSubjectsOpen ? "rotate-90" : ""
+                  ))}
+                </div>
+              )}
+              <div className="w-[246px] mt-6">
+                {/* Subjects Button */}
+                <button
+                  onClick={() => {
+                    setIsSubjectsOpen(!isSubjectsOpen);
+                  }}
+                  className={`flex w-full h-[50px] justify-between px-8 items-center rounded-[6px] border-[1px] border-slate-600 bg-[#2D2E38] ${
+                    isSubjectsOpen ? "bg-gray-700" : "hover:bg-gray-700"
+                  }`}
+                >
+                  <div className="flex gap-6">
+                    <img
+                      src="../../public/File Down 01.png"
+                      alt="Subjects"
+                      className={`h-[20px] w-[20px] transition-transform duration-300 ${
+                        isSubjectsOpen ? "rotate-180" : ""
                       }`}
                     />
-                  </button>
+                    <span className="text-[14px] font-semibold">
+                      Select Material
+                    </span>
+                  </div>
+                  <ChevronRight
+                    size={16}
+                    className={`text-gray-400 transition-transform duration-300 ${
+                      isSubjectsOpen ? "rotate-90" : ""
+                    }`}
+                  />
+                </button>
 
-                  {/* Scrollable Subjects List */}
-                  {isSubjectsOpen && (
-                    <div className="w-full flex justify-end items-end">
-                      <div className="w-[95%] flex flex-col justify-end items-end gap-2">
-                        {/* Scrollable Subject List */}
-                        <div className=" flex flex-col items-end w-full">
-                          <div className="w-full max-h-[145px] overflow-y-auto scrollbar-hide px-2 py-2">
-                            {subjects.map((subject) => (
+                {/* Scrollable Subjects List */}
+                {isSubjectsOpen && (
+                  <div className="w-full flex justify-end items-end">
+                    <div className="w-[95%] flex flex-col justify-end items-end gap-2">
+                      {/* Scrollable Subject List */}
+                      <div className=" flex flex-col items-end w-full">
+                        <div className="w-full max-h-[145px] overflow-y-auto scrollbar-hide px-2 py-2">
+                          {subjects
+                            .filter(
+                              (subject) =>
+                                !subjectListChosen.some(
+                                  (chosen) => chosen.id === subject.id
+                                )
+                            )
+                            .map((subject) => (
                               <div
                                 key={subject.id}
                                 className={` hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-[95%] h-[42px] flex items-center gap-3 px-6 rounded-lg cursor-pointer text-white bg-[#2D2E38] mb-2`}
                                 onClick={() => {
-                                  setSelectedSubject(subject);
-                                  setIsSubjectsOpen(false);
+                                  if (subject.name === "Select All") {
+                                    setSubjectListChosen(
+                                      subjects.filter(
+                                        (s) => s.name !== "Select All"
+                                      )
+                                    );
+                                  } else {
+                                    let dex = subjectListChosen;
+                                    dex.push(subject);
+                                    setSubjectListChosen(dex);
+                                    setIsSubjectsOpen(false);
+                                  }
                                 }}
                               >
                                 <div className=" relative">
@@ -198,43 +254,16 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
                                 </div>
                               </div>
                             ))}
-                          </div>
                         </div>
                       </div>
                     </div>
-                  )}
-                </div>
-              )}
-
-              {selectedSubject !== null && (
-                <div className="flex justify-start">
-                  <div className="relative">
-                    <div className="w-[246px] h-[50px] bg-[#2D2E38] rounded-md flex gap-3 px-6 justify-start items-center">
-                      <img src={selectedSubject.icon} alt="" />
-                      <div className="text-[14px] font-semibold relative">
-                        {selectedSubject.name}
-                        {selectedSubject.name === "Select All" && (
-                          <div className="absolute top-0 -right-28">
-                            <img src="../../public/Group 628841.png" alt="" />
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className="absolute  -left-8 top-3">
-                      <button
-                        className=""
-                        onClick={() => setSelectedSubject(null)}
-                      >
-                        <XIcon />
-                      </button>
-                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
 
             {/* step 2 */}
-            {selectedSubject !== null && (
+            {subjectListChosen.length !== 0 && (
               <div className=" mt-6 flex flex-col items-center gap-4 h-fit">
                 <h1 className="text-[16px] font-bold">Choose Duration</h1>
 
@@ -321,7 +350,7 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
             )}
 
             {/* step 4 */}
-            {selectedSession && selectedSubject && (
+            {selectedSession && subjectListChosen.length !== 0 && (
               <div className="mt-12">
                 {selectedFocus === "" && (
                   <div className="">
@@ -492,11 +521,13 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
             )}
           </div>
           {/* step 4 */}
-          {selectedSession && selectedSubject && selectedFocus && (
-            <button className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 text-white px-2 py-3 rounded-lg w-[246px] flex justify-center items-center text-[15px] font-bold">
-              Start Studying
-            </button>
-          )}
+          {selectedSession &&
+            subjectListChosen.length !== 0 &&
+            selectedFocus && (
+              <button className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 text-white px-2 py-3 rounded-lg w-[246px] flex justify-center items-center text-[15px] font-bold">
+                Start Studying
+              </button>
+            )}
         </div>
 
         {/* Footer or additional actions */}
