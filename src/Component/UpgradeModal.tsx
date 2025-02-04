@@ -87,20 +87,12 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ isOpen, onClose }) => {
                 <div className="flex gap-3 items-center">
                   <img
                     src="../../public/redClose.png"
-                    className="w-[16px] h-[12px]"
+                    className="w-[12px] h-[12px]"
                     alt=""
                   />
                   <p className="text-[16px] font-normal text-[#ACADB2]">
                     3 months unpaid = AI progress lost
                   </p>
-                </div>
-                <div className="flex gap-3 items-center">
-                  <img
-                    src="../../public/redClose.png"
-                    className="w-[16px] h-[12px]"
-                    alt=""
-                  />
-                  <p className="text-[16px] font-normal text-[#ACADB2]"></p>
                 </div>
               </div>
 

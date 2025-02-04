@@ -105,7 +105,7 @@ const ColorPickerModal: React.FC<ColorPickerModalProps> = ({
               </div>
 
               {/* Right Panel - Hexagonal Color Picker */}
-              <div className="bg-[#2c2c2e] rounded-lg p-3 flex flex-wrap gap-2 justify-center">
+              <div className="bg-[#2c2c2e] rounded-lg p-2 flex flex-wrap gap-2 justify-center items-center">
                 {hexagonalColors.map((color, index) => (
                   <button
                     key={index}
