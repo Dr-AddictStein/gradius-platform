@@ -48,6 +48,7 @@ const LearningTimeGraph: React.FC = ({ isSmall }) => {
             <CartesianGrid
               strokeDasharray="4 4"
               vertical={false}
+              horizontal={false}
               stroke={hoveredIndex !== null ? "#A436F1" : "white"}
               opacity={0.3}
             />

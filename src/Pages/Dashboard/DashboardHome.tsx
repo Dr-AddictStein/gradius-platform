@@ -91,7 +91,7 @@ const DashboardHome = () => {
                           className="flex flex-col justify-center items-center gap-4"
                         >
                           <div className="px-6 py-5">
-                            <CircularProgress value={score}  size={200}/>
+                            <CircularProgress value={score}  size={160}/>
                           </div>
                           <div className="flex gap-2 items-center justify-center bg-gray-600 w-full rounded-b-xl py-2">
                             <div

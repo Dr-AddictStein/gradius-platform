@@ -124,16 +124,17 @@ const KnowledgeGraph = ({ isSmall }) => {
               stroke="white"
               opacity={0.8}
               vertical={false}
+              horizontal={false}
             />
 
             <XAxis
               dataKey="day"
-              axisLine={false}
+              axisLine={true}
               tickLine={false}
               tick={{ fill: "#9CA3AF", fontSize: 10 }}
             />
             <YAxis
-              axisLine={false}
+              axisLine={true}
               tickLine={false}
               tick={{ fill: "#9CA3AF", fontSize: 10 }}
               domain={[0, 10]}

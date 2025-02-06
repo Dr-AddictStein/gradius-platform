@@ -111,7 +111,7 @@ const DashboardPerSubject = () => {
             </div>
           </div>
 
-          <div className="w-full bg-slate-500 h-[1px] mb-6"></div>
+          <div className="w-full bg-slate-500 h-[1px] mb-4"></div>
 
           <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[320px] mb-4">
             <div className="flex justify-between w-full">
@@ -158,7 +158,7 @@ const DashboardPerSubject = () => {
           <LearningTimeGraph isSmall={true} />
           <div className="w-full bg-slate-500 h-[1px] mb-1"></div>
           <div className="w-full">
-            <div className="flex w-full justify-between text-center mb-4">
+            <div className="flex w-full justify-between text-center mb-[9px]">
               <h1 className="text-[15px] font-semibold tet-center w-full">
                 Average Knowledge Score
               </h1>

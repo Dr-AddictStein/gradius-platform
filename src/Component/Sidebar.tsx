@@ -29,6 +29,7 @@ const Sidebar = () => {
     blue: "bg-blue-500",
   };
   const [activeTab, setActiveTab] = React.useState("Home"); // Track active tab
+  const [activeSubject, setActiveSubject] = React.useState(""); // Track active subject
   const [isSubjectsOpen, setIsSubjectsOpen] = React.useState(false);
 
   const subjects: Subject[] = [
@@ -96,6 +97,7 @@ const Sidebar = () => {
               onClick={() => {
                 setIsSubjectsOpen(!isSubjectsOpen);
                 setActiveTab("Subjects");
+                setActiveSubject("");
               }}
               className={`flex w-full h-[50px] justify-between px-8 items-center rounded-[6px] border-[1px] border-slate-600 ${
                 isSubjectsOpen ? "bg-gray-700" : "hover:bg-gray-700"
@@ -138,10 +140,11 @@ const Sidebar = () => {
                       <div
                         key={subject.id}
                         className={` hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
-                          subject.isActive ? "bg-gray-700" : ""
+                          activeSubject===subject.name ? "bg-gray-700" : ""
                         }`}
                         onClick={() => {
                           navigate("/dashboard/perSubject");
+                          setActiveSubject(subject.name);
                         }}
                       >
                         <div
