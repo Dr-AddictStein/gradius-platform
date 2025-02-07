@@ -140,7 +140,7 @@ const KnowledgeGraph = ({ isSmall }) => {
               domain={[0, 10]}
               ticks={[0, 2, 4, 6, 8, 10]}
             />
-            {highlightIndex !== -1 && (
+            {/* {highlightIndex !== -1 && (
               <ReferenceArea
                 x1={previousDay}
                 x2={nextDay}
@@ -148,7 +148,7 @@ const KnowledgeGraph = ({ isSmall }) => {
                 y2={currentData[highlightIndex].score}
                 fill="url(#highlightArea)"
               />
-            )}
+            )} */}
             <Area
               type="linear"
               dataKey="score"
