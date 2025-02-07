@@ -5,6 +5,7 @@ import DashboardPerSubject from "../Pages/Dashboard/DashboardPerSubject";
 import StudySessions from "../Pages/Dashboard/StudySessions";
 import PerformanceAnalysis from "../Pages/Dashboard/PerformanceAnalysis";
 import FinalOverview from "../Pages/Dashboard/FinalOverview";
+import StudySessionMain from "../Pages/Dashboard/StudySessionMain";
 
 // Define your route objects
 const routes: RouteObject[] = [
@@ -31,6 +32,10 @@ const routes: RouteObject[] = [
       {
         path: "finalOverview",
         element: <FinalOverview />,
+      },
+      {
+        path: "studySession",
+        element: <StudySessionMain />,
       },
     ],
   },
