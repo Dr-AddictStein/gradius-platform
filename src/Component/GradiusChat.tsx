@@ -52,6 +52,168 @@ const GradiusChat = () => {
               </p>
             </div>
           </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from sender */}
+          <div className="flex w-full justify-start mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
+          {/* message from user */}
+          <div className="flex w-full justify-end mb-2">
+            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
+              <p className="font-semibold text-[12px]">
+                Hey there, Gradius here! Go ahead and ask me anything. I will
+                give you answers tailored to your specific needs!
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* control area */}

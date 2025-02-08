@@ -1,11 +1,14 @@
 import { Repeat, X } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import TrendGraph from "../../Component/TrendGraph";
 import CircularProgress from "../../Component/CircularProgressProps";
 import KnowledgeGraph from "../../Component/KnowledgeGraph ";
 import PassRateComparison from "../../Component/PassRateComparison";
+import RecommendationModal from "../../Component/RecommendationModal";
 
 const FinalOverview = () => {
+  const [isRecommendationModalOpen, setIsRecommendationModalOpen] =
+    useState(false);
   return (
     <div className="h-[760px] p-4 flex flex-col justify-between">
       {/* Header */}
@@ -97,7 +100,7 @@ const FinalOverview = () => {
 
         {/* right */}
         <div className="flex flex-col justify-between h-full w-[33%]">
-          <div className="flex justify-around items-center h-[123px] w-full bg-[#3D3F4A] rounded-[20px] p-4">
+          <div className="flex justify-around items-center h-[123px] w-full bg-[#3D3F4A] rounded-[20px] p-4 cursor-pointer hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300" onClick={() => setIsRecommendationModalOpen(true)}>
             <div className="flex flex-col justify-around h-full">
               <p className="font-bold text-[17px]">Gradius’ Recommendations</p>
               <p className="font-normal text-[12px] text-[#C4C3D1]">
@@ -141,6 +144,11 @@ const FinalOverview = () => {
           <PassRateComparison />
         </div>
       </div>
+
+      <RecommendationModal
+        isOpen={isRecommendationModalOpen}
+        onClose={() => setIsRecommendationModalOpen(false)}
+      />
     </div>
   );
 };
