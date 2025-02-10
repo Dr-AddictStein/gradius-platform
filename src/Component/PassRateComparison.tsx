@@ -101,7 +101,7 @@ const PassRateComparison = () => {
 
       <div className="w-full bg-slate-500 h-[1px] mb-8"></div>
 
-      <div className="h-52 w-full">
+      <div className="h-44 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={currentData}

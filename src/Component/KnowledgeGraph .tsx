@@ -56,7 +56,7 @@ const KnowledgeGraph = ({ isSmall }) => {
   const nextDay = currentData[highlightIndex + 1]?.day;
 
   return (
-    <div className="w-[100%]  rounded-xl">
+    <div className="w-[100%] h-full rounded-xl flex  flex-col justify-center ">
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-6">
           <h2 className="text-white text-[16px] font-bold">

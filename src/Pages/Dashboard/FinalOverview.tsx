@@ -10,7 +10,7 @@ const FinalOverview = () => {
   const [isRecommendationModalOpen, setIsRecommendationModalOpen] =
     useState(false);
   return (
-    <div className="h-[760px] p-4 flex flex-col justify-between">
+    <div className="h-[95vh] px-4 flex flex-col justify-between">
       {/* Header */}
       <div className="relative pb-14 pl-10 pr-4 border-b border-[#565868]">
         {/* Centered heading */}
@@ -36,11 +36,11 @@ const FinalOverview = () => {
         </div>
       </div>
 
-      <div className="mt-4 h-[300px] flex gap-4 w-full justify-between">
+      <div className="mt-4 h-[45vh] flex gap-4 w-full justify-between">
         {/* left */}
         <div className="flex flex-col justify-between h-full w-[33%]">
           <div className="flex gap-4 w-full">
-            <div className="flex flex-col items-center justify-center h-[123px] w-1/2 bg-[#3D3F4A] rounded-[20px]">
+            <div className="flex flex-col items-center justify-center h-[18vh] w-1/2 bg-[#3D3F4A] rounded-[20px]">
               <div className="flex justify-center items-center gap-1">
                 <img
                   src="../../../public/stopwatch.png"
@@ -55,7 +55,7 @@ const FinalOverview = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center h-[123px] w-1/2 bg-[#3D3F4A] rounded-[20px]">
+            <div className="flex flex-col items-center justify-center h-[18vh] w-1/2 bg-[#3D3F4A] rounded-[20px]">
               <div className="flex justify-center items-center gap-1">
                 <img
                   src="../../../public/greenTick.png"
@@ -70,7 +70,7 @@ const FinalOverview = () => {
             </div>
           </div>
           <div className="bg-[#565868] w-full border-1 h-[1px]"></div>
-          <div className="flex justify-center items-center h-[123px] w-full bg-[#3D3F4A] rounded-[20px]">
+          <div className="flex justify-center items-center h-[18vh] w-full bg-[#3D3F4A] rounded-[20px]">
             <div className="w-1/2 flex flex-col items-center justify-center h-full ">
               <div className="">
                 <p className="text-[#C4C3D1] font-normal text-[12px]">
@@ -100,7 +100,10 @@ const FinalOverview = () => {
 
         {/* right */}
         <div className="flex flex-col justify-between h-full w-[33%]">
-          <div className="flex justify-around items-center h-[123px] w-full bg-[#3D3F4A] rounded-[20px] p-4 cursor-pointer hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300" onClick={() => setIsRecommendationModalOpen(true)}>
+          <div
+            className="flex justify-around items-center h-[18vh] w-full bg-[#3D3F4A] rounded-[20px] p-4 cursor-pointer hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300"
+            onClick={() => setIsRecommendationModalOpen(true)}
+          >
             <div className="flex flex-col justify-around h-full">
               <p className="font-bold text-[17px]">Gradius’ Recommendations</p>
               <p className="font-normal text-[12px] text-[#C4C3D1]">
@@ -113,7 +116,7 @@ const FinalOverview = () => {
             </div>
           </div>
           <div className="bg-[#565868] w-full border-1 h-[1px]"></div>
-          <div className="flex justify-center items-center h-[123px] w-full bg-[#3D3F4A] rounded-[20px]">
+          <div className="flex justify-center items-center h-[18vh] w-full bg-[#3D3F4A] rounded-[20px]">
             <div className="w-1/2 flex flex-col items-center justify-center h-full ">
               <div className="">
                 <p className="text-[#C4C3D1] font-normal text-[12px]">
@@ -136,12 +139,14 @@ const FinalOverview = () => {
         </div>
       </div>
 
-      <div className="h-[315px] flex gap-6">
-        <div className="w-[50%] p-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
-          <KnowledgeGraph isSmall={false} />
-        </div>
-        <div className="w-[50%] p-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
-          <PassRateComparison />
+      <div className="h-[40vh] flex items-center w-full">
+        <div className="h-[90%] flex gap-6 w-full">
+          <div className="w-[50%] px-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
+            <KnowledgeGraph isSmall={false} />
+          </div>
+          <div className="w-[50%] p-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
+            <PassRateComparison />
+          </div>
         </div>
       </div>
 
