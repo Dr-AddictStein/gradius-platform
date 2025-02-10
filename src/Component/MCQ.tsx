@@ -14,8 +14,8 @@ const MCQ = () => {
   return (
     <div className="h-full w-full flex flex-col justify-center items-center">
       <div className="w-full h-full flex flex-col justify-center items-center gap-6">
-        <div className="w-full h-[45vh] overflow-y-auto scrollbar-hide">
-          <div className="w-full flex flex-col justify-center items-center gap-4">
+        <div className="w-full h-[48vh] overflow-y-auto scrollbar-hide">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-4">
             <p className="font-bold text-[16px]">
               What are the assumptions made by the CAPM?
             </p>
