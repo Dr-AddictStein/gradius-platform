@@ -31,9 +31,9 @@ const GradiusChat = () => {
       </div>
 
       {/* chat body */}
-      <div className="w-full h-[72vh]  p-3 flex flex-col justify-between items-center">
+      <div className="w-full h-[65vh]  p-3 flex flex-col justify-between items-center ">
         {/* message area */}
-        <div className="w-full h-[55vh]  overflow-y-auto scrollbar-hide">
+        <div className="w-full h-[45vh]  overflow-y-auto scrollbar-hide ">
           {/* message from sender */}
           <div className="flex w-full justify-start mb-2">
             <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
@@ -217,7 +217,7 @@ const GradiusChat = () => {
         </div>
 
         {/* control area */}
-        <div className="h-[16vh] w-full flex flex-col justify-around items-center pt-2">
+        <div className="h-[12vh] w-full flex flex-col justify-between items-center ">
           <div className="flex justify-between items-center w-full">
             <div className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center">
               <p className="2xl:text-[16px] text-[12px] font-semibold text-center">
@@ -242,7 +242,7 @@ const GradiusChat = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Ask me anything..."
-                className="w-full px-4 h-[7vh] text-white bg-transparent border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent pr-12"
+                className="w-full px-4 h-[5vh] text-white bg-transparent border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent pr-12"
               />
               <button
                 type="submit"
