@@ -47,7 +47,7 @@ const PerformanceAnalysis = () => {
             <LearningTimeGraph />
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <PassRateComparison isMid={true}/>
+            <PassRateComparison isMid={false}/>
           </div>
         </div>
       </div>

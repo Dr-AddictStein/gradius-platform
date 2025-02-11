@@ -1,4 +1,4 @@
-import { Pause } from "lucide-react";
+import { DoorClosed, Pause, StopCircle } from "lucide-react";
 import React, { useState } from "react";
 import GradiusChat from "../../Component/GradiusChat";
 import Flashcard from "../../Component/Flashcard";
@@ -20,9 +20,9 @@ const StudySessionMain = () => {
             </p>
           </div>
           <div className="">
-            <button className="w-[202px] h-[41px] rounded-[6px] bg-[#3D3F4A] flex items-center justify-center gap-2">
-              <Pause size={18} />
-              <p className="text-[16px] font-bold">Pause Study Session</p>
+            <button className="w-[250px] h-[41px] rounded-[6px] bg-[#3D3F4A] flex items-center justify-center gap-2">
+              <StopCircle size={18} />
+              <p className="text-[16px] font-bold">Close the Study Session</p>
             </button>
           </div>
         </div>
