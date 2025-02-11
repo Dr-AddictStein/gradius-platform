@@ -4,11 +4,11 @@ import Sidebar from "../../Component/Sidebar";
 
 const DashboardMain = () => {
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-[20%]">
+    <div className="w-full flex justify-between">
+      <div className="xl:w-[20%] w-[10%]">
         <Sidebar />
       </div>
-      <div className="2xl:w-[100%] w-[80%] p-3">
+      <div className="xl:w-[100%] w-[70%] p-3">
         <div className="bg-[#343540] min-h-fit rounded-[6px] p-2">
           <Outlet />
         </div>

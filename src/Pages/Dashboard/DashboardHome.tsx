@@ -37,7 +37,7 @@ const DashboardHome = () => {
     useState(false);
 
   return (
-    <div className="container mx-auto p-8 h-[860px]">
+    <div className="container mx-auto p-8 h-[100vh]">
       {/* Header Section */}
       <div className="mb-6 w-full min-h-[5%] ">
         <div className="flex gap-2 mb-3 items-center">
@@ -68,7 +68,7 @@ const DashboardHome = () => {
           {/* Centered title */}
           <div className="relative overflow-hidden">
             {/* Container with calculated width for 3 cards */}
-            <div className="mx-auto w-[calc(230px*3+2*16px)] overflow-hidden">
+            <div className="mx-auto xl:w-[calc(230px*3+2*16px)] w-[calc(230px*1+2*16px)] overflow-hidden">
               {" "}
               {/* 3 cards + 2 gaps */}
               <div

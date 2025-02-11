@@ -56,7 +56,7 @@ const Sidebar = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 2xl:w-[16%] h-screen py-4 2xl:pl-6 pl-2 flex flex-col justify-between">
+    <div className="fixed top-0 w-[30%] xl:w-[16%] h-screen py-4 2xl:pl-6 pl-2 flex flex-col justify-between ">
       <div className="flex flex-col justify-between items-center h-full w-full">
         {/* Logo */}
         <div className="w-full flex flex-col items-center gap-6">
@@ -164,12 +164,12 @@ const Sidebar = () => {
 
         {/* User Profile */}
         <div className="w-full h-[160px] bg-[#343540] rounded-md p-3 flex flex-col items-center justify-around">
-          <div className="flex gap-3 cursor-pointer" onClick={() => setIsProfileModalOpen(true)}>
+          <div className="flex gap-3 cursor-pointer items-center" onClick={() => setIsProfileModalOpen(true)}>
             <div>
               <img
                 src={user.avatar}
                 alt="User Avatar"
-                className="rounded-full h-[50px] w-[50px]"
+                className="rounded-full "
               />
             </div>
             <div className="flex flex-col items-start justify-center">

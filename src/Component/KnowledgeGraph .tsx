@@ -102,7 +102,7 @@ const KnowledgeGraph = ({ isSmall }) => {
       </div>
       <div className={`w-full bg-slate-500 h-[1px] ${isSmall?"":"mb-8"} `}></div>
 
-      <div className={`${isSmall ? "h-[132px]" : "h-44"} w-full`}>
+      <div className={`${isSmall ? "h-[132px]" : "h-[70%]"} w-full`}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={currentData}

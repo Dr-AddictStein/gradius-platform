@@ -24,8 +24,8 @@ const PerformanceAnalysis = () => {
       </div>
       <div className="w-full bg-slate-700 h-[1px]"></div>
 
-      <div className="mt-10 flex gap-4 ">
-        <div className="w-[40%]">
+      <div className="mt-10 flex xl:flex-row flex-col gap-4 ">
+        <div className="xl:w-[40%] w-full">
           <div className="bg-[#3D3F4A] text-center px-4 py-5 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <h3>Average Knowledge Score</h3>
             <CircularProgress value={6.9}  size={200}/>
@@ -39,8 +39,8 @@ const PerformanceAnalysis = () => {
             <StrengthGraphRed />
           </div>
         </div>
-        <div className="w-[60%] ">
-          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+        <div className="xl:w-[60%] w-full">
+          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4 h-[38vh]">
             <KnowledgeGraph isSmall={false}/>
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
