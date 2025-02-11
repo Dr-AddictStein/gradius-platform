@@ -39,7 +39,7 @@ const DashboardHome = () => {
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
 
   return (
-    <div className="container mx-auto p-8 lg:h-[120vh] h-[95vh]">
+    <div className="container mx-auto p-8 lg:h-[100vh] h-[95vh]">
       {/* Header Section */}
       <div className="mb-6 w-full min-h-[5%] ">
         <div className="flex gap-2 mb-3 items-center">
@@ -48,10 +48,10 @@ const DashboardHome = () => {
         </div>
         <div className="w-full bg-slate-700 h-[1px]"></div>
       </div>
-      <div className="flex flex-col justify-between w-full min-h-[95%] ">
+      <div className="flex flex-col justify-between w-full h-full ">
         <div className="flex flex-col justify-center items-center gap-6">
           <h1 className="text-[24px] font-bold text-center">Hey Emilio!</h1>
-          <p className="text-white text-[20px] font-medium text-center">
+          <p className="text-white text-[16px] font-medium text-center">
             Back for more? Let's keep learning and...
             <br />
             ...don't forget, every click makes me smarter too, I'm counting on
@@ -69,7 +69,7 @@ const DashboardHome = () => {
         </div>
 
         {/* Progress Cards Slider */}
-        <div className="mb-8 relative mt-20">
+        <div className="mb-8 relative mt-20 pb-10">
           {/* Centered title */}
           <div className="relative overflow-hidden">
             {/* Container with calculated width for 3 cards */}
