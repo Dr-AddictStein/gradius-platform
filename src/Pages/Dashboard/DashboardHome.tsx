@@ -5,6 +5,7 @@ import line1 from "../../../public/Line 1.png";
 import leftA from "../../../public/left.png";
 import rightA from "../../../public/right.png";
 import StartStudyingModal from "../../Component/StartStudyingModal";
+import SignupModal from "../../Component/SignupModal";
 
 const DashboardHome = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,9 +36,10 @@ const DashboardHome = () => {
 
   const [isStartStudyingModalOpen, setIsStartStudyingModalOpen] =
     useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
 
   return (
-    <div className="container mx-auto p-8 h-[100vh]">
+    <div className="container mx-auto p-8 lg:h-[120vh] h-[95vh]">
       {/* Header Section */}
       <div className="mb-6 w-full min-h-[5%] ">
         <div className="flex gap-2 mb-3 items-center">
@@ -58,7 +60,10 @@ const DashboardHome = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <button onClick={() => setIsStartStudyingModalOpen(true)} className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] text-white px-6 py-3 rounded-lg w-[246px] text-[16px] font-bold transition-shadow duration-300">
+          <button
+            onClick={() => setIsStartStudyingModalOpen(true)}
+            className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] text-white px-6 py-3 rounded-lg w-[246px] text-[16px] font-bold transition-shadow duration-300"
+          >
             Start Studying
           </button>
         </div>
@@ -91,7 +96,7 @@ const DashboardHome = () => {
                           className="flex flex-col justify-center items-center gap-4"
                         >
                           <div className="px-6 py-5">
-                            <CircularProgress value={score}  size={160}/>
+                            <CircularProgress value={score} size={160} />
                           </div>
                           <div className="flex gap-2 items-center justify-center bg-gray-600 w-full rounded-b-xl py-2">
                             <div
@@ -131,6 +136,10 @@ const DashboardHome = () => {
       <StartStudyingModal
         isOpen={isStartStudyingModalOpen}
         onClose={() => setIsStartStudyingModalOpen(false)}
+      />
+      <SignupModal
+        isOpen={isSignupModalOpen}
+        onClose={() => setIsSignupModalOpen(false)}
       />
     </div>
   );
