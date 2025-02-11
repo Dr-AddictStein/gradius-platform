@@ -46,7 +46,7 @@ const DATA = {
   ],
 };
 
-const KnowledgeGraph = ({ isSmall }) => {
+const KnowledgeGraph = ({ isSmall, isMid }) => {
   const [timeframe, setTimeframe] = useState("Day");
   const currentData = DATA[timeframe];
 
@@ -100,9 +100,15 @@ const KnowledgeGraph = ({ isSmall }) => {
           </div>
         </div>
       </div>
-      <div className={`w-full bg-slate-500 h-[1px] ${isSmall?"":"mb-8"} `}></div>
+      <div
+        className={`w-full bg-slate-500 h-[1px] ${isSmall ? "" : "mb-8"} `}
+      ></div>
 
-      <div className={`${isSmall ? "h-[132px]" : "h-[70%]"} w-full`}>
+      <div
+        className={`${
+          isSmall ? "h-[132px]" : `${isMid ? "h-52" : "h-44"}`
+        } w-full`}
+      >
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={currentData}

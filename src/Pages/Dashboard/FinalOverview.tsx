@@ -10,11 +10,11 @@ const FinalOverview = () => {
   const [isRecommendationModalOpen, setIsRecommendationModalOpen] =
     useState(false);
   return (
-    <div className="h-[95vh] px-4 flex flex-col justify-between">
+    <div className="xl:h-[95vh] h-full px-4 flex flex-col justify-between">
       {/* Header */}
       <div className="relative pb-14 pl-10 pr-4 border-b border-[#565868]">
         {/* Centered heading */}
-        <h2 className="absolute left-1/2 transform -translate-x-1/2 text-white text-[24px] font-semibold">
+        <h2 className="absolute xl:left-1/2 left-[24%] transform -translate-x-1/2 text-white text-[24px] font-semibold">
           Here’s How You Did
         </h2>
         {/* Right-aligned close button */}
@@ -36,9 +36,9 @@ const FinalOverview = () => {
         </div>
       </div>
 
-      <div className="mt-4 h-[38vh] flex gap-4 w-full justify-between">
+      <div className="mt-4 xl:h-[38vh] flex xl:flex-row flex-col gap-4 w-full justify-between">
         {/* left */}
-        <div className="flex flex-col justify-between h-full w-[33%]">
+        <div className="flex flex-col justify-between h-full xl:w-[33%] w-full gap-2 xl:gap-0">
           <div className="flex gap-4 w-full">
             <div className="flex flex-col items-center justify-center h-[16vh] w-1/2 bg-[#3D3F4A] rounded-[20px]">
               <div className="flex justify-center items-center gap-1">
@@ -93,13 +93,13 @@ const FinalOverview = () => {
         </div>
 
         {/* mid */}
-        <div className="bg-[#3D3F4A] text-center p-4 w-[30%] rounded-xl flex flex-col items-center justify-center gap-4 h-full">
+        <div className="bg-[#3D3F4A] text-center p-4 xl:w-[30%] w-full rounded-xl flex flex-col items-center justify-center gap-4 h-full">
           <h3 className="text-[17px] font-bold">Average Knowledge Score</h3>
           <CircularProgress value={7.7} size={180} />
         </div>
 
         {/* right */}
-        <div className="flex flex-col justify-between h-full w-[33%]">
+        <div className="flex flex-col justify-between h-full xl:w-[33%] w-full xl:gap-0 gap-2">
           <div
             className="flex justify-around items-center h-[16vh] w-full bg-[#3D3F4A] rounded-[20px] p-4 cursor-pointer hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300"
             onClick={() => setIsRecommendationModalOpen(true)}
@@ -139,12 +139,12 @@ const FinalOverview = () => {
         </div>
       </div>
 
-      <div className="h-[50vh] flex items-center w-full">
-        <div className="h-[90%] flex gap-6 w-full">
-          <div className="w-[50%] px-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
-            <KnowledgeGraph isSmall={false} />
+      <div className="xl:h-[50vh] flex items-center w-full">
+        <div className="h-[90%] flex xl:flex-row flex-col gap-6 w-full xl:mt-0 mt-5">
+          <div className="xl:w-[50%] w-full px-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
+            <KnowledgeGraph isMid={true} />
           </div>
-          <div className="w-[50%] p-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
+          <div className="xl:w-[50%] w-full p-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
             <PassRateComparison />
           </div>
         </div>

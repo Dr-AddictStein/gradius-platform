@@ -40,14 +40,14 @@ const PerformanceAnalysis = () => {
           </div>
         </div>
         <div className="xl:w-[60%] w-full">
-          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4 h-[38vh]">
-            <KnowledgeGraph isSmall={false}/>
+          <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
+            <KnowledgeGraph isSmall={false} isMid={false}/>
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
             <LearningTimeGraph />
           </div>
           <div className="bg-[#3D3F4A] text-center p-4 rounded-xl flex flex-col items-center justify-center gap-4 mb-4">
-            <PassRateComparison />
+            <PassRateComparison isMid={true}/>
           </div>
         </div>
       </div>

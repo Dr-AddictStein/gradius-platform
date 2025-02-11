@@ -56,13 +56,13 @@ const DATA = {
   ],
 };
 
-const PassRateComparison = () => {
+const PassRateComparison = ({ isMid }) => {
   const [timeframe, setTimeframe] = useState("Day");
   const currentData = DATA[timeframe];
 
   return (
     <div className="w-full max-w-4xl rounded-xl">
-      <div className="flex items-center justify-between mb-1">
+      <div className="flex items-center justify-between mb-1 h-full">
         <h2 className="text-white text-[16px] font-bold">
           Pass Rate Quizzes VS Flashcards
         </h2>
@@ -101,7 +101,7 @@ const PassRateComparison = () => {
 
       <div className="w-full bg-slate-500 h-[1px] mb-8"></div>
 
-      <div className="h-72 w-full">
+      <div className={`${isMid?"h-72":"h-52"}  w-full`}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={currentData}
