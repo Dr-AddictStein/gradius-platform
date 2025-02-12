@@ -19,7 +19,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) => {
   const [gender, setGender] = useState("");
   return createPortal(
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="w-[1200px] h-[550px] bg-[#343540] rounded-lg">
+      <div className="lg:w-[75vw] w-[95vw] h-[550px] bg-[#343540] rounded-lg">
         {/* Header */}
         <div
           className="flex justify-end items-center py-4 pr-8 border-b border-gray-800 h-[94px] rounded-md"
@@ -61,40 +61,40 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           <div className="flex justify-between gap-2">
-            <div className=" flex flex-col gap-2">
+            <div className=" flex flex-col gap-2 w-[45%]">
               <label htmlFor="" className="text-[15px] font-normal">
                 First Name
               </label>
               <input
                 type="text"
                 placeholder="Your First Name"
-                className="bg-[#F9F9F9] px-4 py-2 w-[555px] h-[49px] rounded-[8px] text-black"
+                className="bg-[#F9F9F9] px-4 py-2 w-full h-[49px] rounded-[8px] text-black"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
-            <div className=" flex flex-col gap-2">
+            <div className=" flex flex-col gap-2 w-[45%]">
               <label htmlFor="" className="text-[15px] font-normal">
                 Last Name
               </label>
               <input
                 type="text"
                 placeholder="Your Last Name"
-                className="bg-[#F9F9F9] px-4 py-2 w-[555px] h-[49px] rounded-[8px] text-black"
+                className="bg-[#F9F9F9] px-4 py-2 w-full h-[49px] rounded-[8px] text-black"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
           </div>
           <div className="flex justify-between gap-2">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-[45%]">
               <label htmlFor="gender" className="text-[15px] font-normal">
                 Gender
               </label>
               <div className="relative">
                 <select
                   id="gender"
-                  className="appearance-none bg-[#F9F9F9] px-4 py-2 w-[555px] h-[49px] rounded-[8px] text-black"
+                  className="appearance-none bg-[#F9F9F9] px-4 py-2 w-full h-[49px] rounded-[8px] text-black"
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
                 >
@@ -109,7 +109,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-[45%]">
               <label htmlFor="country" className="text-[15px] font-normal">
                 Country
               </label>
@@ -117,7 +117,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) => {
                 type="text"
                 id="country"
                 placeholder="Your Country"
-                className="bg-[#F9F9F9] px-4 py-2 w-[555px] h-[49px] rounded-[8px] text-black"
+                className="bg-[#F9F9F9] px-4 py-2 w-full h-[49px] rounded-[8px] text-black"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
               />

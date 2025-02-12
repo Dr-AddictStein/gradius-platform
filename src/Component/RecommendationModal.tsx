@@ -22,7 +22,7 @@ const RecommendationModal: React.FC<RecommendationModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="w-[80vw] h-[95vh] bg-[#343540] rounded-lg p-3">
+      <div className="xl:w-[80vw] w-[98vw] h-[95vh] bg-[#343540] rounded-lg p-3">
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-800">
           <h2 className="text-white text-[16px] font-bold">

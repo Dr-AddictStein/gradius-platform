@@ -12,7 +12,7 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ isOpen, onClose }) => {
 
   return createPortal(
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="w-[1006px] h-[587px] bg-[#343540] rounded-lg">
+      <div className="lg:w-[55vw] w-[95vw] h-[80vh] bg-[#343540] rounded-lg">
         {/* Header */}
         <div className="flex justify-between items-center py-4 pl-10 pr-4 border-b border-gray-800">
           <h2 className="text-white text-[16px] font-bold">
@@ -28,8 +28,8 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ isOpen, onClose }) => {
         {/* Content */}
         <div className="flex flex-col p-10 text-center leading-8">
           {/* Your upgrade content goes here */}
-          <div className="w-full flex gap-4 justify-around">
-            <div className="w-[391px] rounded-[10px] border-[2px] border-[#A436F1] p-8 h-[460px] flex flex-col justify-between">
+          <div className="w-full flex gap-4 justify-around h-[65vh]">
+            <div className="w-[50%] rounded-[10px] border-[2px] border-[#A436F1] p-8 h-full flex flex-col justify-between">
               <div className=" flex gap-3 items-center">
                 <p className="text-[20px] font-bold">Monthly Plan</p>
                 <img
@@ -96,11 +96,11 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <button className="w-[307px] h-[38px] bg-[#A436F1] rounded-[10px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300">
+              <button className="w-full h-[38px] bg-[#A436F1] rounded-[10px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300">
                 <p className="text-[14px] font-semibold">Level Up!</p>
               </button>
             </div>
-            <div className="w-[391px] rounded-[10px] border-[2px] border-[#A436F1] p-8 h-[460px] flex flex-col justify-between">
+            <div className="w-[50%] rounded-[10px] border-[2px] border-[#A436F1] p-8 h-full flex flex-col justify-between">
               <div className=" flex gap-3 items-center">
                 <p className="text-[20px] font-bold">Yearly Plan</p>
                 <div className="h-full w-[50%] relative">
@@ -173,7 +173,7 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <button className="w-[307px] h-[38px] bg-[#A436F1] rounded-[10px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300">
+              <button className="w-full h-[38px] bg-[#A436F1] rounded-[10px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300">
                 <p className="text-[14px] font-semibold">Level Up!</p>
               </button>
             </div>
