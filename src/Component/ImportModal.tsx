@@ -19,7 +19,7 @@ const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="w-[1222px] h-[494px] bg-[#343540] rounded-lg">
+      <div className="w-[75vw] h-[494px] bg-[#343540] rounded-lg">
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-800">
           <h2 className="text-white text-[16px] font-bold">
@@ -42,30 +42,43 @@ const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => {
           </p>
         </div>
 
-        <div className="flex  justify-between gap-0">
-          <img className="cursor-pointer" src="../../public/Gizmo.png" alt=""  onClick={() => setGizmo(true)}/>
-          <img
-            className="cursor-pointer"
-            src="../../public/Quizlet.png"
-            alt=""
-            onClick={() => setQuizlet(true)}
-          />
-          <img className="cursor-pointer" src="../../public/Anki.png" alt="" onClick={() => setAnki(true)}/>
-          <img className="cursor-pointer" src="../../public/Vaia.png" alt="" />
+        <div className="flex w-full justify-around gap-0">
+          <button className="w-[23%]">
+            <img
+              className="cursor-pointer w-full"
+              src="../../public/Gizmo.png"
+              alt=""
+              onClick={() => setGizmo(true)}
+            />
+          </button>
+          <button className="w-[23%]">
+            <img
+              className="cursor-pointer w-full"
+              src="../../public/Quizlet.png"
+              alt=""
+              onClick={() => setQuizlet(true)}
+            />
+          </button>
+          <button className="w-[23%]">
+            <img
+              className="cursor-pointer w-full"
+              src="../../public/Anki.png"
+              alt=""
+              onClick={() => setAnki(true)}
+            />
+          </button>
+          <button className="w-[23%]">
+            <img
+              className="cursor-pointer w-full"
+              src="../../public/Vaia.png"
+              alt=""
+            />
+          </button>
         </div>
       </div>
-      <GizmoImportModal
-        isOpen={gizmo}
-        onClose={() => setGizmo(false)}
-      />
-      <QuizletImportModal
-        isOpen={quizlet}
-        onClose={() => setQuizlet(false)}
-      />
-      <AnkiImportModal
-        isOpen={anki}
-        onClose={() => setAnki(false)}
-      />
+      <GizmoImportModal isOpen={gizmo} onClose={() => setGizmo(false)} />
+      <QuizletImportModal isOpen={quizlet} onClose={() => setQuizlet(false)} />
+      <AnkiImportModal isOpen={anki} onClose={() => setAnki(false)} />
     </div>
   );
 };

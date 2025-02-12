@@ -357,7 +357,7 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
                     <h1 className="text-[16px] font-bold text-center mb-4">
                       What do you want to focus on
                     </h1>
-                    <div className="">
+                    <div className={`${expanded?"absolute ":""}`}>
                       <div
                         className={`group relative w-[246px] ${containerHeight} bg-[#2D2E38] shadow-[0_0_15px_2px_#A436F1] cursor-pointer transition-all duration-300 overflow-hidden rounded-md`}
                         onMouseEnter={() => {
@@ -396,7 +396,7 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Extra Text Section (reveals when expanded) */}
-                        <div className="absolute top-[50px] left-0 right-0 flex flex-col items-center justify-center">
+                        <div className="absolute top-[50px] left-0 right-0 flex flex-col items-center justify-center z-10">
                           <p className="text-[12px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                             <span className="font-medium text-center px-3">
                               <span className="text-[#A436F1]">

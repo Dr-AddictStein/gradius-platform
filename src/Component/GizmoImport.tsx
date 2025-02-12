@@ -15,7 +15,7 @@ const GizmoImportModal: React.FC<GizmoImportModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="w-[1222px] h-[65vh] bg-[#343540] rounded-lg flex flex-col justify-between">
+      <div className="w-[75vw] h-[65vh] bg-[#343540] rounded-lg flex flex-col justify-between">
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-800">
           <h2 className="text-white text-[16px] font-bold">
@@ -44,7 +44,7 @@ const GizmoImportModal: React.FC<GizmoImportModalProps> = ({
             </div>
           </div>
           <div className="relative w-[48%] h-full">
-            <div className="w-full border-[2px] border-dashed border-[#565868] bg-[#3D3F4A] h-full rounded-[6px] flex flex-col items-center justify-around">
+            <div className="w-full border-[2px] border-dashed border-[#565868] bg-[#3D3F4A] h-full rounded-[6px] flex flex-col items-center justify-between py-10">
               <div className="w-full">
                 <h2 className="text-[16px] font-bold text-center">
                   Import your Flashcards{" "}
@@ -54,7 +54,10 @@ const GizmoImportModal: React.FC<GizmoImportModalProps> = ({
                 </h2>
               </div>
               <div className="w-full flex justify-center items-center">
-                <button className="bg-[#A436F1] h-[50px] w-[161px] rounded-[6px] flex justify-center gap-5 items-center">
+                <button
+                  className="bg-[#A436F1] h-[50px] w-[161px] rounded-[6px] flex justify-center gap-5 items-center"
+                  onClick={() => document.getElementById("fileInput")?.click()}
+                >
                   <img
                     src="../../public/docs.png"
                     alt=""
@@ -64,13 +67,19 @@ const GizmoImportModal: React.FC<GizmoImportModalProps> = ({
                     Select File
                   </h2>
                 </button>
+                <input
+                  type="file"
+                  id="fileInput"
+                  className="hidden"
+                  onChange={(e) => console.log(e.target.files)}
+                />
               </div>
             </div>
             <div className="absolute top-[40%] left-0">
-                <img src="../../public/gizmoShade1.png" alt="" />
+              <img src="../../public/gizmoShade1.png" alt="" />
             </div>
             <div className="absolute top-[20%] right-0">
-                <img src="../../public/gizmoShade1.png" alt="" />
+              <img src="../../public/gizmoShade1.png" alt="" />
             </div>
           </div>
         </div>

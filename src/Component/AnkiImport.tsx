@@ -44,7 +44,7 @@ const AnkiImportModal: React.FC<AnkiImportModalProps> = ({
             </div>
           </div>
           <div className="relative w-[48%] h-full">
-            <div className="w-full border-[2px] border-dashed border-[#565868] bg-[#3D3F4A] h-full rounded-[6px] flex flex-col items-center justify-around">
+            <div className="w-full border-[2px] border-dashed border-[#565868] bg-[#3D3F4A] h-full rounded-[6px] flex flex-col items-center justify-between py-10">
               <div className="w-full">
                 <h2 className="text-[16px] font-bold text-center">
                   Import your Flashcards{" "}
@@ -54,7 +54,10 @@ const AnkiImportModal: React.FC<AnkiImportModalProps> = ({
                 </h2>
               </div>
               <div className="w-full flex justify-center items-center">
-                <button className="bg-[#A436F1] h-[50px] w-[161px] rounded-[6px] flex justify-center gap-5 items-center">
+                <button
+                  className="bg-[#A436F1] h-[50px] w-[161px] rounded-[6px] flex justify-center gap-5 items-center"
+                  onClick={() => document.getElementById("fileInput")?.click()}
+                >
                   <img
                     src="../../public/docs.png"
                     alt=""
@@ -64,6 +67,12 @@ const AnkiImportModal: React.FC<AnkiImportModalProps> = ({
                     Select File
                   </h2>
                 </button>
+                <input
+                  type="file"
+                  id="fileInput"
+                  className="hidden"
+                  onChange={(e) => console.log(e.target.files)}
+                />
               </div>
             </div>
             <div className="absolute top-[40%] left-0">
