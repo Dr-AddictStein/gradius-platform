@@ -54,6 +54,9 @@ const RecommendationModal: React.FC<RecommendationModalProps> = ({
                 <h2 className="text-white text-[16px] font-bold">
                   CAPM Tailored to You
                 </h2>
+                <h2 className="text-white text-[16px] font-bold">
+                  1/3
+                </h2>
               </div>
 
               <div className="px-4 pt-3 text-[12px] font-medium leading-6 h-[85%]">

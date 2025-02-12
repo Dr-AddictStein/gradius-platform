@@ -39,7 +39,7 @@ const FinalOverview = () => {
         </div>
       </div>
 
-      <div className="mt-4 xl:h-[38vh] flex xl:flex-row flex-col gap-4 w-full justify-between">
+      <div className="mt-4 xl:h-[40vh] flex xl:flex-row flex-col gap-4 w-full justify-between">
         {/* left */}
         <div className="flex flex-col justify-between h-full xl:w-[33%] w-full gap-2 xl:gap-0">
           <div className="flex gap-4 w-full">
@@ -73,8 +73,8 @@ const FinalOverview = () => {
             </div>
           </div>
           <div className="bg-[#565868] w-full border-1 h-[1px]"></div>
-          <div className="flex justify-center items-center h-[16vh] w-full bg-[#3D3F4A] rounded-[20px]">
-            <div className="w-1/2 flex flex-col items-center justify-center h-full ">
+          <div className="flex justify-between items-center h-[16vh] w-full bg-[#3D3F4A] rounded-[20px] px-10">
+            <div className=" flex flex-col items-center justify-center h-full ">
               <div className="">
                 <p className="text-[#C4C3D1] font-normal text-[12px]">
                   Progression
@@ -119,8 +119,8 @@ const FinalOverview = () => {
             </div>
           </div>
           <div className="bg-[#565868] w-full border-1 h-[1px]"></div>
-          <div className="flex justify-center items-center h-[16vh] w-full bg-[#3D3F4A] rounded-[20px]">
-            <div className="w-1/2 flex flex-col items-center justify-center h-full ">
+          <div className="flex justify-between px-10 items-center h-[16vh] w-full bg-[#3D3F4A] rounded-[20px]">
+            <div className=" flex flex-col items-center justify-center h-full ">
               <div className="">
                 <p className="text-[#C4C3D1] font-normal text-[12px]">
                   Progression
@@ -142,7 +142,7 @@ const FinalOverview = () => {
         </div>
       </div>
 
-      <div className="xl:h-[50vh] flex items-center w-full">
+      <div className="xl:h-[40vh] flex items-center w-full">
         <div className="h-[90%] flex xl:flex-row flex-col gap-6 w-full xl:mt-0 mt-5">
           <div className="xl:w-[50%] w-full px-4 flex justify-center items-center h-full bg-[#3D3F4A] rounded-[26px]">
             <KnowledgeGraph isMid={true} />
