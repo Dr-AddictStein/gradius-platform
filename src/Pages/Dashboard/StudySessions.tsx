@@ -3,6 +3,7 @@ import { Pencil, Eye, RotateCcw, X, Plus, ArrowUpDown } from "lucide-react";
 import KnowledgeGraph from "../../Component/KnowledgeGraph ";
 import ColorPickerModal from "../../Component/ColorPickerModal";
 import ImportModal from "../../Component/ImportModal";
+import { Link } from "react-router-dom";
 
 interface StudySession {
   title: string;
@@ -19,7 +20,7 @@ const StudySessions = () => {
       creationDate: "19/07/2024",
       correct: 6,
       wrong: 3,
-      topics: ["Dummy", "Dummy"],
+      topics: ["Dummy", "Dummy", "Dummy", "Dummy", "Dummy"],
     },
     // Repeated for visual purposes
     ...Array(7).fill({
@@ -39,9 +40,9 @@ const StudySessions = () => {
           <div className="h-2 w-2 rounded-full bg-red-500"></div>
           <h1 className="text-xl font-semibold">Physics</h1>
         </div>
-        <button className="p-2">
+        <Link to={'/dashboard/perSubject'} className="p-2">
           <X className="w-5 h-5" />
-        </button>
+        </Link>
       </div>
       <div className="w-full bg-slate-700 h-[1px]"></div>
 
@@ -55,7 +56,7 @@ const StudySessions = () => {
 
       <div className="border border-gray-400 rounded-lg overflow-hidden">
         <div className="grid grid-cols-5 text-sm text-gray-400 px-4 py-2 border-b border-gray-400">
-          <div className="col-span-1 flex items-center text-[14px] font-medium text-white">
+          <div className="col-span-1 flex items-center lg:text-[14px] text-[10px] font-medium text-white">
             Title
             <svg
               className="w-4 h-4 ml-1"
@@ -71,19 +72,19 @@ const StudySessions = () => {
               />
             </svg>
           </div>
-          <div className="col-span-1 flex items-center gap-1 text-[14px] font-medium text-white justify-center">
+          <div className="col-span-1 flex items-center gap-1 lg:text-[14px] text-[10px] font-medium text-white justify-center">
             Creation Date
             <ArrowUpDown size={16} />
           </div>
-          <div className="col-span-1 flex justify-center items-center gap-1 text-[14px] font-medium text-white">
+          <div className="col-span-1 flex justify-center items-center gap-1 lg:text-[14px] text-[10px] font-medium text-white">
             # Correct/Wrong
             <ArrowUpDown size={16} />
           </div>
-          <div className="col-span-1 flex items-center justify-center gap-1 text-[14px] font-medium text-white">
+          <div className="col-span-1 flex items-center justify-center gap-1 lg:text-[14px] text-[10px] font-medium text-white">
             Topics
             <ArrowUpDown size={16} />
           </div>
-          <div className="col-span-1 flex items-center justify-center text-[14px] font-medium text-white">
+          <div className="col-span-1 flex items-center justify-center lg:text-[14px] text-[10px] font-medium text-white">
             Actions
           </div>
         </div>
@@ -93,15 +94,15 @@ const StudySessions = () => {
             key={index}
             className={`grid grid-cols-5 px-4 py-3 items-center border-b border-gray-400 hover:bg-gray-800`}
           >
-            <div className="col-span-1 text-[14px] font-normal">{session.title}</div>
-            <div className="col-span-1 text-[14px] font-normal justify-center flex">{session.creationDate}</div>
+            <div className="col-span-1 lg:text-[14px] text-[10px] font-normal">{session.title}</div>
+            <div className="col-span-1 lg:text-[14px] text-[10px] font-normal justify-center flex">{session.creationDate}</div>
             <div className="col-span-1 flex items-center gap-2 text-[14px] font-normal justify-center">
               <span className="text-green-500">↑</span>
               {session.correct}
               <span className="text-red-500">↓</span>
               {session.wrong}
             </div>
-            <div className="col-span-1 flex gap-2 flex items-center justify-center">
+            <div className="col-span-1 flex gap-2 lg:flex-row flex-col items-center justify-center flex-wrap">
               {session.topics.map((topic, idx) => (
                 <span
                   key={idx}
@@ -111,11 +112,11 @@ const StudySessions = () => {
                 </span>
               ))}
             </div>
-            <div className="col-span-1 flex gap-2">
-              <button className="flex items-center gap-1 bg-[#565868] hover:bg-gray-600 px-3 py-1.5 rounded-xl text-[14px] font-normal">
+            <div className="col-span-1 flex lg:flex-row flex-col gap-2">
+              <button className="flex items-center gap-1 bg-[#565868] hover:bg-gray-600 px-3 py-1.5 rounded-xl lg:text-[14px] text-[10px] font-normal">
                 <Eye className="w-4 h-4" /> Review
               </button>
-              <button className="flex items-center gap-1 bg-[#565868] hover:bg-gray-600 px-3 py-1.5 rounded-xl text-[14px] font-normal">
+              <button className="flex items-center gap-1 bg-[#565868] hover:bg-gray-600 px-3 py-1.5 rounded-xl lg:text-[14px] text-[10px] font-normal">
                 <RotateCcw className="w-4 h-4" /> Retake
               </button>
             </div>

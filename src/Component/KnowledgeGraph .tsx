@@ -59,7 +59,7 @@ const KnowledgeGraph = ({ isSmall, isMid }) => {
     <div className="w-[100%] h-full rounded-xl flex  flex-col justify-center ">
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-6">
-          <h2 className="text-white text-[16px] font-bold">
+          <h2 className="text-white lg:text-[16px] text-[10px]  lg:font-bold font-semibold">
             Overall Knowledge
           </h2>
         </div>
@@ -67,17 +67,17 @@ const KnowledgeGraph = ({ isSmall, isMid }) => {
           {!isSmall && (
             <>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-                <span className="text-gray-300 text-[10px] font-normal">
+                <div className="w-3 lg:h-3 h-2 rounded-full bg-purple-500"></div>
+                <span className="text-gray-300 lg:text-[10px] text-[8px] font-normal">
                   Knowledge score
                 </span>
               </div>
               <div className="flex flex-col items-center ">
                 <div className="flex items-center gap-1 text-sm text-gray-400">
-                  <span className="text-white text-[10px] font-bold">1.3%</span>
+                  <span className="text-white lg:text-[10px] text-[8px] font-bold">1.3%</span>
                   <img src={growthIcon} alt="" />
                 </div>
-                <span className="text-[10px] font-normal text-[#ACADB6]">
+                <span className="lg:text-[10px] text-[8px] font-normal text-[#ACADB6]">
                   VS LAST WEEK
                 </span>
               </div>
@@ -106,7 +106,7 @@ const KnowledgeGraph = ({ isSmall, isMid }) => {
 
       <div
         className={`${
-          isSmall ? "h-[132px]" : `${isMid ? "h-52" : "h-44"}`
+          isSmall ? "h-[132px]" : `${isMid ? "h-52" : "lg:h-44 h-[166px]"}`
         } w-full`}
       >
         <ResponsiveContainer width="100%" height="100%">

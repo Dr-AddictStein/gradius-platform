@@ -56,7 +56,7 @@ const Sidebar = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 w-[30%] xl:w-[16%] h-screen py-4 2xl:pl-6 pl-2 flex flex-col justify-between ">
+    <div className="fixed top-0 w-[24%] xl:w-[16%] h-screen py-4 2xl:pl-6 pl-2 flex flex-col justify-between ">
       <div className="flex flex-col justify-between items-center h-full w-full">
         {/* Logo */}
         <div className="w-full flex flex-col items-center gap-6">
@@ -128,7 +128,7 @@ const Sidebar = () => {
                   {/* New Subject Button */}
                   <div
                     onClick={() => setIsNewSubjectModalOpen(true)}
-                    className="hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer  text-gray-400"
+                    className="text-[12px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] px-10 border border-dashed border-gray-700 rounded-lg flex items-center gap-2 cursor-pointer  text-gray-400"
                   >
                     <Plus size={16} />
                     <span>New Subject</span>
@@ -169,18 +169,18 @@ const Sidebar = () => {
               <img
                 src={user.avatar}
                 alt="User Avatar"
-                className="rounded-full "
+                className="rounded-full lg:h-[44px] h-[36px] w-[44px]"
               />
             </div>
             <div className="flex flex-col items-start justify-center">
-              <div className="text-[14px] font-semibold">{user.name}</div>
-              <div className="text-[#828597] font-medium text-[12px]">
+              <div className="xl:text-[12px] lg:text-[10px] text-[10px] font-semibold">{user.name}</div>
+              <div className="text-[#828597] font-medium xl:text-[10px] lg:text-[8px] text-[8px]">
                 {user.email}
               </div>
             </div>
           </div>
           {/* Upgrade Button */}
-          <button onClick={() => setIsUpgradeModalOpen(true)} className=" hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-[198px] h-[40px] py-2 bg-[#A436F1] rounded-lg flex items-center justify-center gap-2 text-white">
+          <button onClick={() => setIsUpgradeModalOpen(true)} className=" hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-[90%] h-[40px] py-2 bg-[#A436F1] rounded-lg flex items-center justify-center gap-2 text-white">
             <img src={upgradeIcon} alt="Upgrade" className="w-3 h-3" />
             <span className="text-[16px] font-normal">Upgrade</span>
           </button>
