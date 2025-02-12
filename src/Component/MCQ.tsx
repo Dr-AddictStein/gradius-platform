@@ -13,8 +13,12 @@ const MCQ = () => {
   ]);
   return (
     <div className="h-full w-full flex flex-col justify-center items-center">
-      <div className="w-full h-full flex flex-col justify-center items-center gap-6">
-        <div className="w-full h-[48vh] overflow-y-auto scrollbar-hide">
+      <div
+        className={`w-full h-full flex flex-col ${
+          chosenAnswer !== "" ? "justify-around" : "justify-center"
+        } items-center gap-6`}
+      >
+        <div className="w-full max-h-[48vh] overflow-y-auto scrollbar-hide">
           <div className="w-full h-full flex flex-col justify-center items-center gap-4">
             <p className="font-bold text-[16px]">
               What are the assumptions made by the CAPM?
@@ -70,18 +74,26 @@ const MCQ = () => {
               ))}
           </div>
         </div>
-        {chosenAnswer !== "" && <div className="font-semibold text-[20px]">
-          {chosenAnswer !== correctAnswer && (
-            <p>No Problem!</p>
-          )}
-          {chosenAnswer !== "" && chosenAnswer === correctAnswer && (
-            <div className=" flex flex-col justify-center items-center">
-              <img src="../../public/glowUp.PNG" alt="" />
-              <p>Excelent!</p>
-              <img src="../../public/glowDown.PNG" alt="" />
-            </div>
-          )}
-        </div>}
+        {chosenAnswer !== "" && (
+          <div className="font-semibold text-[20px]">
+            {chosenAnswer !== correctAnswer && <p>No Problem!</p>}
+            {chosenAnswer !== "" && chosenAnswer === correctAnswer && (
+              <div className=" flex flex-col justify-center items-center gap-2">
+                <div className="flex items-center justify-center gap-2">
+                  <div className="h-[12px] w-0 bg-[#74ED8F] border-[2px] border-[#74ED8F] rounded-lg -rotate-[25deg]"></div>
+                  <div className="h-[14px] w-0 bg-[#74ED8F] border-[2px] border-[#74ED8F] rounded-lg"></div>
+                  <div className="h-[12px] w-0 bg-[#74ED8F] border-[2px] border-[#74ED8F] rounded-lg rotate-[25deg]"></div>
+                </div>
+                <p>Excelent!</p>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="h-[12px] w-0 bg-[#74ED8F] border-[2px] border-[#74ED8F] rounded-lg rotate-[25deg]"></div>
+                  <div className="h-[14px] w-0 bg-[#74ED8F] border-[2px] border-[#74ED8F] rounded-lg"></div>
+                  <div className="h-[12px] w-0 bg-[#74ED8F] border-[2px] border-[#74ED8F] rounded-lg -rotate-[25deg]"></div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
         {chosenAnswer !== "" && (
           <div className="w-[90%]">
             <button className="  w-full h-[41px] border-[1px] border-[#BF7DED] rounded-[6px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300">

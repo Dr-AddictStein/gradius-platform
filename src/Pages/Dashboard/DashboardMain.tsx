@@ -7,7 +7,10 @@ const DashboardMain = () => {
   console.log("9PP", param);
   return (
     <>
-      {param.pathname.startsWith("/dashboard/performanceAnalysis") || param.pathname.startsWith("/dashboard/studySessions") ? (
+      {param.pathname.startsWith("/dashboard/performanceAnalysis") ||
+      param.pathname.startsWith("/dashboard/studySessions") ||
+      param.pathname.startsWith("/dashboard/studySession") ||
+      param.pathname.startsWith("/dashboard/finalOverview") ? (
         <div className="w-full flex justify-between">
           <div className="xl:w-[20%] w-[10%] xl:block hidden">
             <Sidebar />

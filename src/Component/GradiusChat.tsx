@@ -11,6 +11,18 @@ const GradiusChat = () => {
       setMessage("");
     }
   };
+
+  const [messages, setMessages] = useState([
+    {
+      text: "Hey there, Gradius here! Go ahead and ask me anything. I will give you answers tailored to your specific needs!",
+      sender: "bot",
+    },
+    {
+      text: "Hey there, Gradius here! Go ahead and ask me anything. I will give you answers tailored to your specific needs!",
+      sender: "user",
+    },
+  ]);
+
   return (
     // total 83
     <div className="p-3 w-full h-full ">
@@ -34,206 +46,67 @@ const GradiusChat = () => {
       <div className="w-full h-[65vh]  p-3 flex flex-col justify-between items-center ">
         {/* message area */}
         <div className="w-full h-[45vh]  overflow-y-auto scrollbar-hide ">
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
+          {messages.map((mssg) => (
+            <div
+              className={`flex w-full ${
+                mssg.sender === "bot" ? "justify-start" : "justify-end"
+              }  mb-2`}
+            >
+              <div
+                className={`max-w-[70%] border-2 ${
+                  mssg.sender === "bot" ? "border-[#BF7DED]" : "border-white"
+                }  p-3 rounded-[20px]`}
+              >
+                <p className="lg:font-semibold font-medium lg:text-[12px] text-[10px]">
+                  {mssg.text}
+                </p>
+              </div>
             </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from sender */}
-          <div className="flex w-full justify-start mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
-          {/* message from user */}
-          <div className="flex w-full justify-end mb-2">
-            <div className="w-4/5 border-2 border-[#BF7DED] p-3 rounded-[20px]">
-              <p className="font-semibold text-[12px]">
-                Hey there, Gradius here! Go ahead and ask me anything. I will
-                give you answers tailored to your specific needs!
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* control area */}
         <div className="h-[12vh] w-full flex flex-col justify-between items-center ">
           <div className="flex justify-between items-center w-full">
-            <div className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center">
-              <p className="2xl:text-[16px] text-[12px] font-semibold text-center">
+            <button
+              onClick={() =>
+                setMessages([
+                  ...messages,
+                  { text: "Rephrase the question", sender: "user" },
+                ])
+              }
+              className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center"
+            >
+              <p className="2xl:text-[16px] lg:text-[12px] text-[10px] font-semibold text-center">
                 Rephrase the question
               </p>
-            </div>
-            <div className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center">
-              <p className="2xl:text-[16px] text-[12px] font-semibold text-center">
+            </button>
+            <button
+              onClick={() =>
+                setMessages([
+                  ...messages,
+                  { text: "Ask for a tip", sender: "user" },
+                ])
+              }
+              className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center"
+            >
+              <p className="2xl:text-[16px] lg:text-[12px] text-[10px] font-semibold text-center">
                 Ask for a tip
               </p>
-            </div>
-            <div className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center">
-              <p className="2xl:text-[16px] text-[12px] font-semibold text-center">
+            </button>
+            <button
+              onClick={() =>
+                setMessages([
+                  ...messages,
+                  { text: "I need an example", sender: "user" },
+                ])
+              }
+              className="border-[2px] border-[#BF7DED] h-[6vh] w-[31%] rounded-[6px] flex items-center justify-center"
+            >
+              <p className="2xl:text-[16px] lg:text-[12px] text-[10px] font-semibold text-center">
                 I need an example
               </p>
-            </div>
+            </button>
           </div>
           <form onSubmit={handleSubmit} className="w-full">
             <div className="relative flex items-center">
@@ -242,11 +115,11 @@ const GradiusChat = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Ask me anything..."
-                className="w-full px-4 h-[5vh] text-white bg-transparent border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent pr-12"
+                className="w-full px-4 h-[5vh] text-white bg-transparent border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent pr-12 lg:text-[16px] text-[10px]"
               />
               <button
                 type="submit"
-                className="absolute right-2 p-2 text-purple-500 hover:text-purple-400 transition-colors"
+                className="absolute right-2 p-2 text-white hover:text-purple-400 transition-colors"
                 disabled={!message.trim()}
               >
                 <SendHorizontal size={20} />

@@ -5,20 +5,23 @@ import CircularProgress from "../../Component/CircularProgressProps";
 import KnowledgeGraph from "../../Component/KnowledgeGraph ";
 import PassRateComparison from "../../Component/PassRateComparison";
 import RecommendationModal from "../../Component/RecommendationModal";
+import { useNavigate } from "react-router-dom";
 
 const FinalOverview = () => {
   const [isRecommendationModalOpen, setIsRecommendationModalOpen] =
     useState(false);
+
+    const navigate=useNavigate();
   return (
     <div className="xl:h-[95vh] h-full px-4 flex flex-col justify-between">
       {/* Header */}
       <div className="relative pb-14 pl-10 pr-4 border-b border-[#565868]">
         {/* Centered heading */}
-        <h2 className="absolute xl:left-1/2 left-[24%] transform -translate-x-1/2 text-white text-[24px] font-semibold">
+        <h2 className="absolute xl:left-1/2 left-[16%] transform -translate-x-1/2 text-white text-[24px] font-semibold">
           Here’s How You Did
         </h2>
         {/* Right-aligned close button */}
-        <div className="absolute right-4 -top-1">
+        <div className="absolute right-4 top-0">
           <div className="flex gap-10">
             <button className="flex gap-4 items-center justify-center w-[138px] h-[40px] bg-[#A436F1] rounded-[6px]">
               {" "}
@@ -29,7 +32,7 @@ const FinalOverview = () => {
               />{" "}
               Retake
             </button>
-            <button className=" text-gray-400 hover:text-gray-200">
+            <button onClick={()=>navigate('/dashboard/perSubject')} className=" text-gray-400 hover:text-gray-200">
               <X size={20} />
             </button>
           </div>

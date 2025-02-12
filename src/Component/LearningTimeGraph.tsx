@@ -29,7 +29,11 @@ const LearningTimeGraph: React.FC = ({ isSmall }) => {
   return (
     <div className=" rounded-xl w-full ">
       {/* Title */}
-      <div className={`flex items-center justify-start gap-4 text-white font-semibold ${isSmall?"mb-1":"mb-3"}`}>
+      <div
+        className={`flex items-center justify-start gap-4 text-white font-semibold ${
+          isSmall ? "mb-1" : "mb-3"
+        }`}
+      >
         <span className="text-white text-[16px] font-bold">
           Daily time spent learning
         </span>
@@ -64,7 +68,19 @@ const LearningTimeGraph: React.FC = ({ isSmall }) => {
             />
 
             {/* Tooltip */}
-            <Tooltip cursor={{ fill: "transparent" }} />
+            <Tooltip
+              cursor={{ fill: "transparent" }}
+              contentStyle={{
+                backgroundColor: "white",
+                borderRadius: "6px",
+                padding: "4px 8px",
+                color: "white",
+                fontSize: "12px",
+                border: "none",
+              }}
+              wrapperStyle={{ outline: "none" }}
+              labelStyle={{ display: "none" }}
+            />
 
             {/* Bars */}
             <Bar

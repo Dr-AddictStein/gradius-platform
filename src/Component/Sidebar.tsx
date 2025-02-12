@@ -115,7 +115,7 @@ const Sidebar = () => {
               </div>
               <ChevronRight
                 size={16}
-                className={`text-gray-400 transition-transform duration-300 ${
+                className={`text-gray-400 transition-transform duration-300 lg:block hidden ${
                   isSubjectsOpen ? "rotate-90" : ""
                 }`}
               />

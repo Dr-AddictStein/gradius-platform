@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   ReferenceDot,
   ReferenceArea,
+  Tooltip,
 } from "recharts";
 import growthIcon from "../../public/Growth Indicator.png";
 
@@ -155,6 +156,20 @@ const KnowledgeGraph = ({ isSmall, isMid }) => {
                 fill="url(#highlightArea)"
               />
             )} */}
+            {/* Tooltip */}
+            <Tooltip
+              cursor={{ fill: "transparent" }}
+              contentStyle={{
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                borderRadius: "6px",
+                padding: "4px 8px",
+                color: "white",
+                fontSize: "12px",
+                border: "none",
+              }}
+              labelStyle={{ fontWeight: "bold", color: "#A855F7" }}
+              itemStyle={{ color: "white" }}
+            />
             <Area
               type="linear"
               dataKey="score"

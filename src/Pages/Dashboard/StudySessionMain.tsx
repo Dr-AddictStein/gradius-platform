@@ -7,22 +7,22 @@ import MCQ from "../../Component/MCQ";
 const StudySessionMain = () => {
   const [flashcard, setFlashcard] = useState(true);
   return (
-    <div className="h-[93vh] px-4 py-2">
+    <div className="h-[100vh] px-4 py-2">
       {/* header */}
       <div className="w-full  h-[8vh] border-b-[1px] border-[#565868] flex flex-col justify-center items-center">
         <div className="flex w-full justify-between items-center h-full">
           <div className="">
-            <p className="text-[24px] font-semibold">Name of Study Session</p>
+            <p className="lg:text-[24px] text-[16px] font-semibold">Name of Study Session</p>
           </div>
           <div className="">
-            <p className="text-[16px] font-bold text-center">
+            <p className="lg:text-[16px] text-[10px] font-bold text-center">
               Flashcards and Quizzes left: 12
             </p>
           </div>
           <div className="">
-            <button className="w-[250px] h-[41px] rounded-[6px] bg-[#3D3F4A] flex items-center justify-center gap-2">
+            <button className="lg:w-[250px] w-[180px] h-[41px] rounded-[6px] bg-[#3D3F4A] flex items-center justify-center gap-2">
               <StopCircle size={18} />
-              <p className="text-[16px] font-bold">Close the Study Session</p>
+              <p className="lg:text-[16px] text-[10px] font-bold">Close the Study Session</p>
             </button>
           </div>
         </div>
