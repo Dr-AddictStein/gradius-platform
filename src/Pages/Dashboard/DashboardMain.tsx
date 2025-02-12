@@ -4,7 +4,6 @@ import Sidebar from "../../Component/Sidebar";
 
 const DashboardMain = () => {
   const param = useLocation();
-  console.log("9PP", param);
   return (
     <>
       {param.pathname.startsWith("/dashboard/performanceAnalysis") ||
