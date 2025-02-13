@@ -25,6 +25,8 @@ const TutorialPerSubject = () => {
 
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(true);
   const [isExcellentModalOpen, setIsExcellentModalOpen] = useState(false);
+  
+  const [isNewStudyArrow, setIsNewStudyArrow] = useState(false);
 
   setTimeout(() => {
     setIsWelcomeModalOpen(false);
@@ -38,13 +40,25 @@ const TutorialPerSubject = () => {
           <h1 className="text-[24px] font-bold mr-4">{subjectName}</h1>
           <Pencil size={20} />
         </div>
-        <button
-          onClick={() => setIsNewStudyModalOpen(true)}
-          className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[213px] flex justify-center items-center text-[16px] font-bold"
-        >
-          <Plus />
-          New Study Sessions
-        </button>
+        <div className="flex gap-10">
+          {isNewStudyArrow && <div className=" flex justify-center items-center">
+            <div className=" w-[300px]">
+              <p className="font-bold text-[16px] text-center">
+                Create a new Study Session
+              </p>
+            </div>
+            <div className="rotate-[175deg] w-fit">
+              <img src="../../../public/TutArrow.png" alt="" />
+            </div>
+          </div>}
+          <button
+            onClick={() => setIsNewStudyModalOpen(true)}
+            className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[213px] flex justify-center items-center text-[16px] font-bold"
+          >
+            <Plus />
+            New Study Sessions
+          </button>
+        </div>
       </div>
       <div className="w-full bg-slate-700 h-[1px]"></div>
 
@@ -183,6 +197,7 @@ const TutorialPerSubject = () => {
           setIsExcellentModalOpen(true);
           setTimeout(() => {
             setIsExcellentModalOpen(false);
+            setIsNewStudyArrow(true);
           }, 3000);
         }}
       />

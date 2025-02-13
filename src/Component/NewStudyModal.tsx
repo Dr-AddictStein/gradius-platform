@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import UpgradeModal from "./UpgradeModal";
 import subjectIcon from "../../public/subjectIcon.png";
+import { useNavigate } from "react-router-dom";
 
 interface NewStudyModalProps {
   isOpen: boolean;
@@ -110,6 +111,9 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
 
   const [subjectList, setSubjectList] = useState(subjects);
   const [subjectListChosen, setSubjectListChosen] = useState([]);
+
+
+  const navigate=useNavigate();
 
   return createPortal(
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
@@ -524,7 +528,7 @@ const NewStudyModal: React.FC<NewStudyModalProps> = ({ isOpen, onClose }) => {
           {selectedSession &&
             subjectListChosen.length !== 0 &&
             selectedFocus && (
-              <button className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 text-white px-2 py-3 rounded-lg w-[246px] flex justify-center items-center text-[15px] font-bold">
+              <button onClick={()=>navigate("/dashboard/studySession")} className="bg-[#A436F1] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 text-white px-2 py-3 rounded-lg w-[246px] flex justify-center items-center text-[15px] font-bold">
                 Start Studying
               </button>
             )}
