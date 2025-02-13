@@ -127,9 +127,9 @@ const PersonalQuestion: React.FC<PersonalQuestionProps> = ({
 
   return createPortal(
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="w-[70vw] lg:h-[88vh] h-[90vh] bg-[#343540] rounded-lg">
+      <div className="w-[70vw] lg:h-[78vh] h-[90vh] bg-[#343540] rounded-lg">
         {/* Header */}
-        <div className="relative pt-4 pb-10 pl-10 pr-4 border-b border-gray-800">
+        <div className="relative pt-4 pb-10 pl-10 pr-4 border-b border-[#565868]">
           {/* Centered heading */}
           <h2 className="absolute left-1/2 transform -translate-x-1/2 text-white text-[16px] font-bold">
             Help Gradius Learn About You!
@@ -144,7 +144,7 @@ const PersonalQuestion: React.FC<PersonalQuestionProps> = ({
         </div>
         {/* Content */}
         {step < 3 && (
-          <div className="flex flex-col justify-between items-center px-16 py-6 h-[90%]">
+          <div className="flex flex-col justify-around items-center px-16 py-6 h-[90%]">
             <div className="text-[16px] font-medium text-center w-full h-[10%]">
               Your answers drive the science behind{" "}
               <span className="text-[#A436F1]">Gradius</span>. By sharing your
@@ -156,9 +156,9 @@ const PersonalQuestion: React.FC<PersonalQuestionProps> = ({
               . Optional, but incredibly valuable!
             </div>
 
-            <div className="w-full h-[50%] ">
+            <div className="w-full h-[60%] ">
               {step === 1 && (
-                <div className="w-full flex flex-col justify-between h-full">
+                <div className="w-full flex flex-col justify-between h-full gap-3">
                   <p className="text-[16px] fotn-bold">
                     What is your gender identity?
                   </p>
@@ -322,7 +322,7 @@ const PersonalQuestion: React.FC<PersonalQuestionProps> = ({
                     alt=""
                     className="w-[4px] h-[8px]"
                   />
-                  <p className="text-[12px] font-medium">Previous</p>
+                  <p className="text-[16px] font-medium">Previous</p>
                 </button>
                 <button
                   className="flex items-center gap-3"
@@ -330,7 +330,7 @@ const PersonalQuestion: React.FC<PersonalQuestionProps> = ({
                     setStep(step + 1);
                   }}
                 >
-                  <p className="text-[12px] font-medium">Next</p>
+                  <p className="text-[16px] font-medium">Next</p>
                   <img
                     src="../../public/next.png"
                     alt=""
@@ -343,8 +343,8 @@ const PersonalQuestion: React.FC<PersonalQuestionProps> = ({
         )}
 
         {step === 3 && (
-          <div className="flex flex-col justify-center items-center px-16 py-6 h-[90%] gap-16">
-            <div className="text-[16px] font-medium text-center w-full h-[10%]">
+          <div className="flex flex-col justify-center items-center px-16 py-6 h-[90%] gap-32">
+            <div className="text-[20px] font-medium text-center  h-[10%] w-[90%]">
               We really appreciate your input! You’re helping Gradius get even
               better at understanding and supporting your{" "}
               <span className="text-[#A436F1]">unique learning style</span>

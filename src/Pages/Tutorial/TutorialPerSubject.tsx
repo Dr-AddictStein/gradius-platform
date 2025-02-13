@@ -25,7 +25,7 @@ const TutorialPerSubject = () => {
 
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(true);
   const [isExcellentModalOpen, setIsExcellentModalOpen] = useState(false);
-  
+
   const [isNewStudyArrow, setIsNewStudyArrow] = useState(false);
 
   setTimeout(() => {
@@ -33,7 +33,7 @@ const TutorialPerSubject = () => {
   }, 4000);
 
   return (
-    <div className=" text-white p-6 rounded-lg min-h-fit">
+    <div className=" text-white px-6 py-2 rounded-lg  min-h-[90vh]">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-red-500"></div>
@@ -41,16 +41,20 @@ const TutorialPerSubject = () => {
           <Pencil size={20} />
         </div>
         <div className="flex gap-10">
-          {isNewStudyArrow && <div className=" flex justify-center items-center">
-            <div className=" w-[300px]">
-              <p className="font-bold text-[16px] text-center">
-                Create a new Study Session
-              </p>
-            </div>
-            <div className="rotate-[175deg] w-fit">
-              <img src="../../../public/TutArrow.png" alt="" />
-            </div>
-          </div>}
+          <div className="lg:block hidden">
+            {isNewStudyArrow && (
+              <div className=" flex justify-center items-center">
+                <div className=" w-[300px]">
+                  <p className="font-bold text-[16px] text-center">
+                    Create a new Study Session
+                  </p>
+                </div>
+                <div className="rotate-[175deg] w-fit">
+                  <img src="../../../public/TutArrow.png" alt="" />
+                </div>
+              </div>
+            )}
+          </div>
           <button
             onClick={() => setIsNewStudyModalOpen(true)}
             className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[213px] flex justify-center items-center text-[16px] font-bold"
@@ -64,7 +68,7 @@ const TutorialPerSubject = () => {
 
       <div className="py-6 w-full min-h-fit flex xl:flex-row flex-col justify-between gap-2">
         <div className="xl:w-1/2 w-full">
-          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[320px] mb-4">
+          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[346px] mb-4">
             <div className="flex justify-between w-full">
               <div className="flex gap-3 mb-3">
                 <img className="h-[24px] w-[24px]" src={fileDown} alt="" />
@@ -139,7 +143,7 @@ const TutorialPerSubject = () => {
 
           <div className="w-full bg-slate-500 h-[1px] mb-4"></div>
 
-          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[320px] mb-4">
+          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[346px] ">
             <div className="flex justify-between w-full">
               <div className="flex gap-3 mb-3">
                 <History />
@@ -161,7 +165,7 @@ const TutorialPerSubject = () => {
           </div>
         </div>
         <div className="h-full bg-slate-700 w-[1px]"></div>
-        <div className="xl:w-1/2 w-full bg-[#3D3F4A] h-fit rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
+        <div className="xl:w-1/2 w-full bg-[#3D3F4A] 2xl:h-[79vh] min-h-[77vh] rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
           <div className="flex justify-between w-full">
             <div className="flex gap-3">
               <img className="h-[24px] w-[24px]" src={growthIcon} alt="" />

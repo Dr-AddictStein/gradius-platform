@@ -40,10 +40,10 @@ const DashboardHome = () => {
     useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isPQModalOpen, setIsPQModalOpen] = useState(false);
-  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(true);
 
   return (
-    <div className="container mx-auto p-8 lg:h-[100vh] h-[95vh]">
+    <div className="container mx-auto p-8 lg:h-[95vh] h-[95vh]">
       {/* Header Section */}
       <div className="mb-6 w-full min-h-[5%] ">
         <div className="flex gap-2 mb-3 items-center">

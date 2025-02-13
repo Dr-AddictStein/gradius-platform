@@ -19,7 +19,7 @@ const DashboardPerSubject = () => {
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [isNewStudyModalOpen, setIsNewStudyModalOpen] = useState(false);
   return (
-    <div className=" text-white p-6 rounded-lg min-h-[90vh]">
+    <div className=" text-white px-6 py-[20px] rounded-lg min-h-[90vh]">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-red-500"></div>
@@ -38,7 +38,7 @@ const DashboardPerSubject = () => {
 
       <div className="pt-6 w-full h-full flex xl:flex-row flex-col justify-between gap-2 ">
         <div className="xl:w-1/2 w-full xl:h-full">
-          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[320px] mb-4">
+          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[346px] mb-4">
             <div className="flex justify-between w-full">
               <div className="flex gap-3 mb-3">
                 <img className="h-[24px] w-[24px]" src={fileDown} alt="" />
@@ -113,7 +113,7 @@ const DashboardPerSubject = () => {
 
           <div className="w-full bg-slate-500 h-[1px] mb-4"></div>
 
-          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[360px] mb-4">
+          <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[346px] mb-2">
             <div className="flex justify-between w-full">
               <div className="flex gap-3 mb-3">
                 <History />
@@ -135,7 +135,7 @@ const DashboardPerSubject = () => {
           </div>
         </div>
         <div className="h-full bg-slate-700 w-[1px]"></div>
-        <div className="xl:w-1/2 w-full bg-[#3D3F4A] 2xl:h-[77vh] min-h-[77vh] rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
+        <div className="xl:w-1/2 w-full bg-[#3D3F4A] 2xl:h-[79vh] min-h-[77vh] rounded-[6px] px-8 py-4 border-[1px] border-slate-600 flex flex-col gap-2">
           <div className="flex justify-between w-full">
             <div className="flex gap-3">
               <img className="h-[24px] w-[24px]" src={growthIcon} alt="" />

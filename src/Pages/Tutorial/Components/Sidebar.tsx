@@ -99,13 +99,13 @@ const Sidebar = () => {
               {/* Subjects Button */}
 
               {showFirstArrow && !isSubjectsOpen && (
-                <div className="absolute top-[30%] 2xl:-right-[320%] -right-[430%]">
+                <div className="absolute top-[30%] 2xl:-right-[320%] lg:-right-[430%] -right-[500%] ">
                   <div className=" flex">
                     <div className="">
                       <img src="../../../../public/TutArrow.png" alt="" />
                     </div>
                     <div className=" w-[800px]">
-                      <p className="font-bold text-[24px]">
+                      <p className="font-bold lg:text-[24px] text-sm">
                         First of all, let’s open your subject list and create a
                         new one
                       </p>
@@ -170,7 +170,7 @@ const Sidebar = () => {
                             <img src="../../../../public/TutArrow.png" alt="" />
                           </div>
                           <div className=" w-[300px]">
-                            <p className="font-bold text-[24px] text-center">
+                            <p className="font-bold lg:text-[24px] text-sm text-center">
                               Create a new one
                             </p>
                           </div>
@@ -184,7 +184,7 @@ const Sidebar = () => {
                     {subjects.map((subject) => (
                       <div
                         key={subject.id}
-                        className={` hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
+                        className={`lg:text-[18px] text-[14px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
                           activeSubject === subject.name ? "bg-gray-700" : ""
                         }`}
                         onClick={() => {
