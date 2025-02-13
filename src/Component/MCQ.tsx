@@ -18,9 +18,9 @@ const MCQ = () => {
           chosenAnswer !== "" ? "justify-around" : "justify-center"
         } items-center gap-6`}
       >
-        <div className="w-full max-h-[48vh] overflow-y-auto scrollbar-hide">
-          <div className="w-full h-full flex flex-col justify-center items-center gap-4">
-            <p className="font-bold text-[16px]">
+        <div className="w-full max-h-[60vh] overflow-y-auto scrollbar-hide">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-12">
+            <p className="font-bold lg:text-[16px] text-[12px]">
               What are the assumptions made by the CAPM?
             </p>
             {chosenAnswer === "" &&
@@ -30,7 +30,7 @@ const MCQ = () => {
                   onClick={() => setChosenAnswer(op)}
                   className=" w-[90%] h-[41px] border-[1px] border-[#BF7DED] rounded-[6px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300"
                 >
-                  <p className="font-bold text-[16px] text-left pl-[8%]">
+                  <p className="font-bold lg:text-[16px] text-[12px] text-left pl-[8%]">
                     {index + 1 + ". " + op}
                   </p>
                 </button>
@@ -57,7 +57,7 @@ const MCQ = () => {
                 }   
                 w-[90%] h-[41px] border-[1px]  rounded-[6px]  transition-shadow duration-300 flex items-center justify-between`}
                 >
-                  <p className="font-bold text-[16px] text-left pl-[8%]">
+                  <p className="font-bold lg:text-[16px] text-[12px] text-left pl-[8%]">
                     {index + 1 + ". " + op}
                   </p>
                   {correctAnswer !== op && (

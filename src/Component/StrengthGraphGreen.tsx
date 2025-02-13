@@ -10,7 +10,7 @@ const StrengthGraphGreen: React.FC = ({isShort}) => {
   ];
 
   return (
-    <div className=" rounded-xl px-10 w-full">
+    <div className={` rounded-xl ${isShort?"px-10":"px-3"}  w-full`}>
       {!isShort && <div className="space-y-2">
         {strengths.map((strength, index) => (
           <div
