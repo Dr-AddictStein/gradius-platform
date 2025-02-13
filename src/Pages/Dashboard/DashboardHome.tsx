@@ -40,7 +40,7 @@ const DashboardHome = () => {
     useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isPQModalOpen, setIsPQModalOpen] = useState(false);
-  const [isErrorModalOpen, setIsErrorModalOpen] = useState(true);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
   return (
     <div className="container mx-auto p-8 lg:h-[95vh] h-[95vh]">
