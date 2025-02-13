@@ -1,6 +1,6 @@
 import { Expand, History, Pencil, Plus, PlusIcon } from "lucide-react";
 import React, { useState } from "react";
-import KnowledgeGraph from "../../Component/KnowledgeGraph "
+import KnowledgeGraph from "../../Component/KnowledgeGraph ";
 import LearningTimeGraph from "../../Component/LearningTimeGraph";
 import CircularProgress from "../../Component/CircularProgressProps";
 import StrengthGraphGreen from "../../Component/StrengthGraphGreen";
@@ -14,12 +14,22 @@ import TableSmall from "../../Component/TableSmall";
 import { Link, useParams } from "react-router-dom";
 import ImportModal from "../../Component/ImportModal";
 import NewStudyModal from "../../Component/NewStudyModal";
+import WelldoneModal from "../../Component/WelldoneModal";
+import ExcelentModal from "../../Component/ExcelentModal";
 
 const TutorialPerSubject = () => {
   const { subjectName } = useParams();
 
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [isNewStudyModalOpen, setIsNewStudyModalOpen] = useState(false);
+
+  const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(true);
+  const [isExcellentModalOpen, setIsExcellentModalOpen] = useState(false);
+
+  setTimeout(() => {
+    setIsWelcomeModalOpen(false);
+  }, 4000);
+
   return (
     <div className=" text-white p-6 rounded-lg min-h-fit">
       <div className="flex items-center justify-between mb-6">
@@ -69,7 +79,7 @@ const TutorialPerSubject = () => {
                 </h3>
               </div>
             </div>
-            <div className="flex justify-between gap-2">
+            {/* <div className="flex justify-between gap-2">
               <div className="w-1/2">
                 <div className="p-4 h-full flex flex-col justify-center items-center">
                   <div className="flex justify-center items-center gap-3">
@@ -110,7 +120,7 @@ const TutorialPerSubject = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="w-full bg-slate-500 h-[1px] mb-4"></div>
@@ -133,7 +143,7 @@ const TutorialPerSubject = () => {
             </div>
             <div className="w-full bg-slate-500 h-[1px] mb-4"></div>
 
-            <TableSmall />
+            {/* <TableSmall /> */}
           </div>
         </div>
         <div className="h-full bg-slate-700 w-[1px]"></div>
@@ -154,40 +164,27 @@ const TutorialPerSubject = () => {
             </Link>
           </div>
           <div className="w-full bg-slate-500 h-[1px] mb-[1px]"></div>
-
-          <KnowledgeGraph isSmall={true} />
-          <div className="w-full bg-slate-500 h-[1px] mb-1"></div>
-          <LearningTimeGraph isSmall={true} />
-          <div className="w-full bg-slate-500 h-[1px] mb-1"></div>
-          <div className="w-full">
-            <div className="flex w-full justify-between text-center mb-[9px]">
-              <h1 className="text-[15px] font-semibold tet-center w-full">
-                Average Knowledge Score
-              </h1>
-              <h1 className="text-[15px] font-semibold tet-center w-full">
-                Strenghts and Weaknesses
-              </h1>
-            </div>
-            <div className="w-full flex justify-center items-center">
-              <div className="w-1/2 h-full">
-                <div className="flex flex-col gap-6 justify-start items-center">
-                  <CircularProgress value={7.7} size={155} />
-                </div>
-              </div>
-              <div className="w-1/2 h-full">
-                <div className="flex justify-start items-center flex-col gap-2">
-                  <StrengthGraphGreen isShort={true} />
-                  <StrengthGraphRed isShort={true} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="w-full bg-transparent h-[65vh] mb-[1px]"></div>
         </div>
       </div>
 
+      <WelldoneModal
+        isOpen={isWelcomeModalOpen}
+        onClose={() => setIsWelcomeModalOpen(false)}
+      />
+      <ExcelentModal
+        isOpen={isExcellentModalOpen}
+        onClose={() => setIsExcellentModalOpen(false)}
+      />
       <ImportModal
         isOpen={isImportModalOpen}
-        onClose={() => setIsImportModalOpen(false)}
+        onClose={() => {
+          setIsImportModalOpen(false);
+          setIsExcellentModalOpen(true);
+          setTimeout(() => {
+            setIsExcellentModalOpen(false);
+          }, 3000);
+        }}
       />
       <NewStudyModal
         isOpen={isNewStudyModalOpen}
