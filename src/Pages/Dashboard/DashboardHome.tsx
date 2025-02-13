@@ -6,6 +6,8 @@ import leftA from "../../../public/left.png";
 import rightA from "../../../public/right.png";
 import StartStudyingModal from "../../Component/StartStudyingModal";
 import SignupModal from "../../Component/SignupModal";
+import PersonalQuestion from "../../Component/PersonalQuestion";
+import ErrorModal from "../../Component/ErrorModal";
 
 const DashboardHome = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,6 +39,8 @@ const DashboardHome = () => {
   const [isStartStudyingModalOpen, setIsStartStudyingModalOpen] =
     useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+  const [isPQModalOpen, setIsPQModalOpen] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
   return (
     <div className="container mx-auto p-8 lg:h-[100vh] h-[95vh]">
@@ -140,6 +144,14 @@ const DashboardHome = () => {
       <SignupModal
         isOpen={isSignupModalOpen}
         onClose={() => setIsSignupModalOpen(false)}
+      />
+      <PersonalQuestion
+        isOpen={isPQModalOpen}
+        onClose={() => setIsPQModalOpen(false)}
+      />
+      <ErrorModal
+        isOpen={isErrorModalOpen}
+        onClose={() => setIsErrorModalOpen(false)}
       />
     </div>
   );

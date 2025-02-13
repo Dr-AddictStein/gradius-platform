@@ -169,7 +169,7 @@ const Sidebar = () => {
               <img
                 src={user.avatar}
                 alt="User Avatar"
-                className="rounded-full lg:h-[44px] h-[36px] w-[44px]"
+                className="rounded-full lg:h-[40px] h-[36px] w-[40px]"
               />
             </div>
             <div className="flex flex-col items-start justify-center">

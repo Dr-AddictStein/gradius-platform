@@ -19,7 +19,7 @@ const DashboardPerSubject = () => {
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [isNewStudyModalOpen, setIsNewStudyModalOpen] = useState(false);
   return (
-    <div className=" text-white p-6 rounded-lg min-h-fit">
+    <div className=" text-white p-6 rounded-lg min-h-[95vh]">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-red-500"></div>
