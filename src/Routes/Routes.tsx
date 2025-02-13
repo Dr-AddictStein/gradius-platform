@@ -6,6 +6,9 @@ import StudySessions from "../Pages/Dashboard/StudySessions";
 import PerformanceAnalysis from "../Pages/Dashboard/PerformanceAnalysis";
 import FinalOverview from "../Pages/Dashboard/FinalOverview";
 import StudySessionMain from "../Pages/Dashboard/StudySessionMain";
+import TutorialMain from "../Pages/Tutorial/TutorialMain";
+import TutorialHome from "../Pages/Tutorial/TutorialHome";
+import TutorialPerSubject from "../Pages/Tutorial/TutorialPerSubject";
 
 // Define your route objects
 const routes: RouteObject[] = [
@@ -36,6 +39,20 @@ const routes: RouteObject[] = [
       {
         path: "studySession",
         element: <StudySessionMain />,
+      },
+    ],
+  },
+  {
+    path: "/tutorial",
+    element: <TutorialMain />,
+    children: [
+      {
+        path: "",
+        element: <TutorialHome />,
+      },
+      {
+        path: "perSubject/:subjectName",
+        element: <TutorialPerSubject />,
       },
     ],
   },
