@@ -139,7 +139,7 @@ const Sidebar = () => {
                     {subjects.map((subject) => (
                       <div
                         key={subject.id}
-                        className={` hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
+                        className={`lg:text-[18px] text-[14px] hover:shadow-[0_0_15px_2px_#A436F1] transition-shadow duration-300 w-full h-[42px] flex items-center gap-3 px-10 rounded-lg cursor-pointer text-white ${
                           activeSubject===subject.name ? "bg-gray-700" : ""
                         }`}
                         onClick={() => {

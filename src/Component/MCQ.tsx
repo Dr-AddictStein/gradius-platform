@@ -40,6 +40,7 @@ const MCQ = () => {
                 <button
                   key={index}
                   onClick={() => setChosenAnswer(op)}
+                  disabled
                   className={`${
                     correctAnswer === op
                       ? "border-[#74ED8F]"

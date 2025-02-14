@@ -89,8 +89,10 @@ const Flashcard = () => {
               <div className="relative w-1/3">
                 <button
                   className="w-full h-[41px] border-[1px] border-[#74ED8F] rounded-[6px] hover:shadow-[0_0_15px_2px_#74ED8F] transition-shadow duration-300 flex items-center justify-center"
-                  disabled={diff !== ""}
-                  onClick={() => setDiff("Easy")}
+                  disabled={diff !== "" && diff!=="Easy"}
+                  onClick={() =>
+                    diff === "Easy" ? setDiff("") : setDiff("Easy")
+                  }
                 >
                   <p className="font-bold lg:text-[16px] text-[10px] text-center">
                     Easy
@@ -114,8 +116,8 @@ const Flashcard = () => {
               <div className="relative w-1/3">
                 <button
                   className="w-full h-[41px] border-[1px] border-[#F4A462] rounded-[6px] hover:shadow-[0_0_15px_2px_#F4A462] transition-shadow duration-300 flex items-center justify-center"
-                  disabled={diff !== ""}
-                  onClick={() => setDiff("Medium")}
+                  disabled={diff !== "" && diff!=="Medium"}
+                  onClick={() => diff === "Medium" ? setDiff("") : setDiff("Medium")}
                 >
                   <p className="font-bold lg:text-[16px] text-[10px] text-center">
                     Medium
@@ -132,8 +134,8 @@ const Flashcard = () => {
               <div className="relative w-1/3">
                 <button
                   className="w-full h-[41px] border-[1px] border-[#FF0000] rounded-[6px] hover:shadow-[0_0_15px_2px_#FF0000] transition-shadow duration-300 flex items-center justify-center"
-                  disabled={diff !== ""}
-                  onClick={() => setDiff("Hard")}
+                  disabled={diff !== "" && diff!=="Hard"}
+                  onClick={() => diff === "Hard" ? setDiff("") : setDiff("Hard")}
                 >
                   <p className="font-bold lg:text-[16px] text-[10px] text-center">
                     Hard
