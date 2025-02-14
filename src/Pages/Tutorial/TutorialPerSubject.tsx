@@ -28,6 +28,8 @@ const TutorialPerSubject = () => {
 
   const [isNewStudyArrow, setIsNewStudyArrow] = useState(false);
 
+  const [isUploadArrow, setUploadArrow] = useState(true);
+
   setTimeout(() => {
     setIsWelcomeModalOpen(false);
   }, 4000);
@@ -67,7 +69,21 @@ const TutorialPerSubject = () => {
       <div className="w-full bg-slate-700 h-[1px]"></div>
 
       <div className="py-6 w-full min-h-fit flex xl:flex-row flex-col justify-between gap-2">
-        <div className="xl:w-1/2 w-full">
+        <div className="xl:w-1/2 w-full relative">
+          {isUploadArrow && (
+            <div className="absolute 2xl:-right-[10%] lg:-right-[15%] -right-[15%] top-[13%]">
+              <div className=" flex flex-col gap-8 justify-center items-center">
+                <div className="rotate-[85deg] w-fit">
+                  <img src="../../../../public/TutArrow.png" alt="" />
+                </div>
+                <div className=" w-[300px]">
+                  <p className="font-bold lg:text-[24px] text-sm text-center">
+                    Upload study material
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
           <div className=" bg-[#3D3F4A]  rounded-[6px] px-8 py-4 border-[1px] border-slate-600 h-[346px] mb-4">
             <div className="flex justify-between w-full">
               <div className="flex gap-3 mb-3">
@@ -77,7 +93,10 @@ const TutorialPerSubject = () => {
                 </h1>
               </div>
               <button
-                onClick={() => setIsImportModalOpen(true)}
+                onClick={() => {
+                  setUploadArrow(false);
+                  setIsImportModalOpen(true);
+                }}
                 className="bg-purple-600 hover:bg-purple-700 text-white px-2 py-3 rounded-lg w-[88px] h-[26px] flex justify-center items-center text-[13px] font-normal gap-2"
               >
                 <PlusIcon size={14} />
