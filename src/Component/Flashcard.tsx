@@ -11,7 +11,7 @@ const Flashcard = () => {
   const cardStyle = {
     transformStyle: "preserve-3d",
     transition: "transform 0.6s",
-    transform: isQuestion ? "rotateY(0deg)" : "rotateY(180deg)",
+    transform: isQuestion ? "rotateY(0deg)" : "rotateY(-180deg)",
   };
 
   const questionStyle = {
@@ -20,7 +20,7 @@ const Flashcard = () => {
 
   const answerStyle = {
     backfaceVisibility: "hidden",
-    transform: "rotateY(180deg)",
+    transform: "rotateY(-180deg)",
   };
 
   return (
