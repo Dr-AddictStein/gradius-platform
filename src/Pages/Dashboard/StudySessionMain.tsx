@@ -30,7 +30,7 @@ const StudySessionMain = () => {
 
       <div className="w-full h-[83vh] flex flex-col justify-between">
         <div className="w-full h-[90%] pt-4 flex justify-between">
-          <div className="w-[48%] h-full bg-[#3D3F4A] rounded-[6px]">
+          <div className="w-[48%] h-full ">
             {flashcard ? <Flashcard /> : <MCQ />}
           </div>
           <div className="h-full w-[1px] bg-[#565868]"></div>

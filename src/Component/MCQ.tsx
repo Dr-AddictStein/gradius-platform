@@ -12,7 +12,7 @@ const MCQ = () => {
     "All of the above",
   ]);
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center">
+    <div className="h-full w-full flex flex-col justify-center items-center bg-[#3D3F4A] rounded-[6px]">
       <div
         className={`w-full h-full flex flex-col ${
           chosenAnswer !== "" ? "justify-around" : "justify-center"
