@@ -10,6 +10,7 @@ interface FloatingImageProps {
 export const FloatingImage: React.FC<FloatingImageProps> = ({ src, size, left, top }) => {
   return (
     // img
+    // booss
     <img
       loading="lazy"
       src={src}
