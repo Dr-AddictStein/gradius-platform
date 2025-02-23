@@ -11,6 +11,7 @@ export const FloatingImage: React.FC<FloatingImageProps> = ({ src, size, left, t
   return (
     // img
     // booss
+    // booss
     <img
       loading="lazy"
       src={src}
