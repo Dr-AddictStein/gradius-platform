@@ -10,6 +10,7 @@ import AdaptiveLearningFeatures from "./components/AdaptiveLearningFeatures";
 import ChooseGradius from "./components/ChooseGradius";
 import ChoseGradius from "./components/ChoseGradius";
 import Image from 'next/image';
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         <HowItWorks />
         <AdaptiveLearningFeatures />
         <ChooseGradius />
+        <Footer companyLinks={[]} infoLinks={[]} />
       </main>
     </div>
   );
