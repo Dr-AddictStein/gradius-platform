@@ -2,99 +2,59 @@
 
 import React from "react";
 import Image from "next/image";
-import Button from "./SignUpButton";
+import { Bounce, Slide, Zoom } from "react-awesome-reveal"; // Zoom import
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center sm:mt-[200px] lg:mt-[150px] mt-[100px] px-4">
-      {/* Hero SVG */}
-      <div className="relative w-full flex justify-center">
-        <Image
-          src="/hero.svg" // Replace with your exported SVG file path
-          alt="Hero Section"
-          width={930} // Adjust width as needed
-          height={341} // Adjust height as needed
-          className="object-contain"
-          priority
-        />
-        <div className="absolute -top-[20%] left-[20%]">
-          <Image
-            src="/StarBig.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={50} // Adjust width as needed
-            height={50} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute -top-[20%] right-[20%]">
-          <Image
-            src="/StarBig.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={50} // Adjust width as needed
-            height={50} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute top-[20%] left-[18%]">
-          <Image
-            src="/StarSmall.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={30} // Adjust width as needed
-            height={30} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute top-[20%] right-[18%]">
-          <Image
-            src="/StarMid.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={30} // Adjust width as needed
-            height={30} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute top-[60%] left-[22%]">
-          <Image
-            src="/StarMid.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={40} // Adjust width as needed
-            height={40} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute top-[60%] right-[23%]">
-          <Image
-            src="/StarSmall.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={30} // Adjust width as needed
-            height={30} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute top-[100%] left-[32%]">
-          <Image
-            src="/StarMid.png" // Replace with your exported SVG file path
-            alt="Hero Section"
-            width={25} // Adjust width as needed
-            height={25} // Adjust height as needed
-            className="object-contain"
-            priority
-          />
-        </div>
+    <section className="max-w-[1440px] mx-auto relative flex flex-col items-center justify-center text-center sm:mt-[200px] lg:mt-[150px] mt-[120px] px-4">
+      {/* Hero Content */}
+      <div className="relative w-full flex flex-col justify-center">
+        <Zoom triggerOnce> 
+          <h1 className="text-[54px] font-bold leading-[62px] tracking-tight text-white drop-shadow-lg">
+            Get the first self-trained AI Tutor that 
+            <br /> matches your unique learning style
+          </h1>
+        </Zoom>
+
+        <Zoom delay={100} triggerOnce> 
+          <p className="w-[500px] my-3 text-[#F3ECFEB2] mx-auto">
+            Gradius identifies your learning needs, then adapts to your unique learning style to help you overcome them efficiently.
+          </p>
+        </Zoom>
+
+        <Zoom delay={200} triggerOnce> 
+          <p className="text-2xl font-semibold text-[#A436F1]">
+            Study Less <span className="text-[#F3ECFEB2]">get</span> Better Grades
+          </p>
+        </Zoom>
+
+        {/* Star Images with Bounce Animation */}
+        {[
+          { src: "/StarBig.png", alt: "Star", width: 50, height: 50, style: "absolute -top-[20%] left-[14%]" },
+          { src: "/StarBig.png", alt: "Star", width: 50, height: 50, style: "absolute top-[14%] right-[12%]" },
+          { src: "/StarSmall.png", alt: "Star", width: 30, height: 30, style: "absolute -top-[6%] left-[13.5%]" },
+          { src: "/StarMid.png", alt: "Star", width: 30, height: 30, style: "absolute top-[37%] right-[13%]" },
+          { src: "/StarMid.png", alt: "Star", width: 40, height: 40, style: "absolute top-[65%] left-[15%]" },
+          { src: "/StarSmall.png", alt: "Star", width: 30, height: 30, style: "absolute top-[70%] right-[28%]" },
+          { src: "/StarMid.png", alt: "Star", width: 25, height: 25, style: "absolute top-[100%] left-[28%]" },
+        ].map((image, index) => (
+          <div key={index} className={image.style}>
+            <Bounce>
+              <Image src={image.src} alt={image.alt} width={image.width} height={image.height} className="object-contain" priority />
+            </Bounce>
+          </div>
+        ))}
       </div>
 
       {/* Call-to-Action Button */}
-      <div className="mt-6 flex justify-center">
-        <button className="w-full px-4 sm:py-3 py-2 rounded-[8px] border-[1px] border-[#A436F1] text-white font-medium sm:text-[18px] text-[12px] hover:bg-[#8929d1] hover:shadow-[0_0_15px_2px_#A436F1] transition-all duration-300">
-          Start studying for free
-        </button>
-      </div>
+      <Zoom delay={300} triggerOnce> 
+        <div className="mt-6 flex justify-center">
+          <button className="flex items-center gap-2 px-4 sm:py-3 py-2 rounded-lg border border-[#A436F1] text-white font-medium sm:text-[18px] text-[12px] transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
+            Start studying for free <ArrowRight />
+          </button>
+        </div>
+      </Zoom>
     </section>
   );
 };

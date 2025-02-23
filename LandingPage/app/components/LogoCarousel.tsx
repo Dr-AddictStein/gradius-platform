@@ -2,12 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import 'swiper/css/autoplay';
-
-import { Autoplay } from 'swiper/modules';
+import Marquee from "react-fast-marquee";
 
 const logos = [
   { src: "/Asia pacific management club.svg", alt: "Asia Pacific Management Club" },
@@ -29,47 +24,19 @@ const LogoCarousel = () => {
       </h2>
 
       <div className="relative w-full max-w-7xl">
-
-        <Swiper
-          modules={[Autoplay]}
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-          }}
-          className="w-full"
-        >
+        <Marquee speed={50} pauseOnHover={true} gradient={false}>
           {logos.map((logo, index) => (
-            <SwiperSlide key={index} className="flex items-center justify-center">
-              <div className="h-[60px] flex items-center justify-center">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={120}
-                  height={60}
-                  className="object-contain w-auto h-full max-h-[60px] opacity-80 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </SwiperSlide>
+            <div key={index} className="h-[60px] flex items-center justify-center mx-4">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={60}
+                className="object-contain w-auto h-full max-h-[60px] opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
           ))}
-        </Swiper>
+        </Marquee>
       </div>
     </section>
   );

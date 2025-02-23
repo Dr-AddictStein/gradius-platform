@@ -14,31 +14,22 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="h-fit w-full relative overflow-y-auto">
-      {/* Background container */}
-      <div className="absolute inset-0 w-full h-[140%] bg-red-500 top-0 left-0 right-0 bottom-0">
-        <Image
-          src="/Frame 1216259520.png"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-      </div>
+    <div 
+  className="min-h-screen bg-red-500 bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat"
+>
+  {/* Main content */}
+  <main className="relative z-10">
+    <NavigationBar />
+    <Hero />
+    <DashBoard />
+    <LogoCarousel />
+    <PersonalizedLearning />
+    <HowItWorks />
+    <AdaptiveLearningFeatures />
+    <ChooseGradius />
+    <Footer companyLinks={[]} infoLinks={[]} />
+  </main>
+</div>
 
-      {/* Main content */}
-      <main className="relative z-10">
-        <NavigationBar />
-        <Hero />
-        <DashBoard />
-        <LogoCarousel />
-        <PersonalizedLearning />
-        <HowItWorks />
-        <AdaptiveLearningFeatures />
-        <ChooseGradius />
-        <Footer companyLinks={[]} infoLinks={[]} />
-      </main>
-    </div>
   );
 }
