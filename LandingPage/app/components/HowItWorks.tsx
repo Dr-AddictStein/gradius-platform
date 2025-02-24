@@ -71,7 +71,14 @@ export const HowItWorks: React.FC = () => {
       <div className="flex overflow-hidden  flex-col max-w-full w-[1175px] sm:mt-20 mt-10">
         <div className="flex items-center relative justify-between">
           {/* Left Content */}
-          <div className="w-2/3">
+
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-2/3"
+          >
             <StepCard
               stepNumber="1"
               title="Import Your Study Material"
@@ -87,7 +94,7 @@ export const HowItWorks: React.FC = () => {
               logoSrc="/app import logos.png"
               className="self-start"
             />
-          </div>
+          </motion.div>
 
           {/* Right Image */}
           <div className="w-1/3 flex justify-center">
@@ -113,7 +120,7 @@ export const HowItWorks: React.FC = () => {
         {/* card 2 */}
 
         <div className="flex items-center relative justify-between">
-        <div className="w-1/3 flex justify-center">
+          <div className="w-1/3 flex justify-center">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -121,27 +128,36 @@ export const HowItWorks: React.FC = () => {
               alt="icon"
             />
           </div>
-        <div className="">
-        <StepCard
-          stepNumber="2"
-          title={
-            <>
-              Gradius Identifies Topics and
-              <br />
-              Microtopics
-            </>
-          }
-          description="Gradius scans the content of your material and not only understands what you need to study but also breaks that down into smaller parts, called"
-          additionalText="Microtopics"
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/12d158f4598e297985e99b9b9f12adda82235245d862973b8bbdec01aafa6091"
-          iconSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/40a5dca75a173b57bdf1c966bf2a1d413fdef1262f4030de58fb19e755bd0848"
-          headerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/5834b0b83013f28b057c299224a262cdd854072bb6e2f12d58b91cdb243c3e26"
-          footerImage="/assets/footer2.png"
-
-          className="self-end mt-36 max-md:mt-10"
-        />
-        </div>
-        <div className="absolute  -bottom-14 left-56">
+          
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-2/3"
+          >
+           <StepCard
+              stepNumber="2"
+              title={
+                <>
+                  Gradius Identifies Topics and
+                  <br />
+                  Microtopics
+                </>
+              }
+              description="Gradius scans the content of your material and not only understands what you need to study but also breaks that down into smaller parts, called"
+              additionalText="Microtopics"
+              imageSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/12d158f4598e297985e99b9b9f12adda82235245d862973b8bbdec01aafa6091"
+              iconSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/40a5dca75a173b57bdf1c966bf2a1d413fdef1262f4030de58fb19e755bd0848"
+              headerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/5834b0b83013f28b057c299224a262cdd854072bb6e2f12d58b91cdb243c3e26"
+              footerImage="/assets/footer2.png"
+              className="self-end mt-36 max-md:mt-10"
+            />
+          
+          </motion.div>
+           
+         
+          <div className="absolute  -bottom-14 left-0">
             <Image
               src={"/assets/Element3.png"}
               width={205}
@@ -151,32 +167,39 @@ export const HowItWorks: React.FC = () => {
           </div>
         </div>
 
-
-
         {/* 3 */}
-       <div className="flex items-center relative justify-between">
-        <div className="w-2/3">
-        <StepCard
-          stepNumber="3"
-          title="Just Study! Let Gradius do the rest"
-          description={
-            <>
-              Study as you normally would with your flashcards and quizzes.
-              <br />
-              Gradius analyzes your performance on each piece of study material
-              and scores your understanding on each microtopic. This figure is
-              called
-            </>
-          }
-          additionalText="Knowledge Score"
-          imageSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/98b5f5547e192dd724dc19d18729ca61477b4e7daf4f95eb492c0ad3ca0fbe44"
-          iconSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/0e2938146a2409b7b44a574bd96e707f82aa3e827323586e731c6fe87025c9a0"
-          headerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/ce0549f228a60744b7f24087ccf2ff9f1375d60311b54be9657adb93513b3ae5"
-          footerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/db90669345ca6bd484fffaa1c3f72cf9702db73336f1a36439783658ac97a38e"
-          className="mt-28 max-md:mt-10"
-        />
-        </div>
-        <div className="w-1/3 flex justify-center">
+        <div className="flex items-center relative justify-between">
+         
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-2/3"
+          >
+           <StepCard
+              stepNumber="3"
+              title="Just Study! Let Gradius do the rest"
+              description={
+                <>
+                  Study as you normally would with your flashcards and quizzes.
+                  <br />
+                  Gradius analyzes your performance on each piece of study
+                  material and scores your understanding on each microtopic.
+                  This figure is called
+                </>
+              }
+              additionalText="Knowledge Score"
+              imageSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/98b5f5547e192dd724dc19d18729ca61477b4e7daf4f95eb492c0ad3ca0fbe44"
+              iconSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/0e2938146a2409b7b44a574bd96e707f82aa3e827323586e731c6fe87025c9a0"
+              headerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/ce0549f228a60744b7f24087ccf2ff9f1375d60311b54be9657adb93513b3ae5"
+              footerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/db90669345ca6bd484fffaa1c3f72cf9702db73336f1a36439783658ac97a38e"
+              className="mt-28 max-md:mt-10"
+            />
+          </motion.div>
+            
+          
+          <div className="w-1/3 flex justify-center">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -194,13 +217,10 @@ export const HowItWorks: React.FC = () => {
               alt="icon"
             />
           </div>
+        </div>
 
-       </div>
-        
-
-        
         <div className="flex items-center mt-28 relative justify-between">
-        <div className="w-1/3 flex justify-center">
+          <div className="w-1/3 flex justify-center">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -208,17 +228,26 @@ export const HowItWorks: React.FC = () => {
               alt="icon"
             />
           </div>
-        <div className="">
-        <StepCard
-                  stepNumber="4"
-                  title="Then, everything adjusts according to what you need"
-                  description="Thanks to your answers to quizzes, flashcards, and the dynamic learning mapper, we continuously gather insights about your learning style, which automatically self-trains our AI to adapt all platform features to suit you better"
-                  imageSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/cdcad405e0d224abf9f70bf9dd9415fdc48e54e145f367e7e6361a3afd3eba16"
-                  iconSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/66a637eb5cd87636acc284aa200fc6cff7c8e5c8395f0d6530a5dcdc57c3b1cf"
-                  headerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/b6e5537bb59c17d4aa195a759dc79d3c1bdd39278fbfa6a0f2a16dd713d37d2f"
-                />
-        </div>
-        <div className="absolute  -bottom-14 left-56">
+         
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-2/3"
+          >
+            <StepCard
+              stepNumber="4"
+              title="Then, everything adjusts according to what you need"
+              description="Thanks to your answers to quizzes, flashcards, and the dynamic learning mapper, we continuously gather insights about your learning style, which automatically self-trains our AI to adapt all platform features to suit you better"
+              imageSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/cdcad405e0d224abf9f70bf9dd9415fdc48e54e145f367e7e6361a3afd3eba16"
+              iconSrc="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/66a637eb5cd87636acc284aa200fc6cff7c8e5c8395f0d6530a5dcdc57c3b1cf"
+              headerImage="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/b6e5537bb59c17d4aa195a759dc79d3c1bdd39278fbfa6a0f2a16dd713d37d2f"
+            />
+          </motion.div>
+           
+        
+          <div className="absolute  -bottom-14 ">
             <Image
               src={"/assets/Element3.png"}
               width={205}
@@ -228,14 +257,18 @@ export const HowItWorks: React.FC = () => {
           </div>
         </div>
 
-
         <div className="w-full">
-        <UnlockPotentialCard />
+        <motion.div
+            initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="full"
+          >
+          <UnlockPotentialCard />
+          </motion.div>
         </div>
-
-          
-        </div>
-    
+      </div>
     </section>
   );
 };
