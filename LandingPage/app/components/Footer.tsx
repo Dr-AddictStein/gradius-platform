@@ -4,9 +4,10 @@ import LinkList from './LinkList';
 import SocialIcons from './SocialIcons';
 
 interface FooterProps {
-  companyLinks: string[];
-  infoLinks: string[];
+  companyLinks: { name: string; url: string }[];
+  infoLinks: { name: string; url: string }[];
 }
+
 
 const Footer: React.FC<FooterProps> = ({ companyLinks, infoLinks }) => {
   return (
@@ -16,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({ companyLinks, infoLinks }) => {
           <div className="flex flex-col grow shrink items-start leading-6 min-w-[240px] w-[266px]">
             <Logo />
             <p className="self-stretch mt-6  text-gray-300">
-              The first self-trained AI tutor for a truly personalized learning
+              The first self-trained AI tutor for a truly <br /> personalized learning
               experience
             </p>
             <SocialIcons />
@@ -24,9 +25,7 @@ const Footer: React.FC<FooterProps> = ({ companyLinks, infoLinks }) => {
           <LinkList title="Company" links={companyLinks} />
           <LinkList title="Info" links={infoLinks} />
         </div>
-        <div className="self-stretch px-2.5 py-6 mt-20 w-full border-t text-gray-300 border-violet-100 border-opacity-10 max-md:mt-10 max-md:max-w-full">
-          © 2025 Gradius.ai - All rights reserved
-        </div>
+
       </div>
     </footer>
   );
