@@ -3,7 +3,7 @@ import React from 'react';
 export const UnlockPotentialCard: React.FC = () => {
   return (
     <>
-      <article className="flex relative flex-col items-center px-10 pt-9 pb-40 mt-24 max-w-full text-3xl font-bold leading-none text-center text-white rounded-3xl bg-[linear-gradient(180deg,#A436F1_32.5%,#A267FE_100%)] min-h-[356px] w-[808px] max-md:px-5 max-md:pb-24 max-md:mt-10">
+      <article className="flex relative flex-col items-center px-10 pt-9 pb-40 mt-24 max-w-full w-11/12 mx-auto  text-3xl font-bold leading-none text-center text-white rounded-3xl bg-[linear-gradient(180deg,#A436F1_32.5%,#A267FE_100%)] max-md:px-5 max-md:pb-24 max-md:mt-10">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/54672b7c9018b8e3a3fa28357d77fe6801a561fba7da910fdd1f37532d8e918f"

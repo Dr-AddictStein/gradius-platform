@@ -16,16 +16,23 @@ import Study from "./components/Study";
 export default function Home() {
   return (
     <div 
-  className="min-h-screen bg-red-500 bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat"
->
+    className="min-h-screen bg-red-500 bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat pt-10"
+  >
+  
+
   {/* Main content */}
   <main className="relative z-10 overflow-y-hidden">
-   <div className='mt-20 border'> <NavigationBar /></div>
-    <Hero />
+   <div className='mt-20  '> <NavigationBar /></div>
+   <div className="border-none border-red-600 ">
+   <Hero />
+   </div>
     <DashBoard />
     <LogoCarousel />
     <PersonalizedLearning />
+   
+    <div className="">
     <Study></Study>
+    </div>
     <HowItWorks />
     <AdaptiveLearningFeatures />
     <ChooseGradius />

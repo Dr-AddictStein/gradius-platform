@@ -7,7 +7,8 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="max-w-[1440px] mx-auto  relative flex flex-col items-center justify-center text-center sm:mt-[200px] lg:mt-[150px] mt-[120px] px-4">
+   <div className="">
+     <section className="max-w-[1440px] mx-auto  relative flex flex-col items-center justify-center text-center sm:mt-[200px] lg:mt-[150px] mt-[120px] px-4">
       {/* Hero Content */}
       <div className="relative w-full flex flex-col justify-center">
         <Zoom triggerOnce> 
@@ -57,6 +58,7 @@ const Hero = () => {
         </div>
       </Zoom>
     </section>
+   </div>
   );
 };
 

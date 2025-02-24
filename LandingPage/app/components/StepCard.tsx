@@ -35,10 +35,10 @@ export const StepCard: React.FC<StepCardProps> = ({
         className="object-contain absolute top-1.5 left-2 z-0 self-start w-20 h-20 aspect-square shadow-[0px_0px_10px_rgba(164,54,241,1)]"
         alt={`Step ${stepNumber} icon`}
       />
-      <span className="absolute z-0 self-start h-6 leading-none text-purple-600 left-[41px] top-[35px] w-[13px]">
-        {stepNumber}
-      </span>
-      
+      <span className="absolute z-0 self-start h-6 leading-none text-purple-600 left-[38px] top-[35px] w-[13px]">
+  {stepNumber==="1" ? stepNumber:null}
+</span>
+
       {/* Logo */}
       {logoSrc && (
         <img
@@ -81,7 +81,7 @@ export const StepCard: React.FC<StepCardProps> = ({
       
       {/* Additional Text */}
       {additionalText && (
-        <p className="z-0 mt-9 text-2xl leading-none max-md:max-w-full">
+        <p className="z-0 mt-9 text-sm font-normal leading-none max-md:max-w-full">
           {additionalText}
         </p>
       )}
@@ -91,7 +91,7 @@ export const StepCard: React.FC<StepCardProps> = ({
         <img
           loading="lazy"
           src={footerImage}
-          className="object-contain z-0 mt-9 max-w-full aspect-[26.32] w-[236px]"
+          className="object-contain z-0 mt-9 max-w-full aspect-[26.32] w-[236px] h-[21px]"
           alt="Footer illustration"
         />
       )}

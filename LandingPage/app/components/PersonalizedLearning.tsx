@@ -184,7 +184,7 @@ const PersonalizedLearning = () => {
       <div className="absolute -left-12">
       <Slide>
       <Image
-            src="/assets/Elements.png"
+            src="/assets/Elements1.png"
             alt="Body 1"
             width={117} // Adjust width as needed
             height={250} // Adjust height as needed
