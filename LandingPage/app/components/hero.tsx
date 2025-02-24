@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative w-full flex flex-col justify-center">
         <Zoom triggerOnce> 
-          <h1 className="text-[54px] font-bold leading-[62px] tracking-tight text-white drop-shadow-lg">
+          <h1 className="text-[54px]  drop-shadow-[0_4px_4px_#A436F1] font-bold leading-[62px] tracking-tight text-white ">
             Get the first self-trained AI Tutor that 
             <br /> matches your unique learning style
           </h1>
@@ -50,7 +50,7 @@ const Hero = () => {
       {/* Call-to-Action Button */}
       <Zoom delay={300} triggerOnce> 
         <div className="mt-6 flex justify-center">
-          <button className="flex items-center gap-2 px-4 sm:py-3 py-2 rounded-lg border border-[#A436F1] text-white font-medium sm:text-[18px] text-[12px] transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
+          <button className="flex items-center gap-2 px-4  py-2 rounded-lg border border-[#A436F1] text-white font-medium sm:text-[18px] text-[12px] transition-transform transform hover:scale-110 hover:shadow-lg duration-300">
             Start studying for free <ArrowRight />
           </button>
         </div>

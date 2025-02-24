@@ -18,8 +18,8 @@ const logos = [
 
 const LogoCarousel = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center sm:mt-[80px] mt-[60px] px-4">
-      <h2 className="sm:text-[12px] text-[10px] uppercase tracking-wider font-bold mb-12 font-['Plus Jakarta Sans'] text-[#F3ECFE]">
+    <section className="relative overflow-y-hidden flex flex-col items-center justify-center sm:mt-[80px]  px-4">
+      <h2 className="sm:text-[12px] text-[10px] uppercase tracking-wider font-bold mb-12 font-['Plus Jakarta Sans'] mt-[20px] text-[#F3ECFE]">
         Trusted by University Societies Globally
       </h2>
 

@@ -18,7 +18,7 @@ export default function Home() {
   className="min-h-screen bg-red-500 bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat"
 >
   {/* Main content */}
-  <main className="relative z-10">
+  <main className="relative z-10 overflow-y-hidden">
     <NavigationBar />
     <Hero />
     <DashBoard />
