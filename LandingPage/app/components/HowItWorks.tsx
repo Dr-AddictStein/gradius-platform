@@ -54,7 +54,7 @@ export const HowItWorks: React.FC = () => {
 
           {/* Animated Heading */}
           <motion.h1 
-            className="[text-shadow:_1px_1px_8px_#a436f1] sm:text-[54px] text-[24px] md:text-5xl font-medium tracking-tighter leading-tight text-white"
+            className="[text-shadow:_1px_1px_8px_#a436f1] sm:text-[54px] text-[24px] md:text-5xl font-medium tracking-tighter leading-tight text-[#3D1576]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-20% 0px" }}
@@ -72,7 +72,7 @@ export const HowItWorks: React.FC = () => {
           </motion.h1>
 
 
-          <p className="self-center mt-6 sm:text-[24px] text-[14px] tracking-tight leading-tight text-white max-md:max-w-full">
+          <p className="self-center mt-6 sm:text-[24px] text-[14px] tracking-tight leading-tight  max-md:max-w-full">
             Gradius makes you a better student by tailoring everything according to your needs and style. Here's how:
           </p>
         </div>

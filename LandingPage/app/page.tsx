@@ -11,6 +11,7 @@ import ChooseGradius from "./components/ChooseGradius";
 import ChoseGradius from "./components/ChoseGradius";
 import Image from 'next/image';
 import Footer from "./components/Footer";
+import Study from "./components/Study";
 
 export default function Home() {
   return (
@@ -19,11 +20,12 @@ export default function Home() {
 >
   {/* Main content */}
   <main className="relative z-10 overflow-y-hidden">
-    <NavigationBar />
+   <div className='mt-20 border'> <NavigationBar /></div>
     <Hero />
     <DashBoard />
     <LogoCarousel />
     <PersonalizedLearning />
+    <Study></Study>
     <HowItWorks />
     <AdaptiveLearningFeatures />
     <ChooseGradius />

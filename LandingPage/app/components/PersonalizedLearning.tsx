@@ -32,7 +32,7 @@ const PersonalizedLearning = () => {
   whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
   viewport={{ once: false, amount: 0.2 }} 
   transition={{ duration: 0.4, ease: "easeOut" }} 
-  className="sm:text-[54px] text-[24px] font-medium sm:leading-[62px] leading-[32px] tracking-[-0.02em] text-[#F3ECFE] font-['Plus Jakarta Sans'] drop-shadow-[0_4px_4px_#A436F1] mb-12 text-center"
+  className="sm:text-[54px] text-[24px] font-medium sm:leading-[62px] leading-[32px] tracking-[-0.02em] text-[#F3ECFE] font-['Plus Jakarta Sans'] drop-shadow-md [text-shadow:_1px_1px_10px_#A436F1] mb-12 text-center"
 >
   Own your Exams with Personalized Learning!
 </motion.h2>
@@ -42,7 +42,7 @@ const PersonalizedLearning = () => {
       
 
       {/* Frames */}
-      <div className="w-full">
+      <div className="w-full mt-8">
   {/* Body 1 with Scroll Zoom Effect */}
   <motion.div
      initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }} 
