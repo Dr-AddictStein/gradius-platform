@@ -2,6 +2,8 @@
 import React from 'react';
 import FAQItem from './FAQItem';
 import CallToAction from './CallToAction';
+import { motion } from "framer-motion";
+import { Slide } from 'react-awesome-reveal';
 
 interface FAQData {
   question: string;
@@ -34,26 +36,67 @@ const faqData: FAQData[] = [
 
 
 const FAQSection: React.FC = () => {
+  const headingText = "Cool, but how does it work?!";
+  const springTransition = {
+    type: "spring",
+    stiffness: 200,
+    damping: 10,
+    staggerChildren: 0.02,
+  };
+
+  const characterVariants = {
+    hidden: {
+      filter: "blur(8px)",
+      y: 15,
+      opacity: 0,
+    },
+    visible: {
+      filter: "blur(0)",
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.2 },
+    },
+  };
   return (
     <div className="flex flex-col text-black">
       <div className="flex overflow-hidden flex-col items-center px-72 py-24 w-full min-h-[771px] max-md:px-5 max-md:pt-24 max-md:max-w-full">
         <div className="flex flex-col self-stretch w-full text-center max-md:max-w-full">
           <div className="flex flex-col w-full max-md:max-w-full">
-            <h2 className="text-6xl font-medium tracking-tighter leading-none max-md:max-w-full max-md:text-4xl text-[#F3ECFE]">
-              Frequently Asked Questions
-            </h2>
+          <motion.h1
+            className="text-[#F3ECFE] text-6xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={{
+              visible: { transition: springTransition },
+            }}
+          >
+            {" Frequently Asked Questions"
+              .split("")
+              .map((char, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block"
+                  variants={characterVariants}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+          </motion.h1>
             <p className="mt-6 text-lg tracking-tight leading-none max-md:max-w-full text-[#F2EBFD]">
               Everything you need to know about the product and features.
             </p>
           </div>
         </div>
+        <Slide direction='up'>
         <div className="flex flex-col mt-16 max-w-full text-base w-[800px] max-md:mt-10">
           {faqData.map((item, index) => (
             <FAQItem key={index} question={item.question} iconSrc={item.iconSrc} answer={item.answer} />
           ))}
         </div>
+        
         <CallToAction />
-
+        </Slide>
       </div>
     </div>
   );

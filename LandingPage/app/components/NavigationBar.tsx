@@ -35,11 +35,11 @@ export const NavigationBar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex gap-8 items-center text-white">
-          <NavLink>Home</NavLink>
-          <NavLink>Features</NavLink>
-          <NavLink>How it works</NavLink>
-          <NavLink>Pricing</NavLink>
-          <NavLink>FAQ</NavLink>
+        <NavLink href="#home">Home</NavLink>
+          <NavLink href="#features">Features</NavLink>
+          <NavLink href="#how-it-works">How it works</NavLink>
+          <NavLink href="#pricing">Pricing</NavLink>
+          <NavLink href="#faq">FAQ</NavLink>
         </div>
 
         {/* Mobile Menu Button and Buttons Container */}
