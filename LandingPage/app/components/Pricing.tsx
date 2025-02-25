@@ -36,7 +36,7 @@ const yearlyPlan: PlanDetails = {
 
 const PricingPlans: React.FC = () => {
   return (
-    <div className="flex flex-col mt-44">
+    <div className="flex flex-col">
       <div className="flex overflow-hidden flex-col items-center px-32 pb-16 pt-0 w-full min-h-[500px] max-md:px-5 max-md:max-w-full">
         <div className="flex flex-col max-w-full text-center w-[846px]">
           <div className="flex flex-col w-full max-md:max-w-full">

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
+
 const ChooseGradiusNew = () => {
   return (
-    <div className="my-12 relative">
+    <div className="">
+      <div className="my-12 mt-20 relative">
       <div className="">
       <h3
         className="text-[64px] font-[Inter] font-medium leading-[100px] 
@@ -42,6 +44,8 @@ const ChooseGradiusNew = () => {
       <div className="absolute top-52 right-36 ">
       <Image src={'/StarBig.png'} width={30} height={30} alt="ster"></Image>
       </div>
+    </div>
+    
     </div>
   );
 };
