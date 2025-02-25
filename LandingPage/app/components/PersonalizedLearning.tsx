@@ -11,7 +11,7 @@ const PersonalizedLearning = () => {
   return (
     <section 
     
-    className="relative flex flex-col max-w-7xl mx-auto items-center justify-center sm:mt-[205px] mt-[85px] px-4"
+    className="relative flex flex-col max-w-7xl mx-auto items-center justify-center mt-20  px-4"
     
     style= {{
         backgroundImage: `

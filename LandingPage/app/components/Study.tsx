@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Study = () => {
     return (
-        <div className='max-w-7xl  relative mx-auto my-14'>
+        <div className='max-w-7xl  relative mx-auto my-8'>
             <motion.h1 
                 initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }} 
                 whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
