@@ -29,10 +29,10 @@ const ChooseGradiusContent = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl w-11/12 mx-auto px-4">
       <div className="my-12">
         <motion.h1
-          className="text-center mt-48 text-[#F3ECFE] text-5xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
+          className="text-center mt-48 text-[#F3ECFE] text-2xl md:text-5xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
@@ -55,14 +55,20 @@ const ChooseGradiusContent = () => {
           3 simple reasons to level up now
         </p>
       </div>
+      
       {/* Card 1 */}
-      <div className="flex gap-7 mt-44">
+      <div className="flex flex-col md:flex-row gap-7 md:mt-44">
         <Zoom>
-        <div className="">
-          <Image src={"/assets/1.png"} width={100} height={127} alt="1"></Image>
-        </div>
+          <div className="mb-6 md:mb-0">
+            <Image
+              src={"/assets/1.png"}
+              width={100}
+              height={127}
+              alt="1"
+            ></Image>
+          </div>
         </Zoom>
-        <div className="">
+        <div className="flex-1">
           <motion.h1
             className="text-[#F3ECFE] text-3xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
             initial="hidden"
@@ -73,7 +79,7 @@ const ChooseGradiusContent = () => {
             }}
           >
             {"Unlock Your Unique Learning Style"
-              .split("")
+              .split(" ")
               .map((char, index) => (
                 <motion.span
                   key={index}
@@ -105,19 +111,40 @@ const ChooseGradiusContent = () => {
               without even realizing it
             </p>
           </div>
-          
         </div>
-        <div className="ml-12">
-            <Image src={'/assets/Icon.png'} height={200} width={200} alt="icon"></Image>
-          </div>
+        <div className="ml-12 hidden md:inline-block">
+          <Image
+            src={"/assets/Icon.png"}
+            height={200}
+            width={200}
+            alt="icon"
+          ></Image>
+        </div>
       </div>
-      {/* card2 */}
-      <div className="flex gap-7 mt-44">
-      <div className="ml-12">
-            <Image src={'/assets/Icon.png'} height={200} width={200} alt="icon"></Image>
+      
+      {/* Card 2 */}
+      <div className="flex flex-col md:flex-row gap-7 md:mt-44 mt-12">
+        <div className="ml-12 hidden md:inline-block">
+          <Image
+            src={"/assets/Icon.png"}
+            height={200}
+            width={200}
+            alt="icon"
+          ></Image>
+        </div>
+
+        <Zoom>
+          <div className="mb-6 md:hidden inline-block md:mb-0">
+            <Image
+              src={"/assets/2.png"}
+              width={100}
+              height={127}
+              alt="1"
+            ></Image>
           </div>
-        
-        <div className="">
+        </Zoom>
+
+        <div className="flex-1">
           <motion.h1
             className="text-[#F3ECFE] flex justify-end text-3xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
             initial="hidden"
@@ -127,17 +154,15 @@ const ChooseGradiusContent = () => {
               visible: { transition: springTransition },
             }}
           >
-            {"Stop Worrying About Finding the "
-              .split("")
-              .map((char, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block"
-                  variants={characterVariants}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+            {"Stop Worrying About Finding the ".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                className="inline-block"
+                variants={characterVariants}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </motion.h1>
           <motion.h1
             className="text-[#F3ECFE] mt-2 flex justify-end text-3xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
@@ -148,48 +173,59 @@ const ChooseGradiusContent = () => {
               visible: { transition: springTransition },
             }}
           >
-            {"Right Study Method "
-              .split("")
-              .map((char, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block"
-                  variants={characterVariants}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+            {"Right Study Method ".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                className="inline-block"
+                variants={characterVariants}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           <div className="mt-6 flex flex-col justify-end">
             <p className="flex justify-end bg-gradient-to-r from-[#FFFFFF] to-[#A436F1] text-transparent bg-clip-text">
-              <DotIcon className="text-white" /> No more trial and error, no more endless searching for the right study technique
+              <DotIcon className="text-white" /> No more trial and error, no
+              more endless searching for the right study technique
             </p>
             <p className="flex justify-end mt-2 bg-gradient-to-r from-[#FFFFFF] to-[#A436F1] text-transparent bg-clip-text">
-              <DotIcon className="text-white" />  By using Gradius, you’ll automatically receive the personalized guidance you need to succeed
+              <DotIcon className="text-white" /> By using Gradius, you’ll
+              automatically receive the personalized guidance you need to
+              succeed
             </p>
             <p className="flex justify-end bg-gradient-to-r mt-2 from-[#A436F1] to-[#FFFFFF] text-transparent bg-clip-text">
-              <DotIcon className="text-white" /> Focus on your studies without the stress of figuring out what works for you
+              <DotIcon className="text-white" /> Focus on your studies without
+              the stress of figuring out what works for you
             </p>
-            
           </div>
-          
         </div>
+
         <Zoom>
-        <div className="">
-          <Image src={"/assets/2.png"} width={100} height={127} alt="1"></Image>
-        </div>
+          <div className="mb-6 hidden md:inline-block md:mb-0">
+            <Image
+              src={"/assets/2.png"}
+              width={100}
+              height={127}
+              alt="1"
+            ></Image>
+          </div>
         </Zoom>
-        
       </div>
-      {/* card */}
-      <div className="flex gap-7 mt-44">
-      <Zoom>
-        <div className="">
-          <Image src={"/assets/3.png"} width={100} height={127} alt="1"></Image>
-        </div>
+
+      {/* Card 3 */}
+      <div className="flex flex-col md:flex-row gap-7 md:mt-44 mt-12">
+        <Zoom>
+          <div className="mb-6 md:mb-0">
+            <Image
+              src={"/assets/3.png"}
+              width={100}
+              height={127}
+              alt="1"
+            ></Image>
+          </div>
         </Zoom>
-        <div className="">
+        <div className="flex-1">
           <motion.h1
             className="text-[#F3ECFE] text-3xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
             initial="hidden"
@@ -199,36 +235,41 @@ const ChooseGradiusContent = () => {
               visible: { transition: springTransition },
             }}
           >
-            {"Study Less, Get Better Grades!"
-              .split("")
-              .map((char, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block"
-                  variants={characterVariants}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+            {"Study Less, Get Better Grades!".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                className="inline-block"
+                variants={characterVariants}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           <div className="mt-6">
             <p className="flex bg-gradient-to-r from-[#FFFFFF] to-[#A436F1] text-transparent bg-clip-text">
-              <DotIcon className="text-white" /> Personalized learning  is proven to boost performance more than twofold
+              <DotIcon className="text-white" /> Personalized learning is proven
+              to boost performance more than twofold
             </p>
             <p className="flex mt-2 bg-gradient-to-r from-[#FFFFFF] to-[#A436F1] text-transparent bg-clip-text">
-              <DotIcon className="text-white" /> Studies from top universities show personalized learning can halve study time
+              <DotIcon className="text-white" /> Studies from top universities
+              show personalized learning can halve study time
             </p>
             <p className="flex bg-gradient-to-r mt-2 from-[#A436F1] to-[#FFFFFF] text-transparent bg-clip-text">
-              <DotIcon className="text-white" /> Gradius helps you focus on quality over quantity, resulting in better results with less effort
+              <DotIcon className="text-white" /> Gradius helps you focus on
+              quality over quantity, resulting in better results with less
+              effort
             </p>
-           
           </div>
-          
         </div>
-        <div className="ml-12">
-            <Image src={'/assets/Icon.png'} height={200} width={200} alt="icon"></Image>
-          </div>
+        <div className="ml-12 hidden md:inline-block">
+          <Image
+            src={"/assets/Icon.png"}
+            height={200}
+            width={200}
+            alt="icon"
+          ></Image>
+        </div>
       </div>
     </div>
   );

@@ -63,7 +63,7 @@ const PricingPlans: React.FC = () => {
         <div className="flex flex-col max-w-full text-center w-[846px]">
           <div className="flex flex-col w-full max-md:max-w-full">
           <motion.h1
-            className="text-[#F3ECFE] text-5xl font-semibold text-drop-shadow-[0_0_10px_#A436F1]"
+            className="text-[#F3ECFE] text-[21px] md:text-5xl font-semibold text-drop-shadow-[0_0_10px_#A436F1]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}

@@ -77,7 +77,7 @@ export const HowItWorks: React.FC = () => {
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-2/3"
+            className="md:w-2/3 w-full"
           >
             <StepCard
               stepNumber="1"
@@ -97,7 +97,7 @@ export const HowItWorks: React.FC = () => {
           </motion.div>
 
           {/* Right Image */}
-          <div className="w-1/3 flex justify-center">
+          <div className="md:w-1/3 hidden md:inline-block ">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -107,7 +107,7 @@ export const HowItWorks: React.FC = () => {
           </div>
 
           {/* Bottom Centered Image */}
-          <div className="absolute  -bottom-14 right-56">
+          <div className="absolute hidden md:inline-block  -bottom-14 right-56">
             <Image
               src={"/assets/Elements.png"}
               width={205}
@@ -120,7 +120,7 @@ export const HowItWorks: React.FC = () => {
         {/* card 2 */}
 
         <div className="flex items-center relative justify-between">
-          <div className="w-1/3 flex justify-center">
+          <div className="md:w-1/3 hidden md:inline-block ">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -134,7 +134,7 @@ export const HowItWorks: React.FC = () => {
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-2/3"
+            className="md:w-2/3 w-full"
           >
            <StepCard
               stepNumber="2"
@@ -157,7 +157,7 @@ export const HowItWorks: React.FC = () => {
           </motion.div>
            
          
-          <div className="absolute  -bottom-14 left-0">
+          <div className="absolute hidden md:inline-block  -bottom-14 left-0">
             <Image
               src={"/assets/Element3.png"}
               width={205}
@@ -175,7 +175,7 @@ export const HowItWorks: React.FC = () => {
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-2/3"
+            className="md:w-2/3 w-full"
           >
            <StepCard
               stepNumber="3"
@@ -199,7 +199,7 @@ export const HowItWorks: React.FC = () => {
           </motion.div>
             
           
-          <div className="w-1/3 flex justify-center">
+          <div className="md:w-1/3 hidden md:inline-block ">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -209,7 +209,7 @@ export const HowItWorks: React.FC = () => {
           </div>
 
           {/* Bottom Centered Image */}
-          <div className="absolute  -bottom-14 right-56">
+          <div className="absolute hidden md:inline-block -bottom-14 right-56">
             <Image
               src={"/assets/Elements.png"}
               width={205}
@@ -220,7 +220,7 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         <div className="flex items-center mt-28 relative justify-between">
-          <div className="w-1/3 flex justify-center">
+          <div className="md:w-1/3 hidden md:inline-block ">
             <Image
               src={"/assets/icon.png"}
               width={160}
@@ -234,7 +234,7 @@ export const HowItWorks: React.FC = () => {
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-2/3"
+            className="md:w-2/3 w-full"
           >
             <StepCard
               stepNumber="4"
@@ -247,7 +247,7 @@ export const HowItWorks: React.FC = () => {
           </motion.div>
            
         
-          <div className="absolute  -bottom-14 ">
+          <div className="absolute hidden md:inline-block  -bottom-14 ">
             <Image
               src={"/assets/Element3.png"}
               width={205}

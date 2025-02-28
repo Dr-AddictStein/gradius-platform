@@ -49,7 +49,7 @@ const PersonalizedLearning = () => {
      whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
     viewport={{ once: false, amount: 0.2 }} 
     transition={{ duration: 0.6, ease: "easeOut" }} // Smooth zoom effect
-    className="w-full flex p-9 bg-[#160F22] rounded-xl justify-center items-center"
+    className="w-full flex flex-col md:flex-row p-9 bg-[#160F22] rounded-xl justify-center items-center"
   >
     <div className="flex-1">
       <Image
@@ -63,7 +63,7 @@ const PersonalizedLearning = () => {
     </div>
 
     <div className="flex-1 relative text-[#F3ECFEB2]">
-      <h2 className="text-4xl font-semibold leading-snug">
+      <h2 className="md:text-4xl text-xl mt-7 font-semibold leading-snug">
         <span className="text-[#A436F1] drop-shadow-[0_4px_4px_#A436F1]">
           Gradius
         </span>{" "}
@@ -133,14 +133,14 @@ const PersonalizedLearning = () => {
      whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
     viewport={{ once: false, amount: 0.2 }} 
     transition={{ duration: 0.6, ease: "easeOut" }} // Smooth zoom effect
-    className="w-full flex p-9 bg-[#160F22] rounded-xl justify-center items-center" >
+    className="w-full flex flex-col md:flex-row  p-9 bg-[#160F22] rounded-xl justify-center items-center" >
 
           
           <div className="flex-1  relative text-[#F3ECFEB2]">
           <Image height={30} width={30} alt="Star" src={'/StarMid.png'} className="drop-shadow-glow ml-8" />
 
 
-  <h2 className="text-4xl font-semibold leading-snug">
+  <h2 className="text-xl md:text-4xl  font-semibold leading-snug">
   ...and makes you overcome <br /> them <span className="text-[#A436F1] drop-shadow-[0_4px_4px_#A436F1]">your way</span> !
     <div className=" inline-flex  ml-5 align-middle relative">
       <Image height={30} width={30} alt="Star" src={'/StarMid.png'} className="drop-shadow-glow " />

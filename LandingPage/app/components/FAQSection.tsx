@@ -58,12 +58,12 @@ const FAQSection: React.FC = () => {
     },
   };
   return (
-    <div className="flex flex-col text-black">
-      <div className="flex overflow-hidden flex-col items-center px-72 py-24 w-full min-h-[771px] max-md:px-5 max-md:pt-24 max-md:max-w-full">
+    <div className="flex  flex-col text-black">
+      <div className="flex overflow-hidden flex-col items-center md:px-72 md:py-24 w-full min-h-[771px] max-md:px-5 max-md:pt-24 max-md:max-w-full">
         <div className="flex flex-col self-stretch w-full text-center max-md:max-w-full">
           <div className="flex flex-col w-full max-md:max-w-full">
           <motion.h1
-            className="text-[#F3ECFE] text-6xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
+            className="text-[#F3ECFE] md:text-6xl text-2xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
@@ -89,7 +89,7 @@ const FAQSection: React.FC = () => {
           </div>
         </div>
         <Slide direction='up'>
-        <div className="flex flex-col mt-16 max-w-full text-base w-[800px] max-md:mt-10">
+        <div className="flex flex-col mt-16 max-w-full text-base md:w-[800px] max-md:mt-10">
           {faqData.map((item, index) => (
             <FAQItem key={index} question={item.question} iconSrc={item.iconSrc} answer={item.answer} />
           ))}
