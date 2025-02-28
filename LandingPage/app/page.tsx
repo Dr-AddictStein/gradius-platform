@@ -21,7 +21,7 @@ import UpLavel from "./components/UpLavel";
 export default function Home() {
   return (
     <div className="">
-      <div className="min-h-screen max-w-[1450px] mx-auto bg-red-500 bg-[url('/assets/bg2.png')] bg-cover pt-10">
+      <div className="min-h-screen max-w-[1500px] mx-auto bg-red-500 bg-[url('/assets/bg2.png')] bg-cover pt-10">
         {/* Main content */}
         <main className="relative z-10 overflow-y-hidden">
           <div className="mt-20">
