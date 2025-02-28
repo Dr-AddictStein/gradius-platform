@@ -1,9 +1,10 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import FAQItem from './FAQItem';
 import CallToAction from './CallToAction';
 import { motion } from "framer-motion";
 import { Slide } from 'react-awesome-reveal';
+import { Plus, Minus } from 'lucide-react'; // Import the icons from lucide-react
 
 interface FAQData {
   question: string;
@@ -15,25 +16,49 @@ const faqData: FAQData[] = [
   {
     question: "How is Gradius different?",
     iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Gradius is different because of two key areas. First, it identifies your learning shortfalls with unparalleled granularity by analyzing your performance in each “microtopic” and assigning a knowledge score to each of them. Second, it adapts dynamically to help you overcome those challenges, explaining concepts in the way that best matches your learning style. " 
+    answer: "Gradius is different because of two key areas. First, it identifies your learning shortfalls with unparalleled granularity by analyzing your performance in each “microtopic” and assigning a knowledge score to each of them. Second, it adapts dynamically to help you overcome those challenges, explaining concepts in the way that best matches your learning style."
   },
   {
     question: "How do you identify my learning style?",
     iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Everyone has their own unique learning style—some people grasp concepts better through visuals, others through step-by-step logic, while some need hands-on practice. At Gradius, we identify your learning style using two key inputs. First, throughout your study journey, we ask you a series of targeted questions designed in collaboration with neuroscientists and based on academic research. We’ve transformed these insights into an algorithm that continuously refines its understanding of how you learn best, based on your responses. Second, thanks to our self-training capability, Gradius learns from your interactions over time. As you engage with the platform, we collect valuable insights into which explanations, formats, and approaches work best for you, allowing us to personalize your learning experience with increasing precision." 
+    answer: "Everyone has their own unique learning style—some people grasp concepts better through visuals, others through step-by-step logic, while some need hands-on practice. At Gradius, we identify your learning style using two key inputs. First, throughout your study journey, we ask you a series of targeted questions designed in collaboration with neuroscientists and based on academic research. We’ve transformed these insights into an algorithm that continuously refines its understanding of how you learn best, based on your responses. Second, thanks to our self-training capability, Gradius learns from your interactions over time. As you engage with the platform, we collect valuable insights into which explanations, formats, and approaches work best for you, allowing us to personalize your learning experience with increasing precision."
   },
   {
     question: "Why can I only import quizzes and flashcards from other platforms?",
     iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Right now, we're focusing entirely on adaptability—making sure Gradius can deeply understand your learning needs and personalize your study experience accordingly. However, we’ll soon integrate the ability to upload your own materials (PDFs, Word documents, PowerPoints, etc.), allowing Gradius to generate flashcards, quizzes, and other study tools directly from your content. Stay tuned!" 
+    answer: "Right now, we're focusing entirely on adaptability—making sure Gradius can deeply understand your learning needs and personalize your study experience accordingly. However, we’ll soon integrate the ability to upload your own materials (PDFs, Word documents, PowerPoints, etc.), allowing Gradius to generate flashcards, quizzes, and other study tools directly from your content. Stay tuned!"
   },
   {
     question: "How can I give my advice on how to improve Gradius?",
     iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Every single user is like a developer to us! Join our Discord channel and talk directly with our developers—share your feedback, suggest improvements, and help shape Gradius into the perfect learning tool for you. We’re building this together! 🚀" 
+    answer: "Every single user is like a developer to us! Join our Discord channel and talk directly with our developers—share your feedback, suggest improvements, and help shape Gradius into the perfect learning tool for you. We’re building this together! 🚀"
   }
 ];
 
+const FAQItem: React.FC<{ question: string; iconSrc: string; answer: string }> = ({ question, iconSrc, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAnswer = () => setIsOpen((prevState) => !prevState);
+
+  return (
+    <div className="flex flex-col mb-6">
+      <div className="flex items-center justify-between p-4 text-white bg-[#160F22] rounded-lg cursor-pointer" onClick={toggleAnswer}>
+        <div className="flex items-center">
+          <img src={iconSrc} alt="FAQ icon" className="w-6 h-6 mr-4" />
+          <h2 className="text-xl font-semibold">{question}</h2>
+        </div>
+        <div className="text-2xl">
+          {isOpen ? <Minus /> : <Plus />} {/* Toggle icon */}
+        </div>
+      </div>
+      {isOpen && (
+        <div className="p-4 bg-[#160F22] text-white rounded-lg mt-2 text-base">
+          <p>{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const FAQSection: React.FC = () => {
   const headingText = "Cool, but how does it work?!";
@@ -57,45 +82,46 @@ const FAQSection: React.FC = () => {
       transition: { duration: 0.2 },
     },
   };
+
   return (
-    <div className="flex  flex-col text-black">
+    <div className="flex flex-col text-black">
       <div className="flex overflow-hidden flex-col items-center md:px-72 md:py-24 w-full min-h-[771px] max-md:px-5 max-md:pt-24 max-md:max-w-full">
         <div className="flex flex-col self-stretch w-full text-center max-md:max-w-full">
           <div className="flex flex-col w-full max-md:max-w-full">
-          <motion.h1
-            className="text-[#F3ECFE] md:text-6xl text-2xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={{
-              visible: { transition: springTransition },
-            }}
-          >
-            {" Frequently Asked Questions"
-              .split("")
-              .map((char, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block"
-                  variants={characterVariants}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-          </motion.h1>
+            <motion.h1
+              className="text-[#F3ECFE] md:text-5xl text-2xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={{
+                visible: { transition: springTransition },
+              }}
+            >
+              {" Frequently Asked Questions"
+                .split("")
+                .map((char, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block"
+                    variants={characterVariants}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+            </motion.h1>
             <p className="mt-6 text-lg tracking-tight leading-none max-md:max-w-full text-[#F2EBFD]">
               Everything you need to know about the product and features.
             </p>
           </div>
         </div>
         <Slide direction='up'>
-        <div className="flex flex-col mt-16 max-w-full text-base md:w-[800px] max-md:mt-10">
-          {faqData.map((item, index) => (
-            <FAQItem key={index} question={item.question} iconSrc={item.iconSrc} answer={item.answer} />
-          ))}
-        </div>
-        
-        <CallToAction />
+          <div className="flex flex-col mt-16 max-w-full text-base md:w-[800px] max-md:mt-10">
+            {faqData.map((item, index) => (
+              <FAQItem key={index} question={item.question} iconSrc={item.iconSrc} answer={item.answer} />
+            ))}
+          </div>
+
+          <CallToAction />
         </Slide>
       </div>
     </div>
@@ -103,5 +129,3 @@ const FAQSection: React.FC = () => {
 };
 
 export default FAQSection;
-
-
