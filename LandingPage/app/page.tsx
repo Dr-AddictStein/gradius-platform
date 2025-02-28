@@ -16,7 +16,7 @@ import Study from "./components/Study";
 export default function Home() {
   return (
     <div
-      className="bg-[url('/bg.png')]  bg-center  mx-auto w-full pt-10"
+      className="bg-[url('/bg.png')]  bg-center bg-cover  mx-auto w-full pt-10"
     >
 
 
