@@ -9,50 +9,58 @@ import NewSection from "./components/NewSection";
 import AdaptiveLearningFeatures from "./components/AdaptiveLearningFeatures";
 import ChooseGradius from "./components/ChooseGradius";
 import ChoseGradius from "./components/ChoseGradius";
-import Image from 'next/image';
+import Image from "next/image";
 import Footer from "./components/Footer";
 import Study from "./components/Study";
+import ChooseGradiusNew from "./components/ChooseGradiusNew";
+import ChooseGradiusContent from "./components/ChooseGradiusContent";
+import PricingPlans from "./components/PricingPlans";
+import FAQSection from "./components/FAQSection";
+import UpLavel from "./components/UpLavel";
 
 export default function Home() {
   return (
-    <div
-      className="bg-[url('/bg.png')]  bg-center bg-cover  mx-auto w-full pt-10"
-    >
+    <div className="">
+      <div className="min-h-screen max-w-[1450px] mx-auto bg-red-500 bg-[url('/assets/bg2.png')] bg-cover pt-10">
+        {/* Main content */}
+        <main className="relative z-10 overflow-y-hidden">
+          <div className="mt-20">
+            <NavigationBar />
+          </div>
 
+          <div id="home" className="section">
+            <Hero />
+          </div>
 
-      {/* Main content */}
-      <main className="relative z-10 overflow-y-hidden">
-        <div className='mt-20  '> <NavigationBar /></div>
-        <div className="border-none border-red-600 ">
-          <Hero />
-        </div>
-        <DashBoard />
-        <LogoCarousel />
-        <PersonalizedLearning />
+          {/* Features */}
+          <div id="features" className="section">
+            <DashBoard />
+            <LogoCarousel />
+            <PersonalizedLearning />
+          </div>
 
-        <div className="">
-          <Study></Study>
-        </div>
-        <HowItWorks />
-        <AdaptiveLearningFeatures />
-        <ChooseGradius />
-        <Footer
-          companyLinks={[
-            { "name": "Home", "url": "/" },
-            { "name": "Features", "url": "/features" },
-            { "name": "How it works", "url": "/how-it-works" },
-            { "name": "Pricing", "url": "/pricing" },
-            { "name": "FAQ", "url": "/faq" }
-          ]}
-          infoLinks={[
-            { "name": "Privacy", "url": "/privacy" },
-            { "name": "Terms & Policy", "url": "/terms-policy" },
-            { "name": "404", "url": "/404" }
-          ]}
-        />
+          {/* How it works */}
+          <div id="how-it-works" className="section">
+            <Study />
+            <HowItWorks />
+            <AdaptiveLearningFeatures />
+            <ChooseGradiusNew />
+            <ChooseGradiusContent />
+          </div>
 
-      </main>
+          {/* Pricing */}
+          <div id="pricing" className="section">
+            <PricingPlans />
+          </div>
+
+          {/* FAQ */}
+          <div id="faq" className="section">
+            <FAQSection />
+
+            <UpLavel></UpLavel>
+          </div>
+        </main>
+      </div>
     </div>
-
   );
 }
