@@ -18,16 +18,19 @@ const logos = [
 
 const LogoCarousel = () => {
   return (
-    <section className="relative overflow-y-hidden flex flex-col items-center justify-center sm:mt-[80px] px-4">
+    <section className="relative overflow-hidden flex flex-col items-center justify-center sm:mt-[80px] px-4">
       <h2 className="sm:text-[12px] text-[10px] uppercase tracking-wider font-bold mb-12 font-['Plus Jakarta Sans'] mt-24 text-[#F3ECFE]">
         Trusted by University Societies Globally
       </h2>
 
       <div className="relative w-full max-w-7xl">
-        <Marquee 
-          speed={50} 
-          pauseOnHover={true} 
-         >
+        {/* Left Shadow */}
+        <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#0f0f0f] to-transparent z-10 pointer-events-none" />
+
+        {/* Right Shadow */}
+        <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#321745] to-transparent z-10 pointer-events-none" />
+
+        <Marquee speed={50} pauseOnHover={true}>
           {logos.map((logo, index) => (
             <div key={index} className="h-[60px] flex items-center justify-center mx-4">
               <Image

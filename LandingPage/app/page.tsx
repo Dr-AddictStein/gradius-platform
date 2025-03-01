@@ -78,7 +78,11 @@ export default function Home() {
             <UpLavel></UpLavel>
           </div>
 
-          <Footer companyLinks={companyLinks} infoLinks={infoLinks} />
+          <div className='section mt-24' >
+
+            <Footer companyLinks={companyLinks} infoLinks={infoLinks} />
+          </div>
+
 
         </main>
       </div>
