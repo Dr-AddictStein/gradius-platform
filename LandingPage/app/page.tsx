@@ -19,12 +19,31 @@ import FAQSection from "./components/FAQSection";
 import UpLavel from "./components/UpLavel";
 
 export default function Home() {
+
+  const companyLinks = [
+    { name: "Home", url: "/" },
+    { name: "Features", url: "/features" },
+    { name: "How it works", url: "/how-it-works" },
+    { name: "Pricing", url: "/pricing" },
+    { name: "FAQ", url: "/faq" },
+  ];
+
+  const infoLinks = [
+    { name: "Privacy", url: "/privacy" },
+    { name: "Terms & Policy", url: "/terms-policy" },
+    { name: "404", url: "/404" },
+  ];
+
   return (
     <div className="">
+<<<<<<< HEAD
       <div className="min-h-screen w-full bg-red-500 bg-[url('/assets/bg2.png')] bg-cover bg-top bg-no-repeat pt-10">
 
 
 
+=======
+      <div className="min-h-screen w-full bg-cover mx-auto bg-[url('/assets/bg2.png')]  pt-10">
+>>>>>>> 8fc715c66aa1206a575b28364b7340b3d2253d73
         {/* Main content */}
         <main className="relative z-10 overflow-y-hidden">
           <div className="mt-20">
@@ -62,6 +81,9 @@ export default function Home() {
 
             <UpLavel></UpLavel>
           </div>
+
+          <Footer companyLinks={companyLinks} infoLinks={infoLinks} />
+
         </main>
       </div>
     </div>
