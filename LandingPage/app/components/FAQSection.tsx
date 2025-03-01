@@ -1,128 +1,95 @@
-'use client'
-import React, { useState } from 'react';
-import FAQItem from './FAQItem';
-import CallToAction from './CallToAction';
+"use client";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Slide } from 'react-awesome-reveal';
-import { Plus, Minus } from 'lucide-react'; // Import the icons from lucide-react
+import { Slide } from "react-awesome-reveal";
+import { Plus, Minus } from "lucide-react";
+import CallToAction from "./CallToAction";
 
-interface FAQData {
-  question: string;
-  iconSrc: string;
-  answer: string;
-}
-
-const faqData: FAQData[] = [
+const faqData = [
   {
     question: "How is Gradius different?",
-    iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Gradius is different because of two key areas. First, it identifies your learning shortfalls with unparalleled granularity by analyzing your performance in each “microtopic” and assigning a knowledge score to each of them. Second, it adapts dynamically to help you overcome those challenges, explaining concepts in the way that best matches your learning style."
+    answer:
+      "Gradius identifies your learning shortfalls with unparalleled granularity by analyzing your performance in each microtopic and assigning a knowledge score. It then adapts dynamically to your learning style.",
   },
   {
     question: "How do you identify my learning style?",
-    iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Everyone has their own unique learning style—some people grasp concepts better through visuals, others through step-by-step logic, while some need hands-on practice. At Gradius, we identify your learning style using two key inputs. First, throughout your study journey, we ask you a series of targeted questions designed in collaboration with neuroscientists and based on academic research. We’ve transformed these insights into an algorithm that continuously refines its understanding of how you learn best, based on your responses. Second, thanks to our self-training capability, Gradius learns from your interactions over time. As you engage with the platform, we collect valuable insights into which explanations, formats, and approaches work best for you, allowing us to personalize your learning experience with increasing precision."
+    answer:
+      "Gradius uses targeted questions designed in collaboration with neuroscientists and self-training AI that adapts to your study patterns over time.",
   },
   {
     question: "Why can I only import quizzes and flashcards from other platforms?",
-    iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Right now, we're focusing entirely on adaptability—making sure Gradius can deeply understand your learning needs and personalize your study experience accordingly. However, we’ll soon integrate the ability to upload your own materials (PDFs, Word documents, PowerPoints, etc.), allowing Gradius to generate flashcards, quizzes, and other study tools directly from your content. Stay tuned!"
+    answer:
+      "We're currently focused on adaptability, but soon, you'll be able to upload your own materials, and Gradius will generate study tools for you!",
   },
   {
     question: "How can I give my advice on how to improve Gradius?",
-    iconSrc: "https://cdn.builder.io/api/v1/image/assets/1fb2522fd6c94611a6950922dca36db5/601918a047e60e0559adb277c02f10728c82dbbc97dcfc9a92f5cd2894b283c1?apiKey=1fb2522fd6c94611a6950922dca36db5&",
-    answer: "Every single user is like a developer to us! Join our Discord channel and talk directly with our developers—share your feedback, suggest improvements, and help shape Gradius into the perfect learning tool for you. We’re building this together! 🚀"
-  }
+    answer:
+      "Join our Discord channel and talk directly with our developers—your feedback helps shape Gradius into the best learning tool possible!",
+  },
 ];
 
-const FAQItem: React.FC<{ question: string; iconSrc: string; answer: string }> = ({ question, iconSrc, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAnswer = () => setIsOpen((prevState) => !prevState);
-
-  return (
-    <div className="flex flex-col mb-6">
-      <div className="flex items-center justify-between p-4 text-white bg-[#160F22] rounded-lg cursor-pointer" onClick={toggleAnswer}>
-        <div className="flex items-center">
-          <img src={iconSrc} alt="FAQ icon" className="w-6 h-6 mr-4" />
-          <h2 className="text-xl font-semibold">{question}</h2>
-        </div>
-        <div className="text-2xl">
-          {isOpen ? <Minus /> : <Plus />} {/* Toggle icon */}
-        </div>
-      </div>
-      {isOpen && (
-        <div className="p-4 bg-[#160F22] text-white rounded-lg mt-2 text-base">
-          <p>{answer}</p>
-        </div>
-      )}
-    </div>
-  );
-};
-
 const FAQSection: React.FC = () => {
-  const headingText = "Cool, but how does it work?!";
-  const springTransition = {
-    type: "spring",
-    stiffness: 200,
-    damping: 10,
-    staggerChildren: 0.02,
-  };
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const characterVariants = {
-    hidden: {
-      filter: "blur(8px)",
-      y: 15,
-      opacity: 0,
-    },
-    visible: {
-      filter: "blur(0)",
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.2 },
-    },
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="flex flex-col text-black">
-      <div className="flex overflow-hidden flex-col items-center md:px-72 md:py-24 w-full min-h-[771px] max-md:px-5 max-md:pt-24 max-md:max-w-full">
-        <div className="flex flex-col self-stretch w-full text-center max-md:max-w-full">
-          <div className="flex flex-col w-full max-md:max-w-full">
-            <motion.h1
-              className="text-[#F3ECFE] md:text-5xl text-2xl font-semibold drop-shadow-[0_0_10px_#A436F1]"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
-              variants={{
-                visible: { transition: springTransition },
-              }}
-            >
-              {" Frequently Asked Questions"
-                .split("")
-                .map((char, index) => (
-                  <motion.span
-                    key={index}
-                    className="inline-block"
-                    variants={characterVariants}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
-            </motion.h1>
-            <p className="mt-6 text-lg tracking-tight leading-none max-md:max-w-full text-[#F2EBFD]">
-              Everything you need to know about the product and features.
-            </p>
-          </div>
-        </div>
-        <Slide direction='up'>
-          <div className="flex flex-col mt-16 max-w-full text-base md:w-[800px] max-md:mt-10">
-            {faqData.map((item, index) => (
-              <FAQItem key={index} question={item.question} iconSrc={item.iconSrc} answer={item.answer} />
-            ))}
-          </div>
+    <div className="flex flex-col items-center px-6 md:px-24 py-16 text-black">
+      {/* FAQ Heading */}
+      <motion.h1
+        className="text-[#F3ECFE] text-3xl md:text-5xl font-semibold text-center drop-shadow-[0_0_10px_#A436F1]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Frequently Asked Questions
+      </motion.h1>
+      <p className="mt-4 text-lg text-center text-[#F2EBFD]">
+        Everything you need to know about the product and features.
+      </p>
 
-          <CallToAction />
-        </Slide>
+      {/* FAQ Items */}
+      <Slide direction="up">
+        <div className="mt-12 w-full max-w-4xl space-y-4">
+          {faqData.map((item, index) => (
+            <div key={index} className="flex flex-col w-full">
+              <button
+                className="flex items-center justify-between p-4 w-full bg-[#160F22] rounded-lg cursor-pointer text-white transition-all hover:bg-[#1D112B] focus:outline-none"
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
+              >
+                <span className="text-left text-lg md:text-xl font-semibold">
+                  {item.question}
+                </span>
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-2xl"
+                >
+                  {openIndex === index ? <Minus /> : <Plus />}
+                </motion.div>
+              </button>
+
+              <motion.div
+                className="overflow-hidden"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: openIndex === index ? "auto" : 0, opacity: openIndex === index ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <div className="p-4 bg-[#160F22] text-white rounded-lg  text-base">
+                  {item.answer}
+                </div>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+      </Slide>
+
+      {/* Call To Action */}
+      <div className="mt-10">
+        <CallToAction />
       </div>
     </div>
   );
