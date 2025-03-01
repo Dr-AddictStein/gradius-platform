@@ -29,7 +29,7 @@ const features: FeatureCardProps[] = [
 const AdaptiveLearningFeatures: React.FC = () => {
   return (
     <section
-      className="flex flex-col items-center justify-center px-4 py-20 w-full sm:px-8 lg:px-16"
+      className="flex flex-col items-center lg:mt-[120px] justify-center px-4 py-20 w-full sm:px-8 lg:px-16"
         style = {{
 
         backgroundSize: 'cover',

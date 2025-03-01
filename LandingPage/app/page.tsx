@@ -21,7 +21,10 @@ import UpLavel from "./components/UpLavel";
 export default function Home() {
   return (
     <div className="">
-      <div className="min-h-screen max-w-[1500px] mx-auto bg-red-500 bg-[url('/assets/bg2.png')] bg-cover pt-10">
+      <div className="min-h-screen w-full bg-red-500 bg-[url('/assets/bg2.png')] bg-cover bg-top bg-no-repeat pt-10">
+
+
+
         {/* Main content */}
         <main className="relative z-10 overflow-y-hidden">
           <div className="mt-20">
@@ -33,14 +36,14 @@ export default function Home() {
           </div>
 
           {/* Features */}
-          <div id="features" className="section">
+          <div id="features" className="section mt-24">
             <DashBoard />
             <LogoCarousel />
             <PersonalizedLearning />
           </div>
 
           {/* How it works */}
-          <div id="how-it-works" className="section">
+          <div id="how-it-works" className="section mt-24">
             <Study />
             <HowItWorks />
             <AdaptiveLearningFeatures />
@@ -49,12 +52,12 @@ export default function Home() {
           </div>
 
           {/* Pricing */}
-          <div id="pricing" className="section">
+          <div id="pricing" className="section mt-24">
             <PricingPlans />
           </div>
 
           {/* FAQ */}
-          <div id="faq" className="section">
+          <div id="faq" className="section mt-24">
             <FAQSection />
 
             <UpLavel></UpLavel>

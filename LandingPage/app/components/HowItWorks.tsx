@@ -32,7 +32,7 @@ export const HowItWorks: React.FC = () => {
 
   return (
     <section
-      className="flex flex-col items-center px-32 pt-24 w-full max-md:px-5 max-md:max-w-full"
+      className="flex flex-col lg:mt-[130px] items-center px-32 pt-24 w-full max-md:px-5 max-md:max-w-full"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
