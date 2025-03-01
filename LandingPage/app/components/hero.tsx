@@ -41,10 +41,10 @@ const Hero = () => {
 
           {/* Star Images with Motion Animation */}
           {[
-            { src: "/StarBig.png", alt: "Star", width: 40, height: 40, style: "absolute -top-[15%] left-[8%] sm:left-[14%]" },
-            { src: "/StarBig.png", alt: "Star", width: 40, height: 40, style: "absolute top-[12%] right-[8%] sm:right-[12%]" },
-            { src: "/StarSmall.png", alt: "Star", width: 25, height: 25, style: "absolute -top-[5%] left-[10%] sm:left-[13.5%]" },
-            { src: "/StarMid.png", alt: "Star", width: 30, height: 30, style: "absolute top-[35%] right-[10%] sm:right-[13%]" },
+            { src: "/StarBig.png", alt: "Star", width: 40, height: 40, style: "absolute -top-[15%] left-[16%] " },
+            { src: "/StarBig.png", alt: "Star", width: 40, height: 40, style: "absolute -top-[17%] right-[16%] " },
+            { src: "/StarSmall.png", alt: "Star", width: 25, height: 25, style: "absolute top-[25%] left-[10%] sm:left-[13.5%]" },
+            { src: "/StarMid.png", alt: "Star", width: 30, height: 30, style: "absolute top-[30%] right-[10%] sm:right-[13%]" },
             { src: "/StarMid.png", alt: "Star", width: 35, height: 35, style: "absolute top-[60%] left-[12%] sm:left-[15%]" },
             { src: "/StarSmall.png", alt: "Star", width: 25, height: 25, style: "absolute top-[70%] right-[20%] sm:right-[28%]" },
             { src: "/StarMid.png", alt: "Star", width: 20, height: 20, style: "absolute top-[95%] left-[20%] sm:left-[28%]" },

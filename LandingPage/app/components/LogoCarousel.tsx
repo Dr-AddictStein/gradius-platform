@@ -27,9 +27,7 @@ const LogoCarousel = () => {
         <Marquee 
           speed={50} 
           pauseOnHover={true} 
-          gradient={true} 
-          gradientWidth={20} 
-          gradientColor="#A436F1">
+         >
           {logos.map((logo, index) => (
             <div key={index} className="h-[60px] flex items-center justify-center mx-4">
               <Image
